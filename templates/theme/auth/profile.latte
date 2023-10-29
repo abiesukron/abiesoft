@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-opsi">
                     <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/seting"><i class="las la-cog"></i> <span>Seting</span></button>
-                    <form method="post" id="formHapus" name="formHapus" onSubmit="return hapus()">
+                    <form method="post" id="formHapus-{$id}" name="formHapus-{$id}" data-idu='{$id}' onSubmit="return hapus(this.dataset.idu)">
                         <input type="hidden" id="__info" name="__info" value="{$nama}">
                         <input type="hidden" id="__token" name="__token" value="{$csrf}">
                         <input type="hidden" id="__url" name="__url" value="{$url}">

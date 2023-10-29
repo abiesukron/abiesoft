@@ -73,7 +73,13 @@ final class Template8f43f33362 extends Latte\Runtime\Template
 		echo '/';
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 15 */;
 		echo '/seting"><i class="las la-cog"></i> <span>Seting</span></button>
-                    <form method="post" id="formHapus" name="formHapus" onSubmit="return hapus()">
+                    <form method="post" id="formHapus-';
+		echo LR\Filters::escapeHtmlAttr($id) /* line 16 */;
+		echo '" name="formHapus-';
+		echo LR\Filters::escapeHtmlAttr($id) /* line 16 */;
+		echo '" data-idu=\'';
+		echo LR\Filters::escapeHtmlAttr($id) /* line 16 */;
+		echo '\' onSubmit="return hapus(this.dataset.idu)">
                         <input type="hidden" id="__info" name="__info" value="';
 		echo LR\Filters::escapeHtmlAttr($nama) /* line 17 */;
 		echo '">
