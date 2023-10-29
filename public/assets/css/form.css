@@ -1,0 +1,398 @@
+@import "style.css";
+
+form {
+    display: block;
+}
+
+.form-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.form-group:first-child {
+    margin-top: 0px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0px;
+}
+
+.form-group > label,
+.form-group > input,
+.form-group > select,
+.form-group > textarea,
+.form-group > iframe,
+.form-group > span {
+    width: 100%;
+    display: block;
+}
+
+.form-group > textarea {
+    height: 0px;
+    resize: none;
+}
+
+.form-group > textarea::-webkit-scrollbar,
+.form-group > textarea::-webkit-scrollbar-thumb,
+.form-group > textarea::-webkit-scrollbar-track {
+    background: none;
+    outline: none;
+    width: 0;
+    border: 0;
+}
+
+.form-group > label {
+    font-size: 11pt;
+    font-weight: 400;
+}
+
+.form-group > .form-control,
+.form-group > input.form-control,
+.form-group > select.form-control,
+.form-group > textarea.form-control,
+.form-group > iframe {
+    font-size: 12pt;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border-radius: 4px;
+    background-color: var(--abu);
+    border: 1px solid var(--abu-hover);
+    font-family: Roboto;
+} 
+
+.form-group > .form-control.left,
+.form-group > input.form-control.left {
+    font-size: 12pt;
+    padding: 10px 12px 10px 40px;
+    margin: 8px 0;
+    border-radius: 4px;
+    background-color: var(--abu);
+    border: 1px solid var(--abu-hover);
+    font-family: Roboto;
+}
+
+.form-group > input[type='file'] {
+    border: 1px solid #000;
+    position: absolute;
+    margin-top: 10px;
+    height: 37px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-group > input[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.form-group > input[data-item='password'] {
+    padding-right: 47px;
+}
+
+.form-group > i.form-right {
+    position: absolute;
+    right: 12px;
+    margin-top: 17px;
+    font-size: 16pt;
+}
+
+.form-group > i.form-left {
+    position: absolute;
+    left: 12px;
+    margin-top: 17px;
+    font-size: 16pt;
+}
+
+.form-group > span {
+    display: none;
+}
+
+.form-group > .btnopsi {
+    margin: 5px 0;
+    padding: 5px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+}
+
+.form-group > .btnopsi::-webkit-scrollbar,
+.form-group > .btnopsi::-webkit-scrollbar-track,
+.form-group > .btnopsi::-webkit-scrollbar-thumb {
+    width: 0;
+    height: 0;
+    border: 0;
+}
+
+.form-group > .btnopsi > button,
+.form-group > .btnopsi > select {
+    font-size: 12pt;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: var(--abu);
+    border: 1px solid var(--abu-hover);
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+.form-group > .btnopsi > button {
+    font-weight: 400;
+}
+
+.form-group > .between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group > .between > .form-control {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.form-group > .between > .form-control > .switch {
+    position: relative;
+}
+
+.form-group > .between > .form-control > .switch > .block {
+    display: block;
+    width: 30px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--abu-hover);
+    background-color: var(--abu);
+}
+
+.form-group > .between > .form-control > .switch > .ceklis {
+    width: 20px;
+    height: 20px;
+    background-color: var(--abiesoft);
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    transition: right .15s;
+}
+
+.form-group > .between > .form-control > .switch > .ceklis.active {
+    right: 0;
+    transition: right .15s;
+}
+
+.form-group > .between > .form-control > .switch > input[type="checkbox"] {
+    position: absolute;
+    z-index: 0;
+}
+
+.form-group > .between > .form-control > label {
+    position: absolute;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-left: 40px;
+    z-index: 20;
+}
+
+.form-group > .form-control.tag > div > .item {
+    float: left;
+    margin: 5px;
+    padding: 8px;
+    font-weight: 500;
+    background-color: var(--putih);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.form-group > .form-control.tag > div > .item > button {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 8px;
+    font-size: 8pt;
+}
+
+.form-group > .form-control.tag > input {
+    width: 100px;
+    background-color: var(--abu);
+    font-size: 12pt; 
+    padding: 8px;   
+    font-family: Roboto;
+    margin: 5px;
+}
+
+
+
+
+.la-eye,
+.la-eye-slash {
+    cursor: pointer;
+}
+
+.form-login > .form-group {
+    position: relative;
+    margin: 0;    
+}
+
+.form-login > .form-group > label {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.form-login > .form-group > span {
+    margin: 0;
+    padding: 0;
+}
+
+.form-login > .form-group > i {
+    margin-top: 10px;
+}
+
+
+/*
+    Jika Error
+*/
+
+.form-group.is-error > input,
+.form-group.is-error > select,
+.form-group.is-error > textarea,
+.form-group.is-error > iframe,
+.form-group.is-error > .form-control,
+.form-group.is-error > .btnopsi > button,
+.form-group.is-error > .btnopsi > select,
+.form-login > .form-group.is-error > input {
+    background-color: var(--merah-background);
+    border: 1px solid var(--merah);
+}
+
+.form-group.is-error > .form-control > input {
+    background-color: var(--merah-hover);
+    border: none;
+}
+
+.form-group.is-error > input::placeholder,
+.form-group.is-error > select::placeholder,
+.form-group.is-error > textarea::placeholder {
+    color: var(--merah-placeholder);
+}
+
+.form-group.is-error > input,
+.form-group.is-error > select,
+.form-group.is-error > textarea,
+.form-group.form-group.is-error > label,
+.form-group.form-group.is-error > span,
+.form-group.form-group.is-error > i,
+.form-group.is-error > .btnopsi > button,
+.form-group.is-error > .btnopsi > select {
+    color: var(--merah);
+}
+
+.form-login > .form-group.is-error > span,
+.form-group.is-error > span {
+    display: block;
+    font-size: 10pt;
+}
+
+.form-login > .form-group.is-error > span > span {
+    position: absolute;
+    right: 12px;
+    margin-top: -38px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.form-login > .form-group.is-error > span > span > i {
+    font-size: 16pt;
+}
+
+
+
+
+
+
+/*
+    Button
+*/
+
+.form-btn {
+    margin: 15px 0;
+}
+
+.form-btn-center {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.form-btn-center > button {
+    margin: 0 auto;
+}
+
+.btn {
+    font-size: 12pt;
+    padding: 10px 25px;
+    border-radius: 4px;
+    background-color: var(--abu);
+    border: 1px solid var(--abu-hover);
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-btn > .btn {
+    margin-top: 8px;
+}
+
+.form-btn > .btn:first-child {
+    margin-top: 0;
+}
+
+.btn-clean {
+    background: none;
+    border: none;
+    font-weight: 500;
+    color: inherit;
+}
+
+.btn-clean:hover {
+    color: var(--abiesoft);
+}
+
+.btn-biru {
+    background-color: var(--biru);
+    border: 1px solid var(--biru);
+    color: var(--putih);
+}
+
+.btn-abiesoft {
+    background-color: var(--abiesoft);
+    border: 1px solid var(--abiesoft);
+    color: var(--putih);
+}
+
+.btn-google-merah {
+    background-color: var(--google-merah);
+    border: 1px solid var(--google-merah);
+    color: var(--putih);
+}
+
+.btn > i {
+    font-size: 16pt;
+    margin-right: 10px;
+}
+
+button:disabled {
+    background-color: var(--abu);
+    border: 1px solid var(--abu2);
+    color: var(--font-disable);
+}

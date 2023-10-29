@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{$appdes}">
+    <meta name="author" content="">
+    <title>{$title}</title>
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/shimmer.css" rel="stylesheet" type="text/css">
+    <link href="/assets/lib/icon8/css/line-awesome.css" rel="stylesheet" type="text/css">
+    {block css}{/block}
+
+</head>
+
+<body>
+    <div class='art'><div class='gradient'></div></div>
+    <div class="center-full">
+        <div class="single-4">
+            <div class='brand'>
+                <div class='logo'><img src='/assets/img/logo_with_label.png'></div>
+                <div class='label'>Selamat Datang di <strong>{$appname}</strong></div>
+                <div class='grup-button'>
+                    {if $isLogin}
+                        <button class='btn' onClick='window.location.href=this.dataset.url' data-url='{$dashboard}'>Selamat datang, <strong>{$nama}</strong></button>
+                        <button class='btn' onClick='window.location.href=this.dataset.url' data-url='{$url}/logout'>Logout</button>
+                    {else}
+                        <button class='btn' onClick='window.location.href=this.dataset.url' data-url='{$url}/login'>Login</button>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/jquery-3.7.0.js"></script>
+    {block js}{/block}
+</body>
+
+</html>

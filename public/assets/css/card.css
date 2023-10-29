@@ -1,0 +1,642 @@
+@import "style.css";
+
+.transparent {
+    position: relative;
+    min-width: 300px;
+    border-radius: 8px;
+    background: var(--transparent);
+    padding: 15px;
+    box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+}
+
+.card {
+    position: relative;
+    min-width: 300px;
+    border-radius: 8px;
+    background: var(--putih);
+}
+
+.card > .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-header > button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    font-size: 14pt;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    font-weight: 600;
+}
+
+.card > .card-header > button:hover,
+.card > .card-header > button:focus {
+    background-color: var(--abu);
+    font-size: 18pt;
+}
+
+.card > .card-header > .label {
+    padding: 0 10px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: -20px;
+}
+
+.card > .card-body {
+    padding: 40px;
+}
+
+.card > .card-body > .label {
+    margin-top: 40px;
+}
+
+.card > .card-body > .label:first-child {
+    margin-top: 0px;
+}
+
+.card > .card-body > form > .form-login > .photo {
+    width: 100%;
+}
+
+.card > .card-body > form > .form-login > .photo > div {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 2px solid var(--abiesoft);
+}
+
+.card > .card-body > form > .form-login > .photo > div > .frame {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card > .card-body > form > .form-login > .photo > div > .frame > img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.card > .card-body > form > .form-login > h3 {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+
+
+.card > .card-opsi {
+    display: none;
+}
+
+.card > .card-opsi.active {
+    display: block;
+    position: absolute;
+    right: 0;
+    padding: 20px 10px;
+    background-color: var(--putih);
+    box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.card > .card-opsi.active > form > button,
+.card > .card-opsi.active > button {
+    display: block;
+    width: 200px;
+    padding: 10px 15px;
+    font-size: 11pt;
+    cursor: pointer;
+    background-color: var(--putih);
+    color: var(--hitam);
+    text-align: left;
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-opsi.active > form > button > i,
+.card > .card-opsi.active > button > i {
+    margin-right: 10px;
+}
+
+.card > .card-opsi.active > form > button:hover,
+.card > .card-opsi.active > form > button:focus,
+.card > .card-opsi.active > button:hover,
+.card > .card-opsi.active > button:focus {
+    background-color: var(--abu);
+}
+
+.card > .card-opsi.active > form > button:last-child {
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    Card List
+*/
+
+.card > .card-body-list {
+    margin-top: -1px;
+}
+
+.card > .card-body-list > .list-button {
+    background-color: var(--putih);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+}
+
+.card > .card-body-list > .list-button::-webkit-scrollbar,
+.card > .card-body-list > .list-button::-webkit-scrollbar-track,
+.card > .card-body-list > .list-button::-webkit-scrollbar-thumb {
+    width: 0;
+    height: 0;
+    border: none;
+    background: none;
+}
+
+.card > .card-body-list > .list-button > button {
+    padding: 10px 25px;
+    background-color: var(--abu);
+    font-size: 11pt;
+    font-weight: 500;
+    border-radius: 0;
+    margin-right: 2px;
+}
+
+.card > .card-body-list > .list-button > button:first-child {
+    border-radius: 0;
+}
+
+.card > .card-body-list > .list-button > button.active {
+    background-color: var(--putih);
+    color: var(--hitam);
+}
+
+
+.card > .card-body-list > .grup-seting.hide {
+    display: none;
+}
+
+.card > .card-body-list > .grup-seting {
+    display: block;
+    border-top: 1px solid var(--abu);
+}
+
+
+.card > .card-body-list > .grup-seting > .label{
+    padding: 40px 40px 20px 40px;
+    font-weight: 500;
+}
+
+.card > .card-body-list > .grup-seting:first-child > .label{
+    padding: 20px 40px;
+}
+
+.card > .card-body-list > .grup-seting > ul {
+    display: block;
+}
+
+.card > .card-body-list > .grup-seting > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-body-list > .grup-seting > ul > li:last-child {
+    border-bottom: none;
+}
+
+.card > .card-body-list > .grup-seting > ul > li > div {
+    width: 70%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.card > .card-body-list > .grup-seting > ul > li > div > i {
+    font-size: 32pt;
+    margin-right: 30px;
+}
+
+.card > .card-body-list > .grup-seting > ul > li > div > div > div {
+    font-weight: 500;
+}
+
+.card > .card-body-list > .grup-seting > ul > li > .switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+
+.card > .card-body-list > .grup-seting > ul > li > .switch > span {
+    padding: 10px 20px;
+    background-color: var(--abu);
+}
+
+.card > .card-body-list > .grup-seting > ul > li > .switch > span:first-child {
+    border-radius: 4px 0 0 4px;
+    border: none;
+}
+
+.card > .card-body-list > .grup-seting > ul > li > .switch > span:last-child {
+    border-radius: 0 4px 4px 0;
+    border: none;
+}
+
+
+.card > .card-body-list > .grup-seting > ul > li > .switch > span.active {
+    background-color: var(--abiesoft); 
+    color: var(--putih);
+}
+
+.card > .card-body-list > .grup-seting > ul.env > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-body-list > .grup-seting > ul.env > li:last-child {
+    border: none;
+}
+
+.card > .card-body-list > .grup-seting > ul.env > li > label {
+    width: 40%;
+}
+
+.card > .card-body-list > .grup-seting > ul.env > li > .form-group {
+    position: relative;
+    width: 60%;
+    padding-left: 10px;
+}
+
+.card > .card-body-list > .grup-seting > form {
+    padding: 20px 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card > .header > .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.card > .header > .brand > div {
+    margin-left: 10px;
+}
+
+.card > .header > .brand > div > label {
+    font-weight: 500;
+    font-size: 18pt;
+    margin-left: 10px;
+}
+
+.card > .header > .brand > div > img {
+    width: auto;
+}
+
+
+
+
+
+
+
+/*
+    Profile
+*/
+
+.card > .card-body > .photo-profile {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.card > .card-body > .photo-profile > .frame {
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--abiesoft);
+    border-radius: 50%;
+    margin: 10px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card > .card-body > .photo-profile > .frame > img {
+    width: 105px;
+    height: 105px;
+    overflow: hidden;
+}
+
+.card > .card-body > .photo-profile > .frame > img {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card > .card-body > .photo-profile > button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--putih);
+    position: absolute;
+    margin-top: -53px;
+    font-size: 14pt;
+    border-radius: 50%;
+    margin-left: 55%;
+}
+
+.card > .card-body > .photo-profile > button:hover {
+    background-color: var(--abu);
+}
+
+.card > .card-body > .info-profile {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+    Card Tabel
+*/
+
+.card > .card-tabel {
+    padding: 0;
+}
+
+.card > .card-tabel > .header {
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card > .card-tabel > .header > div:first-child{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.card > .card-tabel > .header > div:first-child > small{
+    margin-left: 20px;
+    font-size: 11pt;
+}
+
+.card > .card-tabel > .header > div:last-child > button {
+    padding: 5px 15px;
+}
+
+.card > .card-tabel > .header > div:last-child > button > i {
+    margin: 0;
+}
+
+.card > .card-tabel > .header > div:last-child > button > span {
+    display: block;
+    margin-left: 10px;
+}
+
+.card > .card-tabel > .tabel > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card > .card-tabel > .tabel > .search {
+    width: 100%;
+    padding: 20px 40px;
+    border-top: 1px solid var(--abu);
+    position: relative;
+}
+
+.card > .card-tabel > .tabel > .search > i {
+    position: absolute;
+    font-size: 16pt;
+    margin-top: -3px;
+}
+
+.card > .card-tabel > .tabel > .search > input {
+    width: 100%;
+    font-size: 12pt;
+    margin-left: 40px;
+}
+
+.card > .card-tabel > .tabel > .table-load-more {
+    padding: 40px;
+}
+
+.card > .card-tabel > .tabel > .table-load-more > button {
+    margin: 0 auto;
+}
+
+.card > .card-tabel > .tabel > table > thead > tr {
+    border-top: 1px solid var(--abu);
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-tabel > .tabel > table > thead > tr > th {
+    padding: 20px 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.card > .card-tabel > .tabel > table > thead > tr > th.down::after {
+    content: "↓";
+    margin-left: 10px;
+}
+
+.card > .card-tabel > .tabel > table > thead > tr > th.up::after {
+    content: "↑";
+    margin-left: 10px;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr {
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr:last-child {
+    border-bottom: 0;
+}
+
+.card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide,
+.card > .card-tabel > .tabel > table > tbody > tr > td.mobile-hide {
+    display: block;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea  {
+    position: relative;
+    text-align: center;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--putih);
+    font-size: 12pt;
+    border-radius: 50%;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button:hover,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button:focus,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button.active {
+    background-color: var(--abu);
+    font-size: 16pt;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu {
+    display: none;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active {
+    display: block;
+    width: 140px;
+    position: absolute;
+    right: 20px;
+    z-index: 30;
+    background-color: var(--abu);
+    box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 9px 20px;
+    background-color: var(--putih);
+    margin-bottom: 1px;
+    font-size: 10pt;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr.hidden  {
+    display: none;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button {
+    margin-bottom: 0;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover {
+    background-color: var(--abu);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button > i,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button > i {
+    font-size: 14pt;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover > i,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:focus > i {
+    color: var(--hijau);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover > i,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:focus > i {
+    color: var(--merah);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button > span,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button > span {
+    margin-left: 10px;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td.text-center {
+    text-align: center;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td > h3,
+.card > .card-tabel > .tabel > table > tbody > tr > td > div,
+.card > .card-tabel > .tabel > table > tbody > tr > td > small {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td > h3:last-child,
+.card > .card-tabel > .tabel > table > tbody > tr > td > div:last-child,
+.card > .card-tabel > .tabel > table > tbody > tr > td > small:last-child {
+    border-bottom: 0;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td.gambar {
+    max-width: 190px;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td.gambar > img {
+    max-width: 150px;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td:first-child,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child {
+    text-align: center;
+}

@@ -1,0 +1,70 @@
+{layout '../../main.latte'}
+{block title}{$title}{/block}
+{block css}{/block}
+{block content}
+<div class='single-7'>
+    <div class='transparent'>
+        <div class='card'>
+
+            <!-- Card Header -->
+            <div class='card-header'>
+                <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/berita"><i class='las la-angle-left'></i></button>
+                <div class='label'>{$title}</div>
+                <button class='card-option-btn' data-model='buttonopsi'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+            </div>
+            <div class='card-opsi'>
+                <button onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/berita/{$id}/edit'><i class='las la-pen'></i> <span>Edit</span></button>
+                <form method='post' id='formHapus-{$id}' name='formHapus-{$id}' onSubmit='return hapus({$id})'>
+                    <input type='hidden' id='__info' name='__info' value='{$judul}'>
+                    <input type='hidden' id='__token' name='__token' value='{$csrf}'>
+                    <input type='hidden' id='__url' name='__url' value='{$url}'>
+                    <input type='hidden' id='id' name='id' value='{$id}'>
+                    <input type='hidden' id='__tb' name='__tb' value='berita'>
+                    <input type='hidden' id='__method' name='__method' value='DELETE'>
+                    <button><i class='las la-trash'></i> <span>Hapus</span></button>
+                </form>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class='label'>
+                    <h3>Info Berita</h3>
+                    <hr>
+                </div>
+                <div class='cover'><img src='{$gambar}'></div>
+                <div class='list'>
+                    <table>
+                        <tr>
+                            <td>Judul</td>
+                            <td>{$judul}</td>
+                        </tr>
+                        <tr>
+                            <td>Dibaca</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class='label'>
+                    <h3>Grafik</h3>
+                    <hr>
+                </div>
+                <div class='list'>
+                    <table>
+                        <tr>
+                            <td>Dibaca</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Dibaca</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{/block}
+{block js}{/block}

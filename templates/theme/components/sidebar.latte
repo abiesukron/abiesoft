@@ -1,0 +1,50 @@
+{block sidebar}
+<div class="sidebar">
+    <div class="block"></div>
+    <div class="menu">
+        <div class="top">
+            <img src="{$url}/assets/img/logo.png" style="cursor:pointer;" onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/dashboard">
+            <button class="close"><i class="las la-times"></i></button>
+        </div>
+        <hr class="no-margin">
+        <ul>
+            <li class="{if $current == ''}active{/if}"><a href='{$url}/{$sessionkey}/dashboard'><i class="las la-chart-pie"></i><span>Dashboard</span></a></li>
+            <label>Menu</label>
+            <li class="sub {if $current == 'editor' || $current == 'berita' || $current == 'kategori'}active{/if}">
+                <a href='javascript:void(0)' class="ic">
+                    <span><i class="las la-file-alt"></i><span>Media Online</span></span>
+                    <i class="las la-angle-right"></i>
+                </a>
+                <ul>
+                    <li class="{if $current == 'editor'}active{/if}"><a href='{$url}/{$sessionkey}/editor'><i class="las la-minus"></i><span>Editor</span></a></li>
+                    <li class="{if $current == 'berita'}active{/if}"><a href='{$url}/{$sessionkey}/berita'><i class="las la-minus"></i><span>Berita</span></a></li>
+                    <li class="{if $current == 'kategori'}active{/if}"><a href='{$url}/{$sessionkey}/kategori'><i class="las la-minus"></i><span>Kategori</span></a></li>
+                </ul>
+            </li>
+            <li><a href='javascript:void(0)'><i class="las la-list"></i><span>Kategori</span></a></li>
+            <li><a href='javascript:void(0)'><i class="las la-image"></i><span>Galeri</span></a></li>
+            <li><a href='javascript:void(0)'><i class="las la-qrcode"></i><span>QRCode</span></a></li>
+            <li><a href='javascript:void(0)'><i class="las la-envelope"></i><span>Email</span></a></li>
+            <li><a href='{$url}/form'><i class="lab la-wpforms"></i><span>Form</span></a></li>
+            <label>Seting</label>
+            <li class="sub">
+                <a href='javascript:void(0)' class="ic">
+                    <span><i class="las la-tasks"></i><span>Data Pendukung</span></span>
+                    <i class="las la-angle-right"></i>
+                </a>
+                <ul>
+                    <li><a href='javascript:void(0)'><i class="las la-minus"></i><span>Manajemen User</span></a></li>
+                    <li><a href='javascript:void(0)'><i class="las la-minus"></i><span>Manajemen Grup</span></a></li>
+                </ul>
+            </li>
+            {* <li><a href='javascript:void(0)'><i class="las la-list"></i><span>List</span></a></li> *}
+        </ul>
+        <div class="line"><hr class="no-margin"></div>
+        <div class='bottom'>
+            <button class="seting" onClick="window.location.href=this.dataset.url" data-url="{$url}/seting"><i class="las la-cog"></i></button>
+            <div class="date">{$hariini}</div>
+            <button class="logout" onClick="window.location.href=this.dataset.url" data-url="{$url}/logout"><i class="las la-sign-out-alt"></i></button>
+        </div>
+    </div>
+</div>
+{/block}

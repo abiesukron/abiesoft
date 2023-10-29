@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{$appdes}">
+    <meta name="author" content="">
+    <meta name="sessionkey" content="{$sessionkey}">
+    <title>{$title}</title>
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/card.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/form.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/media.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/shimmer.css" rel="stylesheet" type="text/css">
+    <link href="/assets/lib/icon8/css/line-awesome.css" rel="stylesheet" type="text/css">
+    {block css}{/block}
+
+</head>
+
+<body>
+    <div class='art'><div class='gradient'></div></div>
+    {include './theme/components/sidebar.latte'}
+    {include './theme/components/navbar.latte'}
+
+    <div class="page">
+        {block content}{/block}
+    </div>
+    {include './theme/components/footer.latte'}
+
+
+    <div id='toasthere'></div>
+
+    {include './theme/components/modal.latte'}
+    <script src="/assets/js/jquery-3.7.0.js"></script>
+    <script src="/assets/js/style.js"></script>
+    <script src="/assets/js/alert.js"></script>
+    <script src="/assets/js/validasi.js"></script>
+    {block js}{/block}
+</body>
+
+</html>

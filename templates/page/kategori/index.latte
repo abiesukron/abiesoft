@@ -1,0 +1,41 @@
+{layout '../../main.latte'}
+{block title}{$title}{/block}
+{block css}{/block}
+{block content}
+<div class='page'>
+    <div class='card'>
+
+        <!-- Card Header -->
+        <div class='card-header'>
+            <button id='back'><i class='las la-angle-left'></i></button>
+            <div class='label'>{$title}</div>
+            <button class='card-option-btn' data-model='buttonopsi'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+        </div>
+        <div class='card-opsi'>
+            <button onClick='window.location.href=this.dataset.url' data-url='{$url}/'><i class='las la-pen'></i> <span>Edit</span></button>
+            <form method='post' id='formHapus' name='formHapus' onSubmit='return hapus()'>
+                <input type='hidden' id='__info' name='__info' value=''>
+                <input type='hidden' id='__token' name='__token' value='{$csrf}'>
+                <input type='hidden' id='__url' name='__url' value='{$url}'>
+                <input type='hidden' id='id' name='id' value='{$id}'>
+                <input type='hidden' id='__tb' name='__tb' value=''>
+                <input type='hidden' id='__method' name='__method' value='DELETE'>
+                <button><i class='las la-trash'></i> <span>Hapus</span></button>
+            </form>
+        </div>
+
+        <!-- Card Body -->
+        <div class='card-body'>
+            <div class='empty'>
+                <div>
+                    <img src='{$url}/assets/img/banner.png'>
+                    <label>Page Kategori</label>
+                    <div><small>Ini tampilan default dari page kategori</small></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
+{block js}{/block}

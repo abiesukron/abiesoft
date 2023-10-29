@@ -1,0 +1,30 @@
+form:
+  method: 'get'
+  path: '/form'
+  controller: 'FormController'
+  function: 'index'
+  auth: true
+
+
+
+# Media Online
+editor:
+  admin: true
+
+berita:
+  admin: true
+
+kategori:
+  admin: true
+
+
+
+
+
+# Publik
+landing:
+  method: 'get'
+  path: '/'
+  controller: 'LandingController'
+  function: 'index'
+  auth: false

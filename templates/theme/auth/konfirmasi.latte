@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en" {if $darkmode == 1}class="dark"{/if}>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="webID" content="abbay123">
+    
+
+    <title>{$appname} | Reset Password</title>
+
+    <link href="/assets/css/output.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class='art'><div class='gradient'></div></div>
+    <div class="w-[100%] h-[100vh] flex flex-center items-center">
+        <div class="p-8 bg-white w-[350px] h-auto rounded-md shadow-sm mx-auto dark:bg-slate-900">
+            <div class="flex justify-center items-center mb-8">
+                <img src="/assets/images/logo_abiesoft.png" class="w-40">
+            </div>
+            <form class="user" id="formAuth" name="formAuth" method="post" onSubmit="return submitAuth()">
+                <div class="form-group"></div>
+                <div class="form-group">
+                    <input type="hidden" class="form-control"
+                        id="email" name="email"
+                        value="{$emailuser}">
+                    <span id="err_email" class="invalid-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control"
+                        id="psw" name="psw"
+                        placeholder="Password baru">
+                    <span id="err_psw" class="invalid-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control"
+                        id="kpsw" name="kpsw"
+                        placeholder="Ulangi password baru">
+                    <span id="err_kpsw" class="invalid-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <div class="text-center text-sm bg-slate-200 dark:bg-slate-700 dark:text-slate-300 mb-3 p-4">Masukan kode reset yang dikirim ke email <strong class="text-primary">{$emailuser}</strong></div>
+                    <input class="form-control text-center"
+                        maxlength="6" id="kodereset" name="kodereset" placeholder="Masukan kode reset ..">
+                    <span id="err_kodereset" class="invalid-feedback"></span>
+                </div>
+                <input type="hidden" id="__token" name="__token" value="{$csrf}">
+                <button class="btn btn-primary btn-block mt-3">
+                    <span id="btnlogin">Simpan Perubahan</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id='toasthere'></div>
+
+    <script src="/assets/js/jquery-3.7.0.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/assets/js/alert.js"></script>
+    <script src="/assets/js/validasi.js"></script>
+    <script src="/assets/jsa/auth/konfirmasi.js"></script>
+
+</body>
+
+</html>

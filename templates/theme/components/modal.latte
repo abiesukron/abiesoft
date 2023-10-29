@@ -1,0 +1,29 @@
+<div class='modal' id="modalprofile">
+    <div class="modal-box" id="modalboxprofile"></div>
+    <div class="profile">
+        <div class="top">
+            <label>Ganti Photo</label>
+            <button class="close" id="modalclose"><i class="las la-times"></i></button>
+        </div>
+        <div class="photo"><img src="{$url.$photo}" id="pp2"></div>
+        <div class="form">
+            <form method="post" id="formPhoto" name="formPhoto">
+                <div class="grup">
+                    <div>Pilih Photo..</div>
+                </div>
+                <input type="hidden" id="__url" name="__url" value="{$url}">
+                <input type="hidden" id="__token" name="__token" value="{$csrf}">
+                <input type="hidden" id="__method" name="__method" value="PATCH">
+                <input type='file' id="photo" name="photo" onChange="return gantiPhoto()">
+            </form>
+            <form method="post" id="formHapusPhoto" name="formHapusPhoto" onSubmit="return hapusPhoto()">
+                <input type="hidden" id="__photo" name="__photo" value="{$photo}">
+                <input type="hidden" id="__url" name="__url" value="{$url}">
+                <input type="hidden" id="__token" name="__token" value="{$csrf}">
+                <input type="hidden" id="__method" name="__method" value="DELETE">
+                <button>Hapus Photo</button>
+            </form>
+        </div>
+    </div>
+</div>
+{block modal}{/block}

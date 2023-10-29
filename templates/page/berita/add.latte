@@ -1,0 +1,96 @@
+{layout '../../main.latte'}
+{block title}{$title}{/block}
+{block css}{/block}
+{block content}
+<div>
+
+    <div class='transparent'>
+        <div class='card'>
+
+            <!-- Card Header -->
+            <div class='card-header'>
+                <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/berita"><i class='las la-angle-left'></i></button>
+                <div class='label'>{$title}</div>
+                <button class='card-option-btn hide'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+            </div>
+
+            <!-- Card Body -->
+            <div class='card-body'>
+                
+                <form method="post" id="formAdd" name="formAdd" onSubmit="return submitAdd()">
+                    <div class="form-group">
+                        <label for="judul">Judul</label>
+                        <input class="form-control" id="judul" name="judul" placeholder="Judul berita">
+                        <span id="err_judul"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="potongan">Potongan berita</label>
+                        <textarea class="form-control" id="potongan" name="potongan" data-type="editor"></textarea>
+                        <span id="err_potongan"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="isi">Isi berita</label>
+                        <textarea class="form-control" id="isi" name="isi" data-type="editor"></textarea>
+                        <span id="err_isi"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategoriid">Kategori</label>
+                        <select class="form-control" id="kategoriid" name="kategoriid">
+                            <option value="">Pilih kategori</option>
+                            {foreach $kategori as $k}
+                                <option value="{$k->id}">{$k->nama}</option>
+                            {/foreach}
+                        </select>
+                        <span id="err_kategoriid"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="tag">Tag</label>
+                        <div class="form-control tag">
+                            <div id="items">
+                                {* 
+                                    Jika ingin menuliskan tag secara langsung
+                                    <div class='item'><label>nama tag</label><button type='button' class='removetagbtn'><i class='las la-times'></i></buttton></div>
+                                *}
+                            </div>
+                            <input id="taginput" placeholder="Tag" data-type="tag">
+                            <div class="clear"></div>
+                        </div>
+                        <input type="hidden" id="tag" name="tag">
+                        <span id="err_tag"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar">Upload gambar</label>
+                        <input type="file" id="gambar" name="gambar">
+                        <i class="las la-paperclip form-right"></i>
+                        <div class="form-control">Pilih file</div>
+                        <span id="err_gambar"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="publikasi">Publikasi</label>
+                        <select class="form-control" id="publikasi" name="publikasi">
+                            <option value="">Pilih status publikasi</option>
+                            <option value="Terbit">Terbit</option>
+                            <option value="Draft">Draft</option>
+                            <option value="Jadwalkan">Jadwalkan</option>
+                        </select>
+                        <span id="err_publikasi"></span>
+                    </div>
+                    <hr>
+                    <div class="form-button">
+                        <input type="hidden" id="editing" name="editing" value="{date('Y-m-d')}">
+                        <input type="hidden" id="editorid" name="editorid" value="">
+                        <input type="hidden" id="uid" name="uid" value="{$uid}">
+                        <input type="hidden" id="__token" name="__token" value="{$csrf}">
+                        <button class="btn btn-biru"><span id="btnsubmit">Simpan</span></button>
+                    </div>
+                </form>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+{/block}
+{block js}
+<script src="/assets/jsa/berita/add.js"></script>
+{/block}
