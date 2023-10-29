@@ -113,6 +113,10 @@ window.document.addEventListener('click',(e)=>{
             el('#pp1-menu').classList.remove('active');
         }
     }
+    
+    if(e.target.dataset.model != 'buttonopsi') {
+        el('.card-opsi').classList.remove('active');   
+    }
 });
 
 var observe;
