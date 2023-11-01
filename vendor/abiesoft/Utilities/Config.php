@@ -22,8 +22,19 @@ class Config
         $result = parse_ini_file(__DIR__ . "/../../../.env")[$label];
         return match ($result) {
             'sesi' => self::labelSesi(),
+            'grup' => self::labelGrup(),
             default => $result
         };
+    }
+
+    protected static function labelGrup () : string {
+        $user = new Authentication;
+
+        if($user->isLogin()){
+            return strtolower(explode(" ",$user->getNamaGrup())[0]);
+        }
+
+        return '';
     }
 
     protected static function labelSesi () : string {
