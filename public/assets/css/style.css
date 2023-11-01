@@ -23,6 +23,7 @@
     --fb: #3b5998;
     --google-merah: #db4a39;
     --abiesoft: #8B56A1;
+    --abiesoft-hover: rgba(139, 86, 161, .1);
 }
 
 * {
@@ -363,15 +364,16 @@ navbar > .user-info > .menu.active > button {
     padding: 12px 25px;
     background: none;
     border-radius: 25px;
-    font-weight: 600;
+    font-weight: 500;
     color: inherit;
+    color: var(--abiesoft);
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid var(--font);
 }
 
 navbar > .user-info > .menu.active > button:hover {
-    background: none;
-    color: var(--abiesoft); 
+    background: var(--abiesoft-hover);
 }
 
 navbar > .user-info > .menu.active > .button-grup  {

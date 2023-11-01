@@ -84,7 +84,11 @@ class Reader
         if($page != ""){
             return explode("/",$_SERVER['REQUEST_URI'])[3];
         }else{
-            return explode("/",$_SERVER['REQUEST_URI'])[1];
+            if(isset(explode("/",$_SERVER['REQUEST_URI'])[2])){
+                return explode("/",$_SERVER['REQUEST_URI'])[2];
+            }else{
+                return explode("/",$_SERVER['REQUEST_URI'])[1];
+            }
         }
     }
 

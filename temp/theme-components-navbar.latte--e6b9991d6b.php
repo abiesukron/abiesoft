@@ -62,7 +62,7 @@ final class Templatee6b9991d6b extends Latte\Runtime\Template
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 20 */;
 		echo '/profile/@';
 		echo LR\Filters::escapeHtmlAttr($username) /* line 20 */;
-		echo '\'>Edit Akun Anda</button>
+		echo '\'>Perbarui akunmu</button>
             <div class=\'button-grup\'>
                 <button onClick=\'window.location.href=this.dataset.url\' data-url=\'';
 		echo LR\Filters::escapeHtmlAttr($url) /* line 22 */;

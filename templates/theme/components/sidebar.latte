@@ -8,7 +8,7 @@
         </div>
         <hr class="no-margin">
         <ul>
-            <li class="{if $current == ''}active{/if}"><a href='{$url}/{$sessionkey}/dashboard'><i class="las la-chart-pie"></i><span>Dashboard</span></a></li>
+            <li class="{if $current == 'dashboard'}active{/if}"><a href='{$url}/{$sessionkey}/dashboard'><i class="las la-chart-pie"></i><span>Dashboard</span></a></li>
             <label>Menu</label>
             <li class="sub {if $current == 'editor' || $current == 'berita' || $current == 'kategori'}active{/if}">
                 <a href='javascript:void(0)' class="ic">

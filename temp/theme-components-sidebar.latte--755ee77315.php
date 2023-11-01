@@ -42,7 +42,7 @@ final class Template755ee77315 extends Latte\Runtime\Template
         <hr class="no-margin">
         <ul>
             <li class="';
-		if ($current == '') /* line 11 */ {
+		if ($current == 'dashboard') /* line 11 */ {
 			echo 'active';
 		}
 		echo '"><a href=\'';
