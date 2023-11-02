@@ -33,7 +33,7 @@
                                             <small>{$s->keterangan}</small>
                                         </div>
                                     </div>
-                                    <button class="switch" onClick="setSeting([this.id,this.dataset.status,this.dataset.url,this.dataset.apikey])" data-status="{$s->tampilkan}" data-url="{$url}" data-apikey="{$apikey}" id="{$s->id}">
+                                    <button class="switch" onClick="setSeting([this.id,this.dataset.status,this.dataset.url,this.dataset.apikey,this.dataset.nama])" data-status="{$s->tampilkan}" data-url="{$url}" data-apikey="{$apikey}" id="{$s->id}" data-nama="{$s->nama}">
                                         <span class="seting-opsi {if $s->tampilkan == 1}active{/if}" id="___{$s->id}">Ya</span>
                                         <span class="seting-opsi {if $s->tampilkan == 0}active{/if}" id="__{$s->id}">Tidak</span>
                                     </button>
@@ -108,7 +108,7 @@
                                     <input type="hidden" id="__model" name="__model" value="file">
                                     <input type="hidden" id="__token" name="__token" value="{$csrf}">
                                     <button class="btn btn-abiesoft">
-                                        <span id="btnFileSeting">Simpan</span>
+                                        <span id="btnFileSeting">Simpan perubahan</span>
                                     </button>
                                 </div>
                             </form>
@@ -154,7 +154,7 @@
                                     <input type="hidden" id="__model" name="__model" value="email">
                                     <input type="hidden" id="__token" name="__token" value="{$csrf}">
                                     <button class="btn btn-abiesoft">
-                                        <span id="btnEmailSeting">Simpan</span>
+                                        <span id="btnEmailSeting">Simpan perubahan</span>
                                     </button>
                                 </div>
                             </form>

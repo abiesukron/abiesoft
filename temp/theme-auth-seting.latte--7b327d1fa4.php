@@ -102,7 +102,7 @@ final class Template7b327d1fa4 extends Latte\Runtime\Template
 				echo '</small>
                                         </div>
                                     </div>
-                                    <button class="switch" onClick="setSeting([this.id,this.dataset.status,this.dataset.url,this.dataset.apikey])" data-status="';
+                                    <button class="switch" onClick="setSeting([this.id,this.dataset.status,this.dataset.url,this.dataset.apikey,this.dataset.nama])" data-status="';
 				echo LR\Filters::escapeHtmlAttr($s->tampilkan) /* line 36 */;
 				echo '" data-url="';
 				echo LR\Filters::escapeHtmlAttr($url) /* line 36 */;
@@ -110,6 +110,8 @@ final class Template7b327d1fa4 extends Latte\Runtime\Template
 				echo LR\Filters::escapeHtmlAttr($apikey) /* line 36 */;
 				echo '" id="';
 				echo LR\Filters::escapeHtmlAttr($s->id) /* line 36 */;
+				echo '" data-nama="';
+				echo LR\Filters::escapeHtmlAttr($s->nama) /* line 36 */;
 				echo '">
                                         <span class="seting-opsi ';
 				if ($s->tampilkan == 1) /* line 37 */ {
@@ -235,7 +237,7 @@ final class Template7b327d1fa4 extends Latte\Runtime\Template
 			echo LR\Filters::escapeHtmlAttr($csrf) /* line 109 */;
 			echo '">
                                     <button class="btn btn-abiesoft">
-                                        <span id="btnFileSeting">Simpan</span>
+                                        <span id="btnFileSeting">Simpan perubahan</span>
                                     </button>
                                 </div>
                             </form>
@@ -295,7 +297,7 @@ final class Template7b327d1fa4 extends Latte\Runtime\Template
 			echo LR\Filters::escapeHtmlAttr($csrf) /* line 155 */;
 			echo '">
                                     <button class="btn btn-abiesoft">
-                                        <span id="btnEmailSeting">Simpan</span>
+                                        <span id="btnEmailSeting">Simpan perubahan</span>
                                     </button>
                                 </div>
                             </form>
