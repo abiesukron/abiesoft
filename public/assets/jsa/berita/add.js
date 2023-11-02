@@ -1,3 +1,34 @@
+let inputJudul = el('#judul');
+if(inputJudul){
+    inputJudul.addEventListener('keyup', ()=>{
+        let prevslug = el('#prevslug');
+        prevslug.value = inputJudul.value.toLowerCase().replaceAll(" ","-").replaceAll("'","").replaceAll("!","").replaceAll("`","").replaceAll("?","");
+    });
+}
+
+let inputGambar =  el('#gambar');
+if(inputGambar){
+    inputGambar.addEventListener('change', ()=>{
+        const file = inputGambar.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const image = new Image();
+                image.src = e.target.result;
+                el('#prevgambar').src = e.target.result;
+                image.addEventListener('load', function() {
+                    el('#imagecontainer').innerHTML = '';
+                    el('#imagecontainer').appendChild(image);
+                });
+                image.setAttribute('style', 'width: 100%;');
+            }
+
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
 function submitAdd() {
     const btnSubmit = document.getElementById('btnsubmit');
     const judul = document.forms['formAdd']['judul'].value;

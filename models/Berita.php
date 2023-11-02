@@ -13,6 +13,7 @@ class Berita extends Fillable
     {
         Fillable::$set = [
             'judul',
+            'slug',
             'isi',
             'potongan',
             'kategoriid',

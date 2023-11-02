@@ -12,6 +12,7 @@ class berita extends Schema
     {
         $schema = new Schema;
         $schema->teks('judul');
+        $schema->paragrap('slug');
         $schema->paragrap('isi');
         $schema->paragrap('potongan');
         $schema->teks('kategoriid');

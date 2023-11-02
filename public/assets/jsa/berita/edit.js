@@ -1,3 +1,12 @@
+let inputJudul = el('#judul');
+if(inputJudul){
+    inputJudul.addEventListener('keyup', ()=>{
+        let prevslug = el('#prevslug');
+        prevslug.value = inputJudul.value.toLowerCase().replaceAll(" ","-").replaceAll("'","").replaceAll("!","").replaceAll("`","").replaceAll("?","");
+    });
+}
+
+
 function submitAdd() {
     const btnSubmit = document.getElementById('btnsubmit');
     const judul = document.forms['formEdit']['judul'].value;

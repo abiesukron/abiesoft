@@ -2,7 +2,7 @@
 {block title}{$title}{/block}
 {block css}{/block}
 {block content}
-<div>
+<div class='single-8'>
 
     <div class='transparent'>
         <div class='card'>
@@ -22,6 +22,11 @@
                         <label for="judul">Judul</label>
                         <input class="form-control" id="judul" name="judul" placeholder="Judul berita">
                         <span id="err_judul"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input class="form-control" id="prevslug" name="prevslug" placeholder="Slug berita" disabled>
+                        <input type='hidden' class="form-control" id="slug" name="slug">
                     </div>
                     <div class="form-group">
                         <label for="potongan">Potongan berita</label>
@@ -58,6 +63,7 @@
                         <input type="hidden" id="tag" name="tag">
                         <span id="err_tag"></span>
                     </div>
+                    <div id='imagecontainer' class="form-img"></div>
                     <div class="form-group">
                         <label for="gambar">Upload gambar</label>
                         <input type="file" id="gambar" name="gambar">

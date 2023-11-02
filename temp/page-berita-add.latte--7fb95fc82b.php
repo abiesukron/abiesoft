@@ -19,7 +19,7 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 94 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 100 */;
 	}
 
 
@@ -28,7 +28,7 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['k' => '40'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['k' => '45'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -61,7 +61,7 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo '<div>
+		echo '<div class=\'single-8\'>
 
     <div class=\'transparent\'>
         <div class=\'card\'>
@@ -89,6 +89,11 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
                         <span id="err_judul"></span>
                     </div>
                     <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input class="form-control" id="prevslug" name="prevslug" placeholder="Slug berita" disabled>
+                        <input type=\'hidden\' class="form-control" id="slug" name="slug">
+                    </div>
+                    <div class="form-group">
                         <label for="potongan">Potongan berita</label>
                         <textarea class="form-control" id="potongan" name="potongan" data-type="editor"></textarea>
                         <span id="err_potongan"></span>
@@ -103,11 +108,11 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
                         <select class="form-control" id="kategoriid" name="kategoriid">
                             <option value="">Pilih kategori</option>
 ';
-		foreach ($kategori as $k) /* line 40 */ {
+		foreach ($kategori as $k) /* line 45 */ {
 			echo '                                <option value="';
-			echo LR\Filters::escapeHtmlAttr($k->id) /* line 41 */;
+			echo LR\Filters::escapeHtmlAttr($k->id) /* line 46 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($k->nama) /* line 41 */;
+			echo LR\Filters::escapeHtmlText($k->nama) /* line 46 */;
 			echo '</option>
 ';
 
@@ -127,6 +132,7 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
                         <input type="hidden" id="tag" name="tag">
                         <span id="err_tag"></span>
                     </div>
+                    <div id=\'imagecontainer\' class="form-img"></div>
                     <div class="form-group">
                         <label for="gambar">Upload gambar</label>
                         <input type="file" id="gambar" name="gambar">
@@ -147,14 +153,14 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
                     <hr>
                     <div class="form-button">
                         <input type="hidden" id="editing" name="editing" value="';
-		echo LR\Filters::escapeHtmlAttr(date('Y-m-d')) /* line 80 */;
+		echo LR\Filters::escapeHtmlAttr(date('Y-m-d')) /* line 86 */;
 		echo '">
                         <input type="hidden" id="editorid" name="editorid" value="">
                         <input type="hidden" id="uid" name="uid" value="';
-		echo LR\Filters::escapeHtmlAttr($uid) /* line 82 */;
+		echo LR\Filters::escapeHtmlAttr($uid) /* line 88 */;
 		echo '">
                         <input type="hidden" id="__token" name="__token" value="';
-		echo LR\Filters::escapeHtmlAttr($csrf) /* line 83 */;
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 89 */;
 		echo '">
                         <button class="btn btn-biru"><span id="btnsubmit">Simpan</span></button>
                     </div>
@@ -169,7 +175,7 @@ final class Template7fb95fc82b extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 94 */
+	/** {block js} on line 100 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script src="/assets/jsa/berita/add.js"></script>

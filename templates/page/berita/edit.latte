@@ -23,6 +23,11 @@
                         <span id="err_judul"></span>
                     </div>
                     <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input class="form-control" id="prevslug" name="prevslug" placeholder="Slug berita" value='{$slug}' disabled>
+                        <input type='hidden' class="form-control" id="slug" name="slug" value='{$slug}'>
+                    </div>
+                    <div class="form-group">
                         <label for="potongan">Potongan berita</label>
                         <textarea class="form-control" id="potongan" name="potongan" data-type="editor"> {$potongan}</textarea>
                         <span id="err_potongan"></span>
@@ -56,11 +61,16 @@
                         <input type="hidden" id="tag" name="tag" value="{$tag}">
                         <span id="err_tag"></span>
                     </div>
+                    <div class="form-img">
+                        <div class='cover'>
+                            <img src='{$gambar}'>
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <label for="gambar">Upload gambar</label>
+                        <label for="gambar">Ganti gambar</label>
                         <input type="file" id="gambar" name="gambar">
                         <i class="las la-paperclip form-right"></i>
-                        <div class="form-control">Pilih file</div>
+                        <div class="form-control">Pilih file untuk mengganti gambar</div>
                         <span id="err_gambar"></span>
                     </div>
                     <div class="form-group">
@@ -95,6 +105,7 @@
 <script>
 document.querySelector('iframe#editor0').contentWindow.document.body.innerHTML = {$potongan};
 document.querySelector('iframe#editor1').contentWindow.document.body.innerHTML = {$isi};
+removeBtn('tag');
 </script>
 <script src="/assets/jsa/berita/edit.js"></script>
 {/block}
