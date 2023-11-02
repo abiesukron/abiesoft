@@ -18,7 +18,7 @@ SESSIONKEY=grup
 
 # Konfigurasi Database   
 DBS_HOST=localhost
-DBS_NAME=
+DBS_NAME=namadatabase
 DBS_USER=root
 DBS_PASS=root
 
