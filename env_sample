@@ -2,21 +2,25 @@
 VERSION=2023
 PUBLIC_FOLDER=public
 WEB_TITLE=AbieSoft
-WEB_DES=AbieSoft App System
-WEB_DOMAIN=192.168.100.59:3000
+WEB_DES=Aplikasi
+WEB_DOMAIN=127.0.0.1:3000
 WEB_SSL=false
-WEB_TOKEN=Qh02991dlMa2991P29729d54a2b21c1cQasdpal42b21cQasddddfsdGHyu38Ghab.ab
-APIKEY=plQ12Njn29dea129dfsdG9asdaplun28adG9d542b21dea129
+WEB_TOKEN=
+APIKEY=
 
 # local jika aplikasi masih dilocalhost
 # production jika aplikasi sudah online/ sudah digunakan
 WEB_STATUS=local
 
+# Sesion key jika value berupa sesi maka url akan menggenerate kode otomatis
+# jika berisi grup, maka url berupa nama grup
+SESSIONKEY=grup
+
 # Konfigurasi Database   
 DBS_HOST=localhost
-DBS_NAME=abiesoft
+DBS_NAME=
 DBS_USER=root
-DBS_PASS=qwe123
+DBS_PASS=root
 
 # Info File Yang Diijinkan Untuk Diupload
 FILE_TYPE_IMAGE=jpg,jpeg,gif,png,WebP,svg
