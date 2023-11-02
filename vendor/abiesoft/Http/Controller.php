@@ -22,6 +22,7 @@ class Controller
                     $nama = "",
                     $photo = "",
                     $email = "",
+                    $nohp = "",
                     $username = "",
                     $grupid = "",
                     $namagrup = "",
@@ -67,6 +68,7 @@ class Controller
             $d->nama = $auth->getNama();
             $d->photo = $auth->getPhoto();
             $d->email = $auth->getEmail();
+            $d->nohp = $auth->getNoHp();
             $d->username = $auth->getUsername();
             $d->grupid = $auth->getGrupID();
             $d->namagrup = $auth->getNamaGrup();

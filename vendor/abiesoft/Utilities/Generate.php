@@ -53,6 +53,17 @@ class Generate
         }
     }
 
+    public static function Username(string $inisial): string
+    {
+        $result = self::acak();
+        $cekUsername = DB::terhubung()->query("SELECT * FROM users WHERE username = '".$inisial."-" . $result . "' ");
+        if ($cekUsername->hitung()) {
+            return self::Username($inisial);
+        } else {
+            return $inisial.'-'.$result;
+        }
+    }
+
     protected static function acak()
     {
         $karakter = 'AaBbCcDdEeFfGgHhIiJjKkLMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789';

@@ -19,7 +19,7 @@ final class Template8f43f33362 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 71 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 76 */;
 	}
 
 
@@ -130,6 +130,13 @@ final class Template8f43f33362 extends Latte\Runtime\Template
 		echo '">
                             <span id="err_email"></span>
                         </div>
+                        <div class="form-group">
+                            <label for="nohp">No Hp.</label>
+                            <input class="form-control" id="nohp" name="nohp" placeholder="No hp" value="';
+		echo LR\Filters::escapeHtmlAttr($nohp) /* line 51 */;
+		echo '">
+                            <span id="err_nohp"></span>
+                        </div>
                         <hr>
                         <div class="form-group">
                             <label for="psw">Password Baru</label>
@@ -140,10 +147,10 @@ final class Template8f43f33362 extends Latte\Runtime\Template
                         <hr>
                         <div class="form-btn-center">
                             <input type="hidden" id="__token" name="__token" value="';
-		echo LR\Filters::escapeHtmlAttr($csrf) /* line 58 */;
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 63 */;
 		echo '">
                             <input type="hidden" id="__url" name="__url" value="';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 59 */;
+		echo LR\Filters::escapeHtmlAttr($url) /* line 64 */;
 		echo '">
                             <input type="hidden" id="__method" name="__method" value="PATCH">
                             <button class="btn btn-abiesoft" id="btnUpdateProfile">
@@ -159,7 +166,7 @@ final class Template8f43f33362 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 71 */
+	/** {block js} on line 76 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script src="/assets/jsa/auth/profile.js"></script>

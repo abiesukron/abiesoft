@@ -13,7 +13,9 @@ class users extends Schema
     {
         $schema = new Schema;
         $schema->teks(nama: 'nama');
+        $schema->teks(nama: 'username', unique: true);
         $schema->teks(nama: 'email', unique: true);
+        $schema->teks(nama: 'nohp');
         $schema->teks(nama: 'psw');
         $schema->teks(nama: 'salt');
         $schema->teks(nama: 'photo', default: '/assets/img/default.png');
@@ -35,7 +37,9 @@ class users extends Schema
             // 'id' => Generate::ID('users'),
             'id' => 'HfCnTEIFtAnB',
             'nama' => 'Sukron',
+            'username' => Generate::Username('user'),
             'email' => 'abiesoft22@gmail.com',
+            'nohp' => '085161473783',
             'psw' => 'f8e538f55c6d29729d542b21c765fa9b3b56f16350f0e1dc91ae648ffafb24fb',
             'salt' => 'uYif',
             'grupid' => 'dpYCGB9FFeht'

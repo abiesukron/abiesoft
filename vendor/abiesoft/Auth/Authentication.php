@@ -144,7 +144,9 @@ class Authentication
                 $input = DB::terhubung()->input('users', [
                     'id' => Generate::ID('users'),
                     'nama' => Input::get('nama'),
+                    'username' => Generate::Username('user'),
                     'email' => Input::get('email'),
+                    'nohp' => '',
                     'salt' => $salt,
                     'psw' => $password
                 ]);
@@ -332,9 +334,14 @@ class Authentication
         return $this->userData('email');
     }
 
+    public function getNoHp()
+    {
+        return $this->userData('nohp');
+    }
+
     public function getUsername()
     {
-        return explode("@",$this->userData('email'))[0];
+        return $this->userData('username');
     }
 
     public function getPhoto()
@@ -384,7 +391,7 @@ class Authentication
             Lanjut::ke('/');
         }
         $controller = new Controller;
-        if($id == "@".explode("@",$this->userData('email'))[0]){
+        if($id == "@".$this->userData('username')){
             return $controller->view('profile', [
                 'title' => 'Profile',
                 'id' => $this->userData('id')
@@ -441,6 +448,7 @@ class Authentication
         $namabaru = date('YmdHis')."_".str_replace(" ","_",$namafile);
         $nama = Input::get('nama');
         $email = Input::get('email');
+        $nohp = Input::get('nohp');
         $psw = Input::get('psw');
         $dataurl = Input::get('__url');
         if(Metafile::approver($tipe, $namafile, $ukuran) == "image") {
@@ -455,6 +463,7 @@ class Authentication
                     $user = DB::terhubung()->perbarui('users', $authid, [
                         'nama' => $nama,
                         'email' => $email,
+                        'nohp' => $nohp,
                         'photo' => '/assets/storage/'.$authid.'/pp/'.$namabaru,
                         'diupdate' => date('Y-m-d H:i:s')
                     ]);
@@ -468,6 +477,7 @@ class Authentication
                     $user = DB::terhubung()->perbarui('users', $authid, [
                         'nama' => $nama,
                         'email' => $email,
+                        'nohp' => $nohp,
                         'psw' => Generate::make($psw, $salt),
                         'salt' => $salt,
                         'photo' => '/assets/storage/'.$authid.'/pp/'.$namabaru,
@@ -490,11 +500,13 @@ class Authentication
     protected function tanpafile($authid) {
         $nama = Input::get('nama');
         $email = Input::get('email');
+        $nohp = Input::get('nohp');
         $psw = Input::get('psw');
         if($psw == ""){
             $user = DB::terhubung()->perbarui('users', $authid, [
                 'nama' => $nama,
                 'email' => $email,
+                'nohp' => $nohp,
                 'diupdate' => date('Y-m-d H:i:s')
             ]);
             if($user){
@@ -507,6 +519,7 @@ class Authentication
             $user = DB::terhubung()->perbarui('users', $authid, [
                 'nama' => $nama,
                 'email' => $email,
+                'nohp' => $nohp,
                 'psw' => Generate::make($psw, $salt),
                 'salt' => $salt,
                 'diupdate' => date('Y-m-d H:i:s')
