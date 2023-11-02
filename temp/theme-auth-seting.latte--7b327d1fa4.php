@@ -331,6 +331,7 @@ final class Template7b327d1fa4 extends Latte\Runtime\Template
 	/** {block js} on line 183 */
 	public function blockJs(array $ʟ_args): void
 	{
-		echo '<script src="/assets/jsa/seting/index.js"></script>';
+		echo '<script src="/assets/jsa/seting/index.js"></script>
+';
 	}
 }

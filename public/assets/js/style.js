@@ -115,7 +115,9 @@ window.document.addEventListener('click',(e)=>{
     }
     
     if(e.target.dataset.model != 'buttonopsi') {
-        el('.card-opsi').classList.remove('active');   
+        if(el('.card-opsi')){
+            el('.card-opsi').classList.remove('active');   
+        }
     }
 });
 
@@ -432,7 +434,7 @@ function autoHeightFrame(x) {
 
 function posisi(x){
     let iframe = document.querySelector('iframe#'+x);
-    console.log(iframe.contentWindow.document.body.innerHTML);
+    // console.log(iframe.contentWindow.document.body.innerHTML);
 }
 
 
@@ -796,6 +798,30 @@ $(document).ready(function() {
         }
     });
 });
+
+function removeBtn (id) {
+    let event = document.getElementById(id);
+    let removetagbtn = document.querySelectorAll('.removetagbtn');
+    if(removetagbtn){
+        for(let i=0; i < removetagbtn.length; i++){
+            removetagbtn[i].addEventListener('click', ()=>{
+                removetagbtn[i].parentElement.remove();
+                let txt = removetagbtn[i].parentElement.children[0].innerHTML;
+                let valueSebelumnya = event.value.split(",");
+                for (let i = valueSebelumnya.length - 1; i >= 0; i--) {
+                    if (valueSebelumnya[i] === txt) {
+                        valueSebelumnya.splice(i, 1);
+                    }
+                }
+                let valueBaru = valueSebelumnya;
+                event.value = valueBaru;
+                if(event.value.slice(-1) == ","){
+                    event.value = event.value.slice(0,-1);
+                }
+            });
+        }
+    }
+}
 
 $(document).ready(function() {
     $(window).keydown(function(event){

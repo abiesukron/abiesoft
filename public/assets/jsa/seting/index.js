@@ -29,3 +29,7 @@ function setSeting(x) {
         }
     }
 }
+
+removeBtn('tipeimage');
+removeBtn('tipemedia');
+removeBtn('tipedokumen');
