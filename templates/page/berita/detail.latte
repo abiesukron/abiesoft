@@ -33,33 +33,32 @@
                 </div>
                 <div class='cover'><img src='{$gambar}'></div>
                 <div class='list'>
-                    <table>
+                    <table class='tb-list'>
                         <tr>
                             <td>Judul</td>
-                            <td>{$judul}</td>
+                            <td><span>{$judul}</span></td>
                         </tr>
                         <tr>
-                            <td>Dibaca</td>
-                            <td>0</td>
+                            <td>Dilihat</td>
+                            <td><span>0</span> <span>kali</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kategori</td>
+                            <td><span>{$kategorilabel}</span></td>
+                        </tr>
+                        <tr>
+                            <td>Potongan</td>
+                            <td><span>{$potongan}</span></td>
                         </tr>
                     </table>
                 </div>
 
                 <div class='label'>
-                    <h3>Grafik</h3>
+                    <h3>Komentar (0)</h3>
                     <hr>
                 </div>
-                <div class='list'>
-                    <table>
-                        <tr>
-                            <td>Dibaca</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Dibaca</td>
-                            <td>0</td>
-                        </tr>
-                    </table>
+                <div id='komentarview'>
+                    <div class='text-center gray'>Belum ada komentar</div>
                 </div>
             </div>
 

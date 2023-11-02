@@ -119,6 +119,12 @@ window.document.addEventListener('click',(e)=>{
             el('.card-opsi').classList.remove('active');   
         }
     }
+
+    if(e.target.dataset.model != 'opsitable') {
+        if(el('.opsihidemenu')){
+            el('.opsihidemenu').classList.remove('active');   
+        }
+    }
 });
 
 var observe;

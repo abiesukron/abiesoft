@@ -73,7 +73,7 @@ function collectData (x) {
 
             opsiBtn = `
                 <div class='opsiarea'>
-                    <button onClick='openOpsi(this.dataset.item)' data-item='`+tb+`-`+data[i].id+`'><i class='las la-ellipsis-v'></i></button>
+                    <button onClick='openOpsi(this.dataset.item)' data-item='`+tb+`-`+data[i].id+`'><i data-model='opsitable' class='las la-ellipsis-v'></i></button>
                     <div id='opsihidemenu-`+data[i].id+`' class='opsihidemenu'>
                         <button type='button' onClick=window.location.href='`+url+`/`+getMeta('sessionkey')+`/berita/`+data[i].id+`'><i class='las la-eye'></i><span>Lihat</span></button>
                         <button type='button' onClick=window.location.href='`+url+`/`+getMeta('sessionkey')+`/berita/`+data[i].id+`/edit'><i class='las la-pen'></i><span>Edit</span></button>

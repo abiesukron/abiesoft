@@ -19,7 +19,7 @@ final class Template768ca71828 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 70 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 69 */;
 	}
 
 
@@ -115,35 +115,38 @@ final class Template768ca71828 extends Latte\Runtime\Template
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($gambar)) /* line 34 */;
 		echo '\'></div>
                 <div class=\'list\'>
-                    <table>
+                    <table class=\'tb-list\'>
                         <tr>
                             <td>Judul</td>
-                            <td>';
+                            <td><span>';
 		echo LR\Filters::escapeHtmlText($judul) /* line 39 */;
-		echo '</td>
+		echo '</span></td>
                         </tr>
                         <tr>
-                            <td>Dibaca</td>
-                            <td>0</td>
+                            <td>Dilihat</td>
+                            <td><span>0</span> <span>kali</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kategori</td>
+                            <td><span>';
+		echo LR\Filters::escapeHtmlText($kategorilabel) /* line 47 */;
+		echo '</span></td>
+                        </tr>
+                        <tr>
+                            <td>Potongan</td>
+                            <td><span>';
+		echo LR\Filters::escapeHtmlText($potongan) /* line 51 */;
+		echo '</span></td>
                         </tr>
                     </table>
                 </div>
 
                 <div class=\'label\'>
-                    <h3>Grafik</h3>
+                    <h3>Komentar (0)</h3>
                     <hr>
                 </div>
-                <div class=\'list\'>
-                    <table>
-                        <tr>
-                            <td>Dibaca</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>Dibaca</td>
-                            <td>0</td>
-                        </tr>
-                    </table>
+                <div id=\'komentarview\'>
+                    <div class=\'text-center gray\'>Belum ada komentar</div>
                 </div>
             </div>
 
@@ -154,7 +157,7 @@ final class Template768ca71828 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 70 */
+	/** {block js} on line 69 */
 	public function blockJs(array $ʟ_args): void
 	{
 	}

@@ -58,7 +58,7 @@ class BeritaController extends Controller
             'title' => 'Detail Berita',
             'id' => $id,
             'judul' => Berita::only(select: ['judul'], id:$id, output:'string'),
-            'potongan' => Berita::only(select: ['potongan'], id:$id, output:'string'),
+            'potongan' => str_replace("&nbsp;","",strip_tags(Berita::only(select: ['potongan'], id:$id, output:'string'))),
             'isi' => Berita::only(select: ['isi'], id:$id, output:'string'),
             'kategorilabel' => Kategori::only(select: ['nama'], id:Berita::only(select: ['kategoriid'], id:$id, output:'string'), output:'string'),
             'publikasi' => Berita::only(select: ['publikasi'], id:$id, output:'string'),

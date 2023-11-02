@@ -148,10 +148,28 @@
 }
 
 
+.card-body > .list {
+    padding: 20px 0;
+}
 
+.card-body > .list > table.tb-list {
+    width: 100%;
+}
 
+.card-body > .list > table.tb-list tr td {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--abu);
+    vertical-align: top;
+}
 
+.card-body > .list > table.tb-list tr:last-child td {
+    border-bottom: 0;
+}
 
+.card-body > .list > table.tb-list tr td:first-child {
+    width: 100px;
+    font-weight: 500;
+}
 
 
 

@@ -46,6 +46,11 @@ body {
     color: var(--font);
 }
 
+.bold { font-weight: 500; }
+
+.text-center { text-align: center; }
+.gray { color: var(--font-disable); }
+
 .art {
     position: relative;
     margin: 0 auto;
