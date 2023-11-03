@@ -6,6 +6,7 @@ use AbieSoft\Application\Http\Controller;
 use AbieSoft\Application\Http\Lanjut;
 use AbieSoft\Application\Mysql\DB;
 use AbieSoft\Application\Package\Email;
+use AbieSoft\Application\Package\Google;
 use AbieSoft\Application\Utilities\Config;
 use AbieSoft\Application\Utilities\Cookies;
 use AbieSoft\Application\Utilities\Generate;
@@ -45,13 +46,13 @@ class Authentication
                 'photouser' => $user->photo,
                 'namauser' => $user->nama,
                 'registrasi' => $registrasi,
-                'google' => $google,
                 'csrf' => Generate::csrf()
             ]);
         }else{
             return $controller->view('login', [
                 'registrasi' => $registrasi,
                 'google' => $google,
+                'google_url_login' => filter_var(Google::createAuthUrl(),FILTER_SANITIZE_URL),
                 'csrf' => Generate::csrf()
             ]);
         }
@@ -122,6 +123,7 @@ class Authentication
         $controller = new Controller;
         return $controller->view('registrasi', [
             'google' => $google,
+            'google_url_login' => filter_var(Google::createAuthUrl(),FILTER_SANITIZE_URL),
             'csrf' => Generate::csrf()
         ]);
     }
@@ -689,6 +691,24 @@ class Authentication
 
     protected function setError () {
         die('Gagal menyimpan perubahan');
+    }
+
+
+
+
+    /*
+
+
+
+
+
+
+        Google Authentication
+    **/
+
+    public function googleAuth () {
+        echo Google::getAuthentication();
+        // print_r(Google::getAuthentication());
     }
 
 }

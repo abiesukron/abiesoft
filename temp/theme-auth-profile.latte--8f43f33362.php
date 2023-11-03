@@ -141,7 +141,7 @@ final class Template8f43f33362 extends Latte\Runtime\Template
                         <div class="form-group">
                             <label for="psw">Password Baru</label>
                             <i class="las la-eye form-right"></i>
-                            <input type="password" class="form-control" id="psw" name="psw" placeholder="******">
+                            <input type="password" class="form-control" id="psw" name="psw" placeholder="Isi password baru jika ingin diubah">
                             <span id="err_psw"></span>
                         </div>
                         <hr>

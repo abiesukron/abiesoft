@@ -86,21 +86,13 @@ final class Template5afb14a109 extends Latte\Runtime\Template
                                     <button class="btn btn-abiesoft full">
                                         <span id="btnlogin">Login</span>
                                     </button>
+                                </div>
 ';
-		if ($google == 1) /* line 60 */ {
-			echo '                                    <button type="button" class="btn btn-google-merah full">
-                                        <i class="lab la-google"></i>
-                                        <span>Login dengan google</span>
-                                    </button>
-';
-		}
-		echo '                                </div>
-';
-		if ($registrasi == 1) /* line 67 */ {
+		if ($registrasi == 1) /* line 61 */ {
 			echo '                                    <hr>
                                     <div class="form-btn">
                                         <button type="button" class="btn btn-clean full" onClick="window.location.href=this.dataset.url" data-url="';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 70 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 64 */;
 			echo '/registrasi">
                                             <span>Registrasi</span>
                                         </button>

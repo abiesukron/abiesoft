@@ -84,7 +84,9 @@ final class Template742722fb37 extends Latte\Runtime\Template
                                     </button>
 ';
 		if ($google == 1) /* line 64 */ {
-			echo '                                    <button type="button" class="btn btn-google-merah full">
+			echo '                                    <button type="button" class="btn btn-google-merah full" onClick="window.location.href=this.dataset.url" data-url="';
+			echo LR\Filters::escapeHtmlAttr($google_url_login) /* line 65 */;
+			echo '">
                                         <i class="lab la-google"></i>
                                         <span>Login dengan google</span>
                                     </button>

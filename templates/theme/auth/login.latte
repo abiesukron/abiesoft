@@ -62,7 +62,7 @@
                                         <span id="btnlogin">Login</span>
                                     </button>
                                     {if $google == 1}
-                                    <button type="button" class="btn btn-google-merah full">
+                                    <button type="button" class="btn btn-google-merah full" onClick="window.location.href=this.dataset.url" data-url = "{$google_url_login}">
                                         <i class="lab la-google"></i>
                                         <span>Login dengan google</span>
                                     </button>

@@ -69,6 +69,7 @@ class Route
         Route::get("/registrasi", ["\Abiesoft\Application\\Auth\\Authentication", 'registrasi']);
         Route::post("/registrasi", ["\Abiesoft\Application\\Auth\\Authentication", 'setRegistrasi']);
         Route::get("/konfirmasi{rid}", ["\Abiesoft\Application\\Auth\\Authentication", 'konfirmasi']);
+        Route::get("/google-auth{code}{scope}{authuser}{prompt}", ["\Abiesoft\Application\\Auth\\Authentication", 'googleAuth']);
         Route::post("/konfirmasi", ["\Abiesoft\Application\\Auth\\Authentication", 'setKonfirmasi']);
         Route::get("/".Config::envReader('SESSIONKEY')."/profile/{id}", ["\Abiesoft\Application\\Auth\\Authentication", 'profile']);
         Route::get("/".Config::envReader('SESSIONKEY')."/profile/{id}", ["\Abiesoft\Application\\Auth\\Authentication", 'profile']);
