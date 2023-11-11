@@ -1,21 +1,88 @@
-{layout '../../main.latte'}
-{block title}{$title}{/block}
-{block css}{/block}
-{block content}
-<div class='single-8'>
+<?php
 
-    <div class='transparent'>
-        <div class='card'>
+use Latte\Runtime as LR;
+
+/** source: D:\Programming\Project\test\abiesoft\vendor\abiesoft\Http/../../../templates/page/berita/add.latte */
+final class Templateb5b7a33f1f extends Latte\Runtime\Template
+{
+	public const Source = 'D:\\Programming\\Project\\test\\abiesoft\\vendor\\abiesoft\\Http/../../../templates/page/berita/add.latte';
+
+	public const Blocks = [
+		['title' => 'blockTitle', 'css' => 'blockCss', 'content' => 'blockContent', 'js' => 'blockJs'],
+	];
+
+
+	public function main(array $ʟ_args): void
+	{
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		$this->renderBlock('title', get_defined_vars()) /* line 2 */;
+		echo "\n";
+		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 100 */;
+	}
+
+
+	public function prepare(): array
+	{
+		extract($this->params);
+
+		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
+			foreach (array_intersect_key(['k' => '45'], $this->params) as $ʟ_v => $ʟ_l) {
+				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
+			}
+		}
+		$this->parentName = '../../main.latte';
+		return get_defined_vars();
+	}
+
+
+	/** {block title} on line 2 */
+	public function blockTitle(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo LR\Filters::escapeHtmlText($title) /* line 2 */;
+	}
+
+
+	/** {block css} on line 3 */
+	public function blockCss(array $ʟ_args): void
+	{
+	}
+
+
+	/** {block content} on line 4 */
+	public function blockContent(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<div class=\'single-8\'>
+
+    <div class=\'transparent\'>
+        <div class=\'card\'>
 
             <!-- Card Header -->
-            <div class='card-header'>
-                <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/berita"><i class='las la-angle-left'></i></button>
-                <div class='label'>{$title}</div>
-                <button class='card-option-btn hide'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+            <div class=\'card-header\'>
+                <button onClick="window.location.href=this.dataset.url" data-url="';
+		echo LR\Filters::escapeHtmlAttr($url) /* line 12 */;
+		echo '/';
+		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 12 */;
+		echo '/berita"><i class=\'las la-angle-left\'></i></button>
+                <div class=\'label\'>';
+		echo LR\Filters::escapeHtmlText($title) /* line 13 */;
+		echo '</div>
+                <button class=\'card-option-btn hide\'><i class=\'las la-ellipsis-v\' data-model=\'buttonopsi\'></i></button>
             </div>
 
             <!-- Card Body -->
-            <div class='card-body'>
+            <div class=\'card-body\'>
                 
                 <form method="post" id="formAdd" name="formAdd" onSubmit="return submitAdd()">
                     <div class="form-group">
@@ -26,7 +93,7 @@
                     <div class="form-group">
                         <label for="slug">Slug</label>
                         <input class="form-control" id="prevslug" name="prevslug" placeholder="Slug berita" disabled>
-                        <input type='hidden' class="form-control" id="slug" name="slug">
+                        <input type=\'hidden\' class="form-control" id="slug" name="slug">
                     </div>
                     <div class="form-group">
                         <label for="potongan">Potongan berita</label>
@@ -42,20 +109,24 @@
                         <label for="kategoriid">Kategori</label>
                         <select class="form-control" id="kategoriid" name="kategoriid">
                             <option value="">Pilih kategori</option>
-                            {foreach $kategori as $k}
-                                <option value="{$k->id}">{$k->nama}</option>
-                            {/foreach}
-                        </select>
+';
+		foreach ($kategori as $k) /* line 45 */ {
+			echo '                                <option value="';
+			echo LR\Filters::escapeHtmlAttr($k->id) /* line 46 */;
+			echo '">';
+			echo LR\Filters::escapeHtmlText($k->nama) /* line 46 */;
+			echo '</option>
+';
+
+		}
+
+		echo '                        </select>
                         <span id="err_kategoriid"></span>
                     </div>
                     <div class="form-group">
                         <label for="tag">Tag</label>
                         <div class="form-control tag">
                             <div id="items">
-                                {* 
-                                    Jika ingin menuliskan tag secara langsung
-                                    <div class='item'><label>nama tag</label><button type='button' class='removetagbtn'><i class='las la-times'></i></buttton></div>
-                                *}
                             </div>
                             <input id="taginput" placeholder="Tag" data-type="tag">
                             <div class="clear"></div>
@@ -63,7 +134,7 @@
                         <input type="hidden" id="tag" name="tag">
                         <span id="err_tag"></span>
                     </div>
-                    <div id='imagecontainer' class="form-img"></div>
+                    <div id=\'imagecontainer\' class="form-img"></div>
                     <div class="form-group">
                         <label for="gambar">Upload gambar</label>
                         <input type="file" id="gambar" name="gambar">
@@ -83,10 +154,16 @@
                     </div>
                     <hr>
                     <div class="form-button">
-                        <input type="hidden" id="editing" name="editing" value="{date('Y-m-d')}">
+                        <input type="hidden" id="editing" name="editing" value="';
+		echo LR\Filters::escapeHtmlAttr(date('Y-m-d')) /* line 86 */;
+		echo '">
                         <input type="hidden" id="editorid" name="editorid" value="">
-                        <input type="hidden" id="uid" name="uid" value="{$uid}">
-                        <input type="hidden" id="__token" name="__token" value="{$csrf}">
+                        <input type="hidden" id="uid" name="uid" value="';
+		echo LR\Filters::escapeHtmlAttr($uid) /* line 88 */;
+		echo '">
+                        <input type="hidden" id="__token" name="__token" value="';
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 89 */;
+		echo '">
                         <button class="btn btn-abiesoft"><span id="btnsubmit">Simpan</span></button>
                     </div>
                 </form>
@@ -96,7 +173,14 @@
         </div>
     </div>
 </div>
-{/block}
-{block js}
-<script src="/assets/jsa/berita/add.js"></script>
-{/block}
+';
+	}
+
+
+	/** {block js} on line 100 */
+	public function blockJs(array $ʟ_args): void
+	{
+		echo '<script src="/assets/jsa/berita/add.js"></script>
+';
+	}
+}

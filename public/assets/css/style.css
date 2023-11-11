@@ -22,8 +22,8 @@
     --biru-o1: rgba(39, 91, 173, .1);
     --fb: #3b5998;
     --google-merah: #db4a39;
-    --abiesoft: #8B56A1;
-    --abiesoft-hover: rgba(139, 86, 161, .1);
+    --abiesoft: rgb(55, 49, 99);
+    --abiesoft-hover: rgba(55, 49, 99, .1);
 }
 
 * {

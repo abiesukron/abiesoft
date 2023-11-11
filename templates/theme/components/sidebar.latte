@@ -9,6 +9,8 @@
         <hr class="no-margin">
         <ul>
             <li class="{if $current == 'dashboard'}active{/if}"><a href='{$url}/{$sessionkey}/dashboard'><i class="las la-chart-pie"></i><span>Dashboard</span></a></li>
+            <label>Untuk kamu</label>
+            <li class="{if $current == 'tugas'}active{/if}"><a href='{$url}/{$sessionkey}/tugas'><i class="las la-tasks"></i><span>Tugas</span></a></li>
             <label>Menu</label>
             <li class="sub {if $current == 'editor' || $current == 'berita' || $current == 'kategori'}active{/if}">
                 <a href='javascript:void(0)' class="ic">
@@ -29,7 +31,7 @@
             <label>Seting</label>
             <li class="sub">
                 <a href='javascript:void(0)' class="ic">
-                    <span><i class="las la-tasks"></i><span>Data Pendukung</span></span>
+                    <span><i class="las la-database"></i><span>Data Pendukung</span></span>
                     <i class="las la-angle-right"></i>
                 </a>
                 <ul>

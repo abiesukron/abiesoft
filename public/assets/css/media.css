@@ -20,8 +20,8 @@
         width: 100%;
     }
 
-    .center-full > .single-4 > .card {
-        max-width: 400px;
+    .center-full > .single-4 > .transparent {
+        max-width: 450px;
         margin: 0 auto;
     }
 
@@ -64,9 +64,9 @@
         width: 100%;
     }
 
-    .center-full > .single-4 > .card {
-        max-width: 350px;
-        margin: 0 auto;
+    .center-full > .single-4 > .transparent {
+        max-width: 100%;
+        margin: 0 30px;
     }
 
     .card > .card-tabel > .header > div:first-child{
