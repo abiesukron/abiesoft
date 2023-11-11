@@ -109,28 +109,55 @@ final class Template1412fc0891 extends Latte\Runtime\Template
             <li><a href=\'';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 30 */;
 		echo '/form\'><i class="lab la-wpforms"></i><span>Form</span></a></li>
-            <label>Seting</label>
-            <li class="sub">
+
+';
+		if ($sessionkey == 'administrator') /* line 32 */ {
+			echo '            <label>Seting</label>
+            <li  class="sub ';
+			if ($current == 'users' || $current == 'grup') /* line 34 */ {
+				echo 'active';
+			}
+			echo '">
                 <a href=\'javascript:void(0)\' class="ic">
-                    <span><i class="las la-database"></i><span>Data Pendukung</span></span>
+                    <span><i class="las la-database"></i><span>Data</span></span>
                     <i class="las la-angle-right"></i>
                 </a>
                 <ul>
-                    <li><a href=\'javascript:void(0)\'><i class="las la-minus"></i><span>Manajemen User</span></a></li>
-                    <li><a href=\'javascript:void(0)\'><i class="las la-minus"></i><span>Manajemen Grup</span></a></li>
+                    <li class="';
+			if ($current == 'users') /* line 40 */ {
+				echo 'active';
+			}
+			echo '"><a href=\'';
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 40 */;
+			echo '/';
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 40 */;
+			echo '/users\'><i class="las la-minus"></i><span>Kelola User</span></a></li>
+                    <li class="';
+			if ($current == 'grup') /* line 41 */ {
+				echo 'active';
+			}
+			echo '"><a href=\'';
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 41 */;
+			echo '/';
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 41 */;
+			echo '/grup\'><i class="las la-minus"></i><span>Kelola Grup</span></a></li>
                 </ul>
             </li>
+';
+		}
+		echo '
+
         </ul>
         <div class="line"><hr class="no-margin"></div>
         <div class=\'bottom\'>
             <button class="seting" onClick="window.location.href=this.dataset.url" data-url="';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 46 */;
+		echo LR\Filters::escapeHtmlAttr($url) /* line 51 */;
 		echo '/seting"><i class="las la-cog"></i></button>
             <div class="date">';
-		echo LR\Filters::escapeHtmlText($hariini) /* line 47 */;
+		echo LR\Filters::escapeHtmlText($hariini) /* line 52 */;
 		echo '</div>
             <button class="logout" onClick="window.location.href=this.dataset.url" data-url="';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 48 */;
+		echo LR\Filters::escapeHtmlAttr($url) /* line 53 */;
 		echo '/logout"><i class="las la-sign-out-alt"></i></button>
         </div>
     </div>

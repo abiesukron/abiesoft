@@ -56,7 +56,7 @@ final class Template4322c042c5 extends Latte\Runtime\Template
 			echo '                        <button class=\'btn\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
 			echo LR\Filters::escapeHtmlAttr($dashboard) /* line 29 */;
 			echo '\'>Selamat datang, <strong>';
-			echo LR\Filters::escapeHtmlText($nama) /* line 29 */;
+			echo LR\Filters::escapeHtmlText($nama_) /* line 29 */;
 			echo '</strong></button>
                         <button class=\'btn\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
 			echo LR\Filters::escapeHtmlAttr($url) /* line 30 */;

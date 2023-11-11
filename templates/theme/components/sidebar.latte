@@ -28,17 +28,22 @@
             <li><a href='javascript:void(0)'><i class="las la-qrcode"></i><span>QRCode</span></a></li>
             <li><a href='javascript:void(0)'><i class="las la-envelope"></i><span>Email</span></a></li>
             <li><a href='{$url}/form'><i class="lab la-wpforms"></i><span>Form</span></a></li>
+
+            {if $sessionkey == "administrator"}
             <label>Seting</label>
-            <li class="sub">
+            <li  class="sub {if $current == 'users' || $current == 'grup'}active{/if}">
                 <a href='javascript:void(0)' class="ic">
-                    <span><i class="las la-database"></i><span>Data Pendukung</span></span>
+                    <span><i class="las la-database"></i><span>Data</span></span>
                     <i class="las la-angle-right"></i>
                 </a>
                 <ul>
-                    <li><a href='javascript:void(0)'><i class="las la-minus"></i><span>Manajemen User</span></a></li>
-                    <li><a href='javascript:void(0)'><i class="las la-minus"></i><span>Manajemen Grup</span></a></li>
+                    <li class="{if $current == 'users'}active{/if}"><a href='{$url}/{$sessionkey}/users'><i class="las la-minus"></i><span>Kelola User</span></a></li>
+                    <li class="{if $current == 'grup'}active{/if}"><a href='{$url}/{$sessionkey}/grup'><i class="las la-minus"></i><span>Kelola Grup</span></a></li>
                 </ul>
             </li>
+            {/if}
+
+
             {* <li><a href='javascript:void(0)'><i class="las la-list"></i><span>List</span></a></li> *}
         </ul>
         <div class="line"><hr class="no-margin"></div>

@@ -3,7 +3,7 @@
 namespace App\Service\Auth\Tabel;
 
 use AbieSoft\Application\Mysql\DB;
-use App\Models\Berita as Berita;
+use App\Models\Berita;
 
 class TabelBerita 
 {

@@ -8,16 +8,16 @@
     </div>
     <div class="user-info">
         <button class="photo">
-            <div><img src="{$url.$photo}" id="pp1"></div>
+            <div><img src="{$url.$photo_}" id="pp1"></div>
         </button>
         <div id="pp1-menu" class="menu">
-            <div class='email' id="emailArea1">{$email}</div>
+            <div class='email' id="emailArea1">{$email_}</div>
             <div class='photo'>
-                <img src="{$url.$photo}" id="pp3">
+                <img src="{$url.$photo_}" id="pp3">
             </div>
             <div class="edit" id="editphoto"><i class="las la-pen"></i></div>
-            <div class='nama' id="namaArea1">{$nama}</div>
-            <button onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/profile/@{$username}'>Perbarui akunmu</button>
+            <div class='nama' id="namaArea1">{$nama_}</div>
+            <button onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/profile/@{$username_}'>Perbarui akunmu</button>
             <div class='button-grup'>
                 <button onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/seting'><i class="las la-cog"></i><span>Seting</span></button>
                 <button onClick="window.location.href=this.dataset.url" data-url="{$url}/logout"><i class="las la-sign-out-alt"></i><span>Logout</span></button>

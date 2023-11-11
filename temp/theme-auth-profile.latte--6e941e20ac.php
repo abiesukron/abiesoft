@@ -83,7 +83,7 @@ final class Template6e941e20ac extends Latte\Runtime\Template
 		echo LR\Filters::escapeHtmlAttr($id) /* line 16 */;
 		echo '\' onSubmit="return hapus(this.dataset.idu)">
                         <input type="hidden" id="__info" name="__info" value="';
-		echo LR\Filters::escapeHtmlAttr($nama) /* line 17 */;
+		echo LR\Filters::escapeHtmlAttr($nama_) /* line 17 */;
 		echo '">
                         <input type="hidden" id="__token" name="__token" value="';
 		echo LR\Filters::escapeHtmlAttr($csrf) /* line 18 */;
@@ -103,17 +103,17 @@ final class Template6e941e20ac extends Latte\Runtime\Template
                     <div class=\'photo-profile\'>
                         <div class="frame">
                             <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url . $photo)) /* line 29 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url . $photo_)) /* line 29 */;
 		echo '" id="pp4">
                         </div>
                         <button class="edit" id="editphoto2"><i class="las la-pen"></i></button>
                     </div>
                     <div class="info-profile">
                         <h2 id="namaArea2">';
-		echo LR\Filters::escapeHtmlText($nama) /* line 34 */;
+		echo LR\Filters::escapeHtmlText($nama_) /* line 34 */;
 		echo '</h2>
                         <small id="emailArea2">';
-		echo LR\Filters::escapeHtmlText($email) /* line 35 */;
+		echo LR\Filters::escapeHtmlText($email_) /* line 35 */;
 		echo '</small>
                     </div>
                     <hr>
@@ -121,21 +121,21 @@ final class Template6e941e20ac extends Latte\Runtime\Template
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input class="form-control" id="nama" name="nama" placeholder="Nama" value="';
-		echo LR\Filters::escapeHtmlAttr($nama) /* line 41 */;
+		echo LR\Filters::escapeHtmlAttr($nama_) /* line 41 */;
 		echo '">
                             <span id="err_nama"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input class="form-control" id="email" name="email" placeholder="Email" value="';
-		echo LR\Filters::escapeHtmlAttr($email) /* line 46 */;
+		echo LR\Filters::escapeHtmlAttr($email_) /* line 46 */;
 		echo '">
                             <span id="err_email"></span>
                         </div>
                         <div class="form-group">
                             <label for="nohp">No Hp.</label>
                             <input class="form-control" id="nohp" name="nohp" placeholder="No hp" value="';
-		echo LR\Filters::escapeHtmlAttr($nohp) /* line 51 */;
+		echo LR\Filters::escapeHtmlAttr($nohp_) /* line 51 */;
 		echo '">
                             <span id="err_nohp"></span>
                         </div>

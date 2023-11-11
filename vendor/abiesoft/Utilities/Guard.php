@@ -24,4 +24,30 @@ class Guard
 
         return false;
     }
+
+    public static function UserEmailChecker(string $email): bool
+    {
+        $cekemail = DB::terhubung()->query("SELECT email FROM users WHERE email = '".$email."' ");
+        if($cekemail->hitung()){
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function UserChangeEmailChecker(string $email, string $id): bool
+    {
+        $cekemail = DB::terhubung()->query("SELECT id, email FROM users WHERE email = '".$email."' ");
+        if($cekemail->hitung()){
+            foreach($cekemail->hasil() as $ce){
+                if($ce->id == $id){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }else{
+            return true;
+        }
+    }
 }

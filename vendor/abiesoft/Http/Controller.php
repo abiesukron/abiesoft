@@ -19,15 +19,15 @@ class Controller
                     $appdes = "",
                     $title = "",
                     $uid = "",
-                    $nama = "",
-                    $photo = "",
-                    $email = "",
-                    $nohp = "",
-                    $username = "",
-                    $grupid = "",
-                    $namagrup = "",
-                    $salt = "",
-                    $psw = "",
+                    $nama_ = "",
+                    $photo_ = "",
+                    $email_ = "",
+                    $nohp_ = "",
+                    $username_ = "",
+                    $grupid_ = "",
+                    $namagrup_ = "",
+                    $salt_ = "",
+                    $psw_ = "",
                     $csrf = "",
                     $hariini = "",
                     $current = "",
@@ -50,14 +50,14 @@ class Controller
         }
 
         $d->uid = "";
-        $d->nama = "";
-        $d->photo = "";
-        $d->email = "";
-        $d->username = "";
-        $d->grupid = "";
-        $d->namagrup = "";
-        $d->salt = "";
-        $d->psw = "";
+        $d->nama_ = "";
+        $d->photo_ = "";
+        $d->email_ = "";
+        $d->username_ = "";
+        $d->grupid_ = "";
+        $d->namagrup_ = "";
+        $d->salt_ = "";
+        $d->psw_ = "";
         $d->hariini = Tanggal::hariini();
         $d->current = Reader::currentPage();
         $d->sessionkey = Config::envReader('SESSIONKEY');
@@ -65,15 +65,15 @@ class Controller
 
         if($auth->isLogin()){
             $d->uid = $auth->getID();
-            $d->nama = $auth->getNama();
-            $d->photo = $auth->getPhoto();
-            $d->email = $auth->getEmail();
-            $d->nohp = $auth->getNoHp();
-            $d->username = $auth->getUsername();
-            $d->grupid = $auth->getGrupID();
-            $d->namagrup = $auth->getNamaGrup();
-            $d->salt = $auth->getSalt();
-            $d->psw = $auth->getPassword();
+            $d->nama_ = $auth->getNama();
+            $d->photo_ = $auth->getPhoto();
+            $d->email_ = $auth->getEmail();
+            $d->nohp_ = $auth->getNoHp();
+            $d->username_ = $auth->getUsername();
+            $d->grupid_ = $auth->getGrupID();
+            $d->namagrup_ = $auth->getNamaGrup();
+            $d->salt_ = $auth->getSalt();
+            $d->psw_ = $auth->getPassword();
         }
 
         $finaldata = $d;

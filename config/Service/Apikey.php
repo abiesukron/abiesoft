@@ -6,6 +6,7 @@ use AbieSoft\Application\Http\Lanjut;
 use AbieSoft\Application\Utilities\Input;
 use App\Service\Auth\Seting;
 use App\Service\Auth\Tabel\TabelBerita;
+use App\Service\Auth\Tabel\TabelUsers;
 
 class Apikey 
 {
@@ -31,6 +32,7 @@ class Apikey
     protected function tabel ($function, $search) {
         return match ($function) {
             'berita' => TabelBerita::index($search),
+            'users' => TabelUsers::index($search),
             default => Lanjut::ke('/')
         };
     }

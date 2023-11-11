@@ -20,6 +20,16 @@ kategori:
 
 
 
+# Seting
+users:
+  admin: true
+
+grup:
+  admin: true
+
+
+
+
 
 # Publik
 landing:

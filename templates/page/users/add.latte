@@ -1,0 +1,61 @@
+{layout '../../main.latte'}
+{block title}{$title}{/block}
+{block css}{/block}
+{block content}
+<div class='single-5'>
+
+    <div class='transparent'>
+        <div class='card'>
+
+            <!-- Card Header -->
+            <div class='card-header'>
+                <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/users"><i class='las la-angle-left'></i></button>
+                <div class='label'>{$title}</div>
+                <button class='card-option-btn hide'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+            </div>
+
+            <!-- Card Body -->
+            <div class='card-body'>
+                
+                <form method="post" id="formAdd" name="formAdd" onSubmit="return submitAdd()">
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input class="form-control" id="nama" name="nama" placeholder="Nama users">
+                        <span id="err_nama"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" id="email" name="email" placeholder="Email users">
+                        <span id="err_email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password Default</label>
+                        <input class="form-control" id="password" name="password" value='{$udf}' disabled>
+                        <span id="err_password"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="grupid">Grup <span><a href=''>+</a></span></label>
+                        <select class="form-control" id="grupid" name="grupid">
+                            <option value="">Pilih grup</option>
+                            {foreach $grup as $g}
+                                <option value="{$g->id}">{$g->nama}</option>
+                            {/foreach}
+                        </select>
+                        <span id="err_grupid"></span>
+                    </div>
+                    <hr>
+                    <div class="form-button">
+                        <input type="hidden" id="__token" name="__token" value="{$csrf}">
+                        <button class="btn btn-abiesoft"><span id="btnsubmit">Simpan</span></button>
+                    </div>
+                </form>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+{/block}
+{block js}
+<script src="/assets/jsa/users/add.js"></script>
+{/block}

@@ -14,7 +14,7 @@
                 <div class="card-opsi">
                     <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/seting"><i class="las la-cog"></i> <span>Seting</span></button>
                     <form method="post" id="formHapus-{$id}" name="formHapus-{$id}" data-idu='{$id}' onSubmit="return hapus(this.dataset.idu)">
-                        <input type="hidden" id="__info" name="__info" value="{$nama}">
+                        <input type="hidden" id="__info" name="__info" value="{$nama_}">
                         <input type="hidden" id="__token" name="__token" value="{$csrf}">
                         <input type="hidden" id="__url" name="__url" value="{$url}">
                         <input type="hidden" id="id" name="id" value="{$id}">
@@ -26,29 +26,29 @@
                 <div class="card-body">
                     <div class='photo-profile'>
                         <div class="frame">
-                            <img src="{$url.$photo}" id="pp4">
+                            <img src="{$url.$photo_}" id="pp4">
                         </div>
                         <button class="edit" id="editphoto2"><i class="las la-pen"></i></button>
                     </div>
                     <div class="info-profile">
-                        <h2 id="namaArea2">{$nama}</h2>
-                        <small id="emailArea2">{$email}</small>
+                        <h2 id="namaArea2">{$nama_}</h2>
+                        <small id="emailArea2">{$email_}</small>
                     </div>
                     <hr>
                     <form method="post" id="formProfile" name="formProfile" enctype="multipart/form-data" onSubmit="return submitUpdateProfile()">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input class="form-control" id="nama" name="nama" placeholder="Nama" value="{$nama}">
+                            <input class="form-control" id="nama" name="nama" placeholder="Nama" value="{$nama_}">
                             <span id="err_nama"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input class="form-control" id="email" name="email" placeholder="Email" value="{$email}">
+                            <input class="form-control" id="email" name="email" placeholder="Email" value="{$email_}">
                             <span id="err_email"></span>
                         </div>
                         <div class="form-group">
                             <label for="nohp">No Hp.</label>
-                            <input class="form-control" id="nohp" name="nohp" placeholder="No hp" value="{$nohp}">
+                            <input class="form-control" id="nohp" name="nohp" placeholder="No hp" value="{$nohp_}">
                             <span id="err_nohp"></span>
                         </div>
                         <hr>

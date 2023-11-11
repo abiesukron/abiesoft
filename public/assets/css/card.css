@@ -646,12 +646,28 @@
     border-bottom: 0;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td.gambar {
+.card > .card-tabel > .tabel > table > tbody > tr > th.gambar,
+.card > .card-tabel > .tabel > table > tbody > tr > td.gambar,
+.card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide.gambar,
+.card > .card-tabel > .tabel > table > thead > tr > td.mobile-hide.gambar {
+    display: block;
     max-width: 190px;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td.gambar > img {
     max-width: 150px;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > th.photo,
+.card > .card-tabel > .tabel > table > tbody > tr > td.photo,
+.card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide.photo,
+.card > .card-tabel > .tabel > table > thead > tr > td.mobile-hide.photo {
+    max-width: 100px;
+    display: block;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > td.photo > img {
+    max-width: 80px;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td:first-child,

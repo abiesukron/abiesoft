@@ -77,7 +77,7 @@ final class Templateb36d0aad7e extends Latte\Runtime\Template
                 <div class="card-body-list">
 
 ';
-		if ($grupid == 'dpYCGB9FFeht') /* line 16 */ {
+		if ($grupid_ == 'dpYCGB9FFeht') /* line 16 */ {
 			echo '
                         <div class="list-button" id="tabButton">
                             <button data-tab="umum" class="active">Umum</button>
