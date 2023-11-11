@@ -18,6 +18,11 @@
             <div class='card-body'>
                 
                 <form method="post" id="formEdit" name="formEdit" onSubmit="return submitEdit()">
+                    <div class="form-img">
+                        <div class='cover'>
+                            <img src='{$photo}'>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input class="form-control" id="nama" name="nama" placeholder="Nama" value='{$nama}'>
@@ -43,7 +48,6 @@
                         </select>
                         <span id="err_grupid"></span>
                     </div>
-                    <div id='imagecontainer' class="form-img" src="{$photo}"></div>
                     <div class="form-group">
                         <label for="photo">Ganti photo</label>
                         <input type="file" id="photo" name="photo">

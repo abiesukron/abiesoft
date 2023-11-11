@@ -2,10 +2,10 @@
 
 use Latte\Runtime as LR;
 
-/** source: D:\Programming\Project\test\abiesoft\vendor\abiesoft\Http/../../../templates/page/users/index.latte */
-final class Template6018073f47 extends Latte\Runtime\Template
+/** source: D:\Programming\Project\test\abiesoft\vendor\abiesoft\Http/../../../templates/page/grup/index.latte */
+final class Templatec9411c52be extends Latte\Runtime\Template
 {
-	public const Source = 'D:\\Programming\\Project\\test\\abiesoft\\vendor\\abiesoft\\Http/../../../templates/page/users/index.latte';
+	public const Source = 'D:\\Programming\\Project\\test\\abiesoft\\vendor\\abiesoft\\Http/../../../templates/page/grup/index.latte';
 
 	public const Blocks = [
 		['title' => 'blockTitle', 'css' => 'blockCss', 'content' => 'blockContent', 'js' => 'blockJs'],
@@ -21,7 +21,7 @@ final class Template6018073f47 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 74 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 78 */;
 		echo "\n";
 	}
 
@@ -76,20 +76,20 @@ final class Template6018073f47 extends Latte\Runtime\Template
 
             <!-- Card Body -->
 ';
-		if ($totalusers > 0) /* line 19 */ {
+		if ($totalgrup > 0) /* line 19 */ {
 			echo '
                 <div class="card-tabel">
                     <div class=\'header\'>
                         <div>
-                            <h2>Semua Users</h2>
-                            <small><span id=\'jumlahdataview\'>0</span> users</small>
+                            <h2>Semua Grup</h2>
+                            <small><span id=\'jumlahdataview\'>0</span> grup</small>
                         </div>
                         <div>
                             <button class="btn btn-biru" onClick="window.location.href=this.dataset.url" data-url="';
 			echo LR\Filters::escapeHtmlAttr($url) /* line 28 */;
 			echo '/';
 			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 28 */;
-			echo '/users/add"><i class="las la-plus"></i><span>Buat Users</span></button>
+			echo '/grup/add"><i class="las la-plus"></i><span>Buat Grup</span></button>
                         </div>
                     </div>
                     <div class="tabel">
@@ -97,19 +97,23 @@ final class Template6018073f47 extends Latte\Runtime\Template
 			echo LR\Filters::escapeHtmlAttr($url) /* line 32 */;
 			echo '\' data-apikey=\'';
 			echo LR\Filters::escapeHtmlAttr($apikey) /* line 32 */;
-			echo '\' data-tb=\'users\'></div>
+			echo '\' data-tb=\'grup\'></div>
                         <table>
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th colspan=\'2\'>Detail Users</th>
+                                    <th>Nama</th>
+                                    <th class=\'mobile-hide\'>Keterangan</th>
+                                    <th>Role</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td colspan=\'2\'><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                    <td class=\'mobile-hide\'><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
                                     <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
                                 </tr>
                             </tbody>
@@ -119,21 +123,21 @@ final class Template6018073f47 extends Latte\Runtime\Template
                 </div>
 
 ';
-		} else /* line 53 */ {
+		} else /* line 57 */ {
 			echo '
                 <div class=\'card-body\'>
                     <div class=\'empty\'>
                         <div>
                             <img src=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 58 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 62 */;
 			echo '/assets/img/banner.png\'>
-                            <label>Belum ada users</label>
-                            <div><small>Untuk sementara belum ada users yang bisa ditampilkan di halaman ini, untuk memulainya silahkan buat users pertama anda</small></div>
+                            <label>Belum ada grup</label>
+                            <div><small>Untuk sementara belum ada grup yang bisa ditampilkan di halaman ini, untuk memulainya silahkan buat grup pertama anda</small></div>
                             <div class=\'center my-40\'><button class=\'btn btn-biru\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 61 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 65 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 61 */;
-			echo '/users/add\'>Buat Users</button></div>
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 65 */;
+			echo '/grup/add\'>Buat Grup</button></div>
                         </div>
                     </div>
                 </div>
@@ -150,23 +154,23 @@ final class Template6018073f47 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 74 */
+	/** {block js} on line 78 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo '<script src="/assets/jsa/users/index.js"></script>
+		echo '<script src="/assets/jsa/grup/index.js"></script>
 ';
-		if ($totalusers > 0) /* line 76 */ {
+		if ($totalgrup > 0) /* line 80 */ {
 			echo '    <script>
     loadTabel([';
-			echo LR\Filters::escapeJs($url) /* line 78 */;
+			echo LR\Filters::escapeJs($url) /* line 82 */;
 			echo ',';
-			echo LR\Filters::escapeJs($apikey) /* line 78 */;
-			echo ',\'users\',';
-			echo LR\Filters::escapeJs($csrf) /* line 78 */;
+			echo LR\Filters::escapeJs($apikey) /* line 82 */;
+			echo ',\'grup\',';
+			echo LR\Filters::escapeJs($csrf) /* line 82 */;
 			echo ']);
     </script>
 ';

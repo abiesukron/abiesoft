@@ -29,21 +29,16 @@ function collectData (x) {
             oe = (i % 2  == 0) ? 'even' : 'odd';
 
             rowData = `
-                <td class="mobile-hide photo"><img src='`+url+data[i].photo+`'></td>
-                <td>
-                    <h3>`+data[i].nama+`</h3>
-                    <div>`+data[i].email+`</div>
-                    <div>`+data[i].namagrup+`</div>
-                </td>
+                <td style='text-align: center;'>`+data[i].nama+`</td>
+                <td class='mobile-hide' style='max-width: 300px;'>`+data[i].keterangan+`</td>
+                <td style='text-align: center;'>`+data[i].role+`</td>
             `;
-
-            // <button type='button' onClick=window.location.href='`+url+`/`+getMeta('sessionkey')+`/users/`+data[i].id+`'><i class='las la-eye'></i><span>Lihat</span></button>
 
             opsiBtn = `
                 <div class='opsiarea'>
                     <button onClick='openOpsi(this.dataset.item)' data-item='`+tb+`-`+data[i].id+`'><i data-model='opsitable' class='las la-ellipsis-v'></i></button>
                     <div id='opsihidemenu-`+data[i].id+`' class='opsihidemenu'>
-                        <button type='button' onClick=window.location.href='`+url+`/`+getMeta('sessionkey')+`/users/`+data[i].id+`/edit'><i class='las la-pen'></i><span>Edit</span></button>
+                        <button type='button' onClick=window.location.href='`+url+`/`+getMeta('sessionkey')+`/grup/`+data[i].id+`/edit'><i class='las la-pen'></i><span>Edit</span></button>
                         <form class='btn-grup' method='post' id='formHapus-`+data[i].id+`' name='formHapus-`+data[i].id+`' onSubmit="return hapus('`+data[i].id+`')">
                             <input type='hidden' id='__info' name='__info' value='`+data[i].nama+`'>
                             <input type='hidden' id='__token' name='__token' value='`+csrf+`'>

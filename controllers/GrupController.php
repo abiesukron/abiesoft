@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use AbieSoft\Application\Http\Controller;
+use App\Models\Grup;
 
 class GrupController extends Controller
 {
@@ -11,25 +12,26 @@ class GrupController extends Controller
     {
         $this->view('grup/index', [
             'title' => 'Grup',
+            'totalgrup' => Grup::all(output:'hitung')
         ]);
-    }
-
-    public function table()
-    {
-        /*
-            Defaultnya function ini digunakan untuk meload data tabel
-            yang digunakan untuk function index
-        */
     }
 
     public function add()
     {
-        /* Halaman tambah */
+        $this->view('grup/add', [
+            'title' => 'Grup',
+        ]);
     }
 
     public function edit($id)
     {
-        /* Halaman edit */
+        $this->view('grup/edit', [
+            'title' => 'Grup',
+            'id' => $id,
+            'nama' => Grup::only(select:['nama'],output:'string',id:$id),
+            'keterangan' => Grup::only(select:['keterangan'],output:'string',id:$id),
+            'role' => Grup::only(select:['role'],output:'string',id:$id),
+        ]);
     }
 
     public function read($id)
@@ -39,17 +41,17 @@ class GrupController extends Controller
 
     public function keep()
     {
-        /* Tambah data, methodnya post */
+        echo Grup::insert();
     }
 
     public function update()
     {
-        /* Edit data, methodnya patch */
+        echo Grup::replace();
     }
 
     public function delete()
     {
-        /* Hapus data, methodnya delete */
+        echo Grup::remove();
     }
 
 }

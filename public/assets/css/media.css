@@ -143,6 +143,6 @@
 
     .card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide,
     .card > .card-tabel > .tabel > table > tbody > tr > td.mobile-hide {
-        display: block;
+        display: table-cell;
     }
 }

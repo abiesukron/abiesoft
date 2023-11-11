@@ -534,7 +534,7 @@
 
 .card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide,
 .card > .card-tabel > .tabel > table > tbody > tr > td.mobile-hide {
-    display: block;
+    display: table-cell;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td {
@@ -558,6 +558,7 @@
     background-color: var(--putih);
     font-size: 12pt;
     border-radius: 50%;
+    z-index: 0;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button:hover,
@@ -636,8 +637,9 @@
 .card > .card-tabel > .tabel > table > tbody > tr > td > div,
 .card > .card-tabel > .tabel > table > tbody > tr > td > small {
     display: block;
-    padding: 10px 0;
+    padding: 7px 0;
     border-bottom: 1px solid var(--abu);
+    font-size: 12pt;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td > h3:last-child,
@@ -647,10 +649,7 @@
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > th.gambar,
-.card > .card-tabel > .tabel > table > tbody > tr > td.gambar,
-.card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide.gambar,
-.card > .card-tabel > .tabel > table > thead > tr > td.mobile-hide.gambar {
-    display: block;
+.card > .card-tabel > .tabel > table > tbody > tr > td.gambar {
     max-width: 190px;
 }
 
@@ -659,15 +658,13 @@
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > th.photo,
-.card > .card-tabel > .tabel > table > tbody > tr > td.photo,
-.card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide.photo,
-.card > .card-tabel > .tabel > table > thead > tr > td.mobile-hide.photo {
-    max-width: 100px;
-    display: block;
+.card > .card-tabel > .tabel > table > tbody > tr > td.photo {
+    width: 130px;
+    text-align: center;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td.photo > img {
-    max-width: 80px;
+    max-width: 100px;
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr > td:first-child,

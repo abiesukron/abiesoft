@@ -464,6 +464,10 @@ function hapus(x) {
     if(confirm("Anda ingin menghapus "+info+"?") == true){
         const form = document.querySelector('form[id="formHapus-'+x+'"]');
         const formData = new FormData(form);
+        Toast({
+            type: 'info',
+            message: 'Sedang menghapus..',
+        });
         fetch(url+'/'+getMeta('sessionkey')+'/'+tb, {
             method: 'POST',
             body: formData
@@ -475,7 +479,7 @@ function hapus(x) {
                 });
                 setTimeout(()=>{
                     window.location.href=url+'/'+getMeta('sessionkey')+"/"+tb;
-                },50);
+                },10);
                 return false;
             }else{
                 Toast({
