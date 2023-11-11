@@ -604,6 +604,16 @@
     margin-bottom: 0;
 }
 
+.card > .card-tabel > .tabel > table > tbody > tr > th:last-child,
+.card > .card-tabel > .tabel > table > tbody > tr > td:last-child {
+    width: 100px;
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr > th:first-child,
+.card > .card-tabel > .tabel > table > tbody > tr > td:first-child {
+    width: 100px;
+}
+
 .card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover,
 .card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover {
     background-color: var(--abu);

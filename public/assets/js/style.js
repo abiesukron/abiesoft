@@ -510,6 +510,10 @@ function gantiPhoto() {
     const url = document.forms['formPhoto']['__url'].value;
     const form = document.querySelector('form[id="formPhoto"]');
     const formData = new FormData(form);
+    Toast({
+        type: 'info',
+        message: 'Memperbarui photo..',
+    });
     fetch(url+'/'+getMeta('sessionkey')+'/ganti-photo', {
         method: 'POST',
         body: formData
@@ -556,6 +560,10 @@ function hapusPhoto() {
         const url = document.forms['formHapusPhoto']['__url'].value;
         const form = document.querySelector('form[id="formHapusPhoto"]');
         const formData = new FormData(form);
+        Toast({
+            type: 'info',
+            message: 'Sedang menghapus..',
+        });
         fetch(url+'/'+getMeta('sessionkey')+'/hapus-photo', {
             method: 'POST',
             body: formData

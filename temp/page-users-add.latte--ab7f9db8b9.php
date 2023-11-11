@@ -103,7 +103,11 @@ final class Templateab7f9db8b9 extends Latte\Runtime\Template
                         <span id="err_password"></span>
                     </div>
                     <div class="form-group">
-                        <label for="grupid">Grup <span><a href=\'\'>+</a></span></label>
+                        <label for="grupid">Grup <button type=\'button\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
+		echo LR\Filters::escapeHtmlAttr($url) /* line 37 */;
+		echo '/';
+		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 37 */;
+		echo '/grup/add\'>Tambah</button></label>
                         <select class="form-control" id="grupid" name="grupid">
                             <option value="">Pilih grup</option>
 ';

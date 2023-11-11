@@ -42,8 +42,15 @@ form {
 }
 
 .form-group > label {
+    display: block;
     font-size: 11pt;
     font-weight: 400;
+}
+
+.form-group > label > button{
+    font-size: 8pt;
+    padding: 5px 10px;
+    border-radius: 3px;
 }
 
 .form-group > .form-control,
@@ -268,6 +275,27 @@ form {
 
 .form-img > .cover > img {
     width: 100%;
+}
+
+.form-img {
+    padding: 0;
+    margin: 0;
+}
+
+.form-img > .center > .cover {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form-img > .center > .cover > img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
 }
 
 

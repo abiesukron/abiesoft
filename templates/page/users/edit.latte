@@ -19,10 +19,20 @@
                 
                 <form method="post" id="formEdit" name="formEdit" onSubmit="return submitEdit()">
                     <div class="form-img">
-                        <div class='cover'>
-                            <img src='{$photo}'>
+                        <div class='center'>
+                            <div class='cover'>
+                                <img src='{$photo}'>
+                            </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="photo">Ganti photo</label>
+                        <input type="file" id="photo" name="photo">
+                        <i class="las la-paperclip form-right"></i>
+                        <div class="form-control">Pilih file</div>
+                        <span id="err_photo"></span>
+                    </div>
+                    <hr>
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input class="form-control" id="nama" name="nama" placeholder="Nama" value='{$nama}'>
@@ -39,7 +49,7 @@
                         <span id="err_nohp"></span>
                     </div>
                     <div class="form-group">
-                        <label for="grupid">Grup <span><a href=''>+</a></span></label>
+                        <label for="grupid">Grup <button type='button' onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/grup/add'>Tambah</button></label>
                         <select class="form-control" id="grupid" name="grupid">
                             <option value="{$grupvalue}">{$gruplabel}</option>
                             {foreach $grup as $g}
@@ -47,13 +57,6 @@
                             {/foreach}
                         </select>
                         <span id="err_grupid"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="photo">Ganti photo</label>
-                        <input type="file" id="photo" name="photo">
-                        <i class="las la-paperclip form-right"></i>
-                        <div class="form-control">Pilih file</div>
-                        <span id="err_photo"></span>
                     </div>
                     <hr>
                     <div class="form-group">

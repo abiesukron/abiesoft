@@ -81,8 +81,8 @@ final class Template6018073f47 extends Latte\Runtime\Template
                 <div class="card-tabel">
                     <div class=\'header\'>
                         <div>
-                            <h2>Semua Users</h2>
-                            <small><span id=\'jumlahdataview\'>0</span> users</small>
+                            <h3>Semua Users</h3>
+                            <small><span id=\'jumlahdataview\'>0</span> user</small>
                         </div>
                         <div>
                             <button class="btn btn-biru" onClick="window.location.href=this.dataset.url" data-url="';

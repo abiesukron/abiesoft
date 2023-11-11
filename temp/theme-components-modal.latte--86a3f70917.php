@@ -25,7 +25,7 @@ final class Template86a3f70917 extends Latte\Runtime\Template
             <button class="close" id="modalclose"><i class="las la-times"></i></button>
         </div>
         <div class="photo"><img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url . $photo)) /* line 8 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url . $photo_)) /* line 8 */;
 		echo '" id="pp2"></div>
         <div class="form">
             <form method="post" id="formPhoto" name="formPhoto">
@@ -43,7 +43,7 @@ final class Template86a3f70917 extends Latte\Runtime\Template
             </form>
             <form method="post" id="formHapusPhoto" name="formHapusPhoto" onSubmit="return hapusPhoto()">
                 <input type="hidden" id="__photo" name="__photo" value="';
-		echo LR\Filters::escapeHtmlAttr($photo) /* line 20 */;
+		echo LR\Filters::escapeHtmlAttr($photo_) /* line 20 */;
 		echo '">
                 <input type="hidden" id="__url" name="__url" value="';
 		echo LR\Filters::escapeHtmlAttr($url) /* line 21 */;

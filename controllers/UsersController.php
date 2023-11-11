@@ -142,6 +142,7 @@ class UsersController extends Controller
         $email = Input::get('email');
         $nohp = Input::get('nohp');
         $psw = Input::get('psw');
+        $grupid = Input::get('grupid');
         if(Metafile::approver($tipe, $namafile, $ukuran) == "image") {
             $folderUser = __DIR__.'/../'.Config::envReader('PUBLIC_FOLDER').'/assets/storage/'.$id;
 
@@ -162,6 +163,7 @@ class UsersController extends Controller
                         'nama' => $nama,
                         'email' => $email,
                         'nohp' => $nohp,
+                        'grupid' => $grupid,
                         'photo' => '/assets/storage/'.$id.'/pp/'.$namabaru,
                         'diupdate' => date('Y-m-d H:i:s')
                     ]);
@@ -176,6 +178,7 @@ class UsersController extends Controller
                         'nama' => $nama,
                         'email' => $email,
                         'nohp' => $nohp,
+                        'grupid' => $grupid,
                         'psw' => Generate::make($psw, $salt),
                         'salt' => $salt,
                         'photo' => '/assets/storage/'.$id.'/pp/'.$namabaru,
@@ -201,11 +204,13 @@ class UsersController extends Controller
         $email = Input::get('email');
         $nohp = Input::get('nohp');
         $psw = Input::get('psw');
+        $grupid = Input::get('grupid');
         if($psw == ""){
             $user = DB::terhubung()->perbarui('users', $id, [
                 'nama' => $nama,
                 'email' => $email,
                 'nohp' => $nohp,
+                'grupid' => $grupid,
                 'diupdate' => date('Y-m-d H:i:s')
             ]);
             if($user){
@@ -219,6 +224,7 @@ class UsersController extends Controller
                 'nama' => $nama,
                 'email' => $email,
                 'nohp' => $nohp,
+                'grupid' => $grupid,
                 'psw' => Generate::make($psw, $salt),
                 'salt' => $salt,
                 'diupdate' => date('Y-m-d H:i:s')
