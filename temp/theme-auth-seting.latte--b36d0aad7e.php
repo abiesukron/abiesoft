@@ -68,11 +68,11 @@ final class Templateb36d0aad7e extends Latte\Runtime\Template
         <div class=\'transparent\'>
             <div class="card">
                 <div class="card-header">
-                    <button id="back"><i class="las la-angle-left"></i></button>
+                    <button id="back" class="left"><i class="las la-angle-left"></i></button>
                     <div class="label">';
 		echo LR\Filters::escapeHtmlText($title) /* line 11 */;
 		echo '</div>
-                    <button class="hide"><i class="las la-ellipsis-v"></i></button>
+                    <button class="hide right"><i class="las la-ellipsis-v"></i></button>
                 </div>
                 <div class="card-body-list">
 

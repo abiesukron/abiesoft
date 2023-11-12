@@ -9,9 +9,17 @@
 
             <!-- Card Header -->
             <div class='card-header'>
-                <button onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/users"><i class='las la-angle-left'></i></button>
+                <button class='left' onClick="window.location.href=this.dataset.url" data-url="{$url}/{$sessionkey}/users"><i class='las la-angle-left'></i></button>
                 <div class='label'>{$title}</div>
-                <button class='card-option-btn hide'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+                <form class='right' method='post' id='formHapus-{$id}' name='formHapus-{$id}' onSubmit='return hapus({$id})'>
+                    <input type='hidden' id='__info' name='__info' value='{$nama}'>
+                    <input type='hidden' id='__token' name='__token' value='{$csrf}'>
+                    <input type='hidden' id='__url' name='__url' value='{$url}'>
+                    <input type='hidden' id='id' name='id' value='{$id}'>
+                    <input type='hidden' id='__tb' name='__tb' value='users'>
+                    <input type='hidden' id='__method' name='__method' value='DELETE'>
+                    <button><i class='las la-trash'></i></button>
+                </form>
             </div>
 
             <!-- Card Body -->

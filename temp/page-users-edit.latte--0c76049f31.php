@@ -21,7 +21,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 90 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 98 */;
 	}
 
 
@@ -30,7 +30,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['g' => '63'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['g' => '71'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -70,7 +70,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
 
             <!-- Card Header -->
             <div class=\'card-header\'>
-                <button onClick="window.location.href=this.dataset.url" data-url="';
+                <button class=\'left\' onClick="window.location.href=this.dataset.url" data-url="';
 		echo LR\Filters::escapeHtmlAttr($url) /* line 12 */;
 		echo '/';
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 12 */;
@@ -78,7 +78,29 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                 <div class=\'label\'>';
 		echo LR\Filters::escapeHtmlText($title) /* line 13 */;
 		echo '</div>
-                <button class=\'card-option-btn hide\'><i class=\'las la-ellipsis-v\' data-model=\'buttonopsi\'></i></button>
+                <form class=\'right\' method=\'post\' id=\'formHapus-';
+		echo LR\Filters::escapeHtmlAttr($id) /* line 14 */;
+		echo '\' name=\'formHapus-';
+		echo LR\Filters::escapeHtmlAttr($id) /* line 14 */;
+		echo '\' onSubmit=\'return hapus(';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::escapeJs($id)) /* line 14 */;
+		echo ')\'>
+                    <input type=\'hidden\' id=\'__info\' name=\'__info\' value=\'';
+		echo LR\Filters::escapeHtmlAttr($nama) /* line 15 */;
+		echo '\'>
+                    <input type=\'hidden\' id=\'__token\' name=\'__token\' value=\'';
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 16 */;
+		echo '\'>
+                    <input type=\'hidden\' id=\'__url\' name=\'__url\' value=\'';
+		echo LR\Filters::escapeHtmlAttr($url) /* line 17 */;
+		echo '\'>
+                    <input type=\'hidden\' id=\'id\' name=\'id\' value=\'';
+		echo LR\Filters::escapeHtmlAttr($id) /* line 18 */;
+		echo '\'>
+                    <input type=\'hidden\' id=\'__tb\' name=\'__tb\' value=\'users\'>
+                    <input type=\'hidden\' id=\'__method\' name=\'__method\' value=\'DELETE\'>
+                    <button><i class=\'las la-trash\'></i></button>
+                </form>
             </div>
 
             <!-- Card Body -->
@@ -89,7 +111,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                         <div class=\'center\'>
                             <div class=\'cover\'>
                                 <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($photo)) /* line 24 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($photo)) /* line 32 */;
 		echo '\'>
                             </div>
                         </div>
@@ -105,7 +127,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input class="form-control" id="nama" name="nama" placeholder="Nama" value=\'';
-		echo LR\Filters::escapeHtmlAttr($nama) /* line 38 */;
+		echo LR\Filters::escapeHtmlAttr($nama) /* line 46 */;
 		echo '\'>
                         <span id="err_nama"></span>
                     </div>
@@ -115,7 +137,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input class="form-control" id="email" name="email" placeholder="Email" value=\'';
-		echo LR\Filters::escapeHtmlAttr($email) /* line 46 */;
+		echo LR\Filters::escapeHtmlAttr($email) /* line 54 */;
 		echo '\'>
                                 <span id="err_email"></span>
                             </div>
@@ -124,7 +146,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                             <div class="form-group">
                                 <label for="nohp">Nomor HP</label>
                                 <input class="form-control" id="nohp" name="nohp" placeholder="Nomor hp" value=\'';
-		echo LR\Filters::escapeHtmlAttr($nohp) /* line 53 */;
+		echo LR\Filters::escapeHtmlAttr($nohp) /* line 61 */;
 		echo '\'>
                                 <span id="err_nohp"></span>
                             </div>
@@ -133,22 +155,22 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                     
                     <div class="form-group">
                         <label for="grupid">Grup <button type=\'button\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 60 */;
+		echo LR\Filters::escapeHtmlAttr($url) /* line 68 */;
 		echo '/';
-		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 60 */;
+		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 68 */;
 		echo '/grup/add\'>Tambah</button></label>
                         <select class="form-control" id="grupid" name="grupid">
                             <option value="';
-		echo LR\Filters::escapeHtmlAttr($grupvalue) /* line 62 */;
+		echo LR\Filters::escapeHtmlAttr($grupvalue) /* line 70 */;
 		echo '">';
-		echo LR\Filters::escapeHtmlText($gruplabel) /* line 62 */;
+		echo LR\Filters::escapeHtmlText($gruplabel) /* line 70 */;
 		echo '</option>
 ';
-		foreach ($grup as $g) /* line 63 */ {
+		foreach ($grup as $g) /* line 71 */ {
 			echo '                                <option value="';
-			echo LR\Filters::escapeHtmlAttr($g->id) /* line 64 */;
+			echo LR\Filters::escapeHtmlAttr($g->id) /* line 72 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($g->nama) /* line 64 */;
+			echo LR\Filters::escapeHtmlText($g->nama) /* line 72 */;
 			echo '</option>
 ';
 
@@ -167,10 +189,10 @@ final class Template0c76049f31 extends Latte\Runtime\Template
                     <div class="form-button">
                         <input type="hidden" id="__method" name="__method" value="PATCH">
                         <input type="hidden" id="id" name="id" value="';
-		echo LR\Filters::escapeHtmlAttr($id) /* line 78 */;
+		echo LR\Filters::escapeHtmlAttr($id) /* line 86 */;
 		echo '">
                         <input type="hidden" id="__token" name="__token" value="';
-		echo LR\Filters::escapeHtmlAttr($csrf) /* line 79 */;
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 87 */;
 		echo '">
                         <button class="btn btn-abiesoft"><span id="btnsubmit">Simpan Perubahan</span></button>
                     </div>
@@ -185,7 +207,7 @@ final class Template0c76049f31 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 90 */
+	/** {block js} on line 98 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script src="/assets/jsa/users/edit.js"></script>

@@ -19,6 +19,54 @@
 }
 
 .card > .card-header {
+    display: block;
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-header > .left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.card > .card-header > .right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.card > .card-header button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    font-size: 14pt;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    font-weight: 600;
+}
+
+.card > .card-header button:hover,
+.card > .card-header button:focus {
+    background-color: var(--abu);
+    font-size: 18pt;
+}
+
+.card > .card-header > .label {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: -20px;
+}
+
+
+/* .card > .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +98,7 @@
     font-weight: 500;
     font-size: 18px;
     margin-left: -20px;
-}
+} */
 
 .card > .card-body {
     padding: 40px;
