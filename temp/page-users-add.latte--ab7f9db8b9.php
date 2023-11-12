@@ -21,7 +21,7 @@ final class Templateab7f9db8b9 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 59 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 67 */;
 	}
 
 
@@ -63,7 +63,7 @@ final class Templateab7f9db8b9 extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo '<div class=\'single-5\'>
+		echo '<div class=\'single-6\'>
 
     <div class=\'transparent\'>
         <div class=\'card\'>
@@ -90,29 +90,27 @@ final class Templateab7f9db8b9 extends Latte\Runtime\Template
                         <input class="form-control" id="nama" name="nama" placeholder="Nama users">
                         <span id="err_nama"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" id="email" name="email" placeholder="Email users">
-                        <span id="err_email"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password Default</label>
-                        <input class="form-control" id="password" name="password" value=\'';
-		echo LR\Filters::escapeHtmlAttr($udf) /* line 33 */;
-		echo '\' disabled>
-                        <span id="err_password"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="grupid">Grup <button type=\'button\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
+
+                    <div class=\'row\'>
+                        <div class=\'col-7\'>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="form-control" id="email" name="email" placeholder="Email users">
+                                <span id="err_email"></span>
+                            </div>
+                        </div>
+                        <div class=\'col-5\'>
+                            <div class="form-group">
+                                <label for="grupid">Grup <button type=\'button\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
 		echo LR\Filters::escapeHtmlAttr($url) /* line 37 */;
 		echo '/';
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 37 */;
 		echo '/grup/add\'>Tambah</button></label>
-                        <select class="form-control" id="grupid" name="grupid">
-                            <option value="">Pilih grup</option>
+                                <select class="form-control" id="grupid" name="grupid">
+                                    <option value="">Pilih grup</option>
 ';
 		foreach ($grup as $g) /* line 40 */ {
-			echo '                                <option value="';
+			echo '                                        <option value="';
 			echo LR\Filters::escapeHtmlAttr($g->id) /* line 41 */;
 			echo '">';
 			echo LR\Filters::escapeHtmlText($g->nama) /* line 41 */;
@@ -121,13 +119,23 @@ final class Templateab7f9db8b9 extends Latte\Runtime\Template
 
 		}
 
-		echo '                        </select>
-                        <span id="err_grupid"></span>
+		echo '                                </select>
+                                <span id="err_grupid"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="password">Password Default</label>
+                        <input class="form-control" id="password" name="password" value=\'';
+		echo LR\Filters::escapeHtmlAttr($udf) /* line 51 */;
+		echo '\' disabled>
+                        <span id="err_password"></span>
                     </div>
                     <hr>
                     <div class="form-button">
                         <input type="hidden" id="__token" name="__token" value="';
-		echo LR\Filters::escapeHtmlAttr($csrf) /* line 48 */;
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 56 */;
 		echo '">
                         <button class="btn btn-abiesoft"><span id="btnsubmit">Simpan</span></button>
                     </div>
@@ -142,7 +150,7 @@ final class Templateab7f9db8b9 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 59 */
+	/** {block js} on line 67 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script src="/assets/jsa/users/add.js"></script>

@@ -89,9 +89,9 @@ final class Template9a0906bb0e extends Latte\Runtime\Template
                     </div>
                     <div class="form-group">
                         <label for="keterangan">Keterangan</label>
-                        <input class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan grup" value="';
-		echo LR\Filters::escapeHtmlAttr($keterangan) /* line 28 */;
-		echo '">
+                        <textarea class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan grup">';
+		echo LR\Filters::escapeHtmlText($keterangan) /* line 28 */;
+		echo '</textarea>
                         <span id="err_keterangan"></span>
                     </div>
                     <div class="form-group">

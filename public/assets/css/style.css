@@ -23,6 +23,8 @@
     --fb: #3b5998;
     --google-merah: #db4a39;
     --abiesoft: rgb(55, 49, 99);
+    --abiesoft-even: rgba(55, 49, 99, .03);
+    --abiesoft-odd: rgba(55, 49, 99, .07);
     --abiesoft-hover: rgba(55, 49, 99, .1);
 }
 

@@ -87,7 +87,7 @@ final class Templatee3308b3f1c extends Latte\Runtime\Template
                     </div>
                     <div class="form-group">
                         <label for="keterangan">Keterangan</label>
-                        <input class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan grup">
+                        <textarea class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan grup"></textarea>
                         <span id="err_keterangan"></span>
                     </div>
                     <div class="form-group">

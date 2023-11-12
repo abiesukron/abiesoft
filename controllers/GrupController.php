@@ -19,14 +19,14 @@ class GrupController extends Controller
     public function add()
     {
         $this->view('grup/add', [
-            'title' => 'Grup',
+            'title' => 'Buat Grup',
         ]);
     }
 
     public function edit($id)
     {
         $this->view('grup/edit', [
-            'title' => 'Grup',
+            'title' => 'Edit Grup',
             'id' => $id,
             'nama' => Grup::only(select:['nama'],output:'string',id:$id),
             'keterangan' => Grup::only(select:['keterangan'],output:'string',id:$id),

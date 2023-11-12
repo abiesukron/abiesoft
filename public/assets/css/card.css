@@ -176,6 +176,8 @@
 
 
 
+
+
 /*
     Card List
 */
@@ -526,6 +528,14 @@
 
 .card > .card-tabel > .tabel > table > tbody > tr {
     border-bottom: 1px solid var(--abu);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr.odd {
+    background-color: var(--abiesoft-odd);
+}
+
+.card > .card-tabel > .tabel > table > tbody > tr.even {
+    background-color: var(--abiesoft-even);
 }
 
 .card > .card-tabel > .tabel > table > tbody > tr:last-child {

@@ -39,57 +39,58 @@ final class Templatec02bb52b11 extends Latte\Runtime\Template
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/card.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/form.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/colom.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/media.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/shimmer.css" rel="stylesheet" type="text/css">
     <link href="/assets/lib/icon8/css/line-awesome.css" rel="stylesheet" type="text/css">
 ';
-		$this->renderBlock('css', get_defined_vars()) /* line 20 */;
+		$this->renderBlock('css', get_defined_vars()) /* line 21 */;
 		echo '
 </head>
 
 <body>
     <div class=\'art\'><div class=\'gradient\'></div></div>
 ';
-		$this->createTemplate('./theme/components/sidebar.latte', $this->params, 'include')->renderToContentType('html') /* line 26 */;
-		$this->createTemplate('./theme/components/navbar.latte', $this->params, 'include')->renderToContentType('html') /* line 27 */;
+		$this->createTemplate('./theme/components/sidebar.latte', $this->params, 'include')->renderToContentType('html') /* line 27 */;
+		$this->createTemplate('./theme/components/navbar.latte', $this->params, 'include')->renderToContentType('html') /* line 28 */;
 		echo '
     <div class="page">
 ';
-		$this->renderBlock('content', get_defined_vars()) /* line 30 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 31 */;
 		echo '    </div>
 ';
-		$this->createTemplate('./theme/components/footer.latte', $this->params, 'include')->renderToContentType('html') /* line 32 */;
+		$this->createTemplate('./theme/components/footer.latte', $this->params, 'include')->renderToContentType('html') /* line 33 */;
 		echo '
 
     <div id=\'toasthere\'></div>
 
 ';
-		$this->createTemplate('./theme/components/modal.latte', $this->params, 'include')->renderToContentType('html') /* line 37 */;
+		$this->createTemplate('./theme/components/modal.latte', $this->params, 'include')->renderToContentType('html') /* line 38 */;
 		echo '    <script src="/assets/js/jquery-3.7.0.js"></script>
     <script src="/assets/js/style.js"></script>
     <script src="/assets/js/alert.js"></script>
     <script src="/assets/js/validasi.js"></script>
 ';
-		$this->renderBlock('js', get_defined_vars()) /* line 42 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 43 */;
 		echo '</body>
 
 </html>';
 	}
 
 
-	/** {block css} on line 20 */
+	/** {block css} on line 21 */
 	public function blockCss(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block content} on line 30 */
+	/** {block content} on line 31 */
 	public function blockContent(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block js} on line 42 */
+	/** {block js} on line 43 */
 	public function blockJs(array $ʟ_args): void
 	{
 	}

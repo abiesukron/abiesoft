@@ -2,7 +2,7 @@
 {block title}{$title}{/block}
 {block css}{/block}
 {block content}
-<div class='single-5'>
+<div class='single-6'>
 
     <div class='transparent'>
         <div class='card'>
@@ -23,25 +23,33 @@
                         <input class="form-control" id="nama" name="nama" placeholder="Nama users">
                         <span id="err_nama"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" id="email" name="email" placeholder="Email users">
-                        <span id="err_email"></span>
+
+                    <div class='row'>
+                        <div class='col-7'>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="form-control" id="email" name="email" placeholder="Email users">
+                                <span id="err_email"></span>
+                            </div>
+                        </div>
+                        <div class='col-5'>
+                            <div class="form-group">
+                                <label for="grupid">Grup <button type='button' onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/grup/add'>Tambah</button></label>
+                                <select class="form-control" id="grupid" name="grupid">
+                                    <option value="">Pilih grup</option>
+                                    {foreach $grup as $g}
+                                        <option value="{$g->id}">{$g->nama}</option>
+                                    {/foreach}
+                                </select>
+                                <span id="err_grupid"></span>
+                            </div>
+                        </div>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label for="password">Password Default</label>
                         <input class="form-control" id="password" name="password" value='{$udf}' disabled>
                         <span id="err_password"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="grupid">Grup <button type='button' onClick='window.location.href=this.dataset.url' data-url='{$url}/{$sessionkey}/grup/add'>Tambah</button></label>
-                        <select class="form-control" id="grupid" name="grupid">
-                            <option value="">Pilih grup</option>
-                            {foreach $grup as $g}
-                                <option value="{$g->id}">{$g->nama}</option>
-                            {/foreach}
-                        </select>
-                        <span id="err_grupid"></span>
                     </div>
                     <hr>
                     <div class="form-button">

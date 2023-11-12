@@ -21,7 +21,7 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 105 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 160 */;
 	}
 
 
@@ -102,15 +102,75 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
                     <input class="form-control" id="nama" name="nama" placeholder="Nama">
                     <span id="err_nama"></span>
                 </div>
-                <div class="form-group">
-                    <label for="jeniskelamin">Jenis Kelamin</label>
-                    <select class="form-control" id="jeniskelamin" name="jeniskelamin">
-                        <option value="">Pilih Jenis Kelamin</option>
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                    <span id="err_jeniskelamin"></span>
+                
+                <div class=\'row\'>
+                    <div class=\'col-4\'>
+                        <div class="form-group">
+                            <label for="jeniskelamin">Jenis Kelamin</label>
+                            <select class="form-control" id="jeniskelamin" name="jeniskelamin">
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            <span id="err_jeniskelamin"></span>
+                        </div>
+                    </div>
+                    <div class=\'col-4\'>
+                        <div class="form-group">
+                            <label for="password">Password Saat Ini</label>
+                            <i class="las la-eye form-right"></i>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="****">
+                            <span id="err_password"></span>
+                        </div>                    
+                    </div>
+                    <div class=\'col-4\'>
+                        <div class="form-group">
+                            <label for="password">Password Saat Ini</label>
+                            <i class="las la-eye form-right"></i>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="****">
+                            <span id="err_password"></span>
+                        </div>                    
+                    </div>
+
+
+                    <div class=\'col-3\'>
+                        <div class="form-group">
+                            <label for="jeniskelamin">Jenis Kelamin</label>
+                            <select class="form-control" id="jeniskelamin" name="jeniskelamin">
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            <span id="err_jeniskelamin"></span>
+                        </div>
+                    </div>
+                    <div class=\'col-3\'>
+                        <div class="form-group">
+                            <label for="password">Password Saat Ini</label>
+                            <i class="las la-eye form-right"></i>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="****">
+                            <span id="err_password"></span>
+                        </div>                    
+                    </div>
+                    <div class=\'col-3\'>
+                        <div class="form-group">
+                            <label for="password">Password Saat Ini</label>
+                            <i class="las la-eye form-right"></i>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="****">
+                            <span id="err_password"></span>
+                        </div>                    
+                    </div>
+                    <div class=\'col-3\'>
+                        <div class="form-group">
+                            <label for="password">Password Saat Ini</label>
+                            <i class="las la-eye form-right"></i>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="****">
+                            <span id="err_password"></span>
+                        </div>                    
+                    </div>
                 </div>
+
+                
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <textarea class="form-control" id="alamat" name="alamat" placeholder="Alamat"></textarea>
@@ -123,12 +183,7 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
                     <div class="form-control">Pilih file</div>
                     <span id="err_photo"></span>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password Saat Ini</label>
-                    <i class="las la-eye form-right"></i>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="****">
-                    <span id="err_password"></span>
-                </div>
+                
                 <div class="form-group">
                     <label for="nama">Tanggal</label>
                     <i class="las la-calendar form-right"></i>
@@ -167,7 +222,7 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 105 */
+	/** {block js} on line 160 */
 	public function blockJs(array $ʟ_args): void
 	{
 	}
