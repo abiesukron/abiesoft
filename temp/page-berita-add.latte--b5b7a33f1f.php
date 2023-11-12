@@ -21,7 +21,7 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 100 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 112 */;
 	}
 
 
@@ -30,7 +30,7 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['k' => '45'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['k' => '49'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -105,43 +105,55 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
                         <textarea class="form-control" id="isi" name="isi" data-type="editor"></textarea>
                         <span id="err_isi"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="kategoriid">Kategori</label>
-                        <select class="form-control" id="kategoriid" name="kategoriid">
-                            <option value="">Pilih kategori</option>
+
+                    <div class=\'row\'>
+                        <div class=\'col-6\'>
+
+                            <div class="form-group">
+                                <label for="kategoriid">Kategori</label>
+                                <select class="form-control" id="kategoriid" name="kategoriid">
+                                    <option value="">Pilih kategori</option>
 ';
-		foreach ($kategori as $k) /* line 45 */ {
-			echo '                                <option value="';
-			echo LR\Filters::escapeHtmlAttr($k->id) /* line 46 */;
+		foreach ($kategori as $k) /* line 49 */ {
+			echo '                                        <option value="';
+			echo LR\Filters::escapeHtmlAttr($k->id) /* line 50 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($k->nama) /* line 46 */;
+			echo LR\Filters::escapeHtmlText($k->nama) /* line 50 */;
 			echo '</option>
 ';
 
 		}
 
-		echo '                        </select>
-                        <span id="err_kategoriid"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="tag">Tag</label>
-                        <div class="form-control tag">
-                            <div id="items">
+		echo '                                </select>
+                                <span id="err_kategoriid"></span>
                             </div>
-                            <input id="taginput" placeholder="Tag" data-type="tag">
-                            <div class="clear"></div>
-                        </div>
-                        <input type="hidden" id="tag" name="tag">
-                        <span id="err_tag"></span>
+
+                            <div class="form-group">
+                                <label for="tag">Tag</label>
+                                <div class="form-control tag">
+                                    <div id="items">
+                                    </div>
+                                    <input id="taginput" placeholder="Tag" data-type="tag">
+                                    <div class="clear"></div>
+                                </div>
+                                <input type="hidden" id="tag" name="tag">
+                                <span id="err_tag"></span>
+                            </div>
+                        </div>    
+                        <div class=\'col-6\'>
+                            <div id=\'imagecontainer\' class="form-img">
+                                <div style=\'width: 100%; min-height: 93px; background: #f3f6fc; display: flex; justify-content: center; align-items: center;\'>Preview Gambar</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar">Upload gambar</label>
+                                <input type="file" id="gambar" name="gambar">
+                                <i class="las la-paperclip form-right"></i>
+                                <div class="form-control">Pilih file</div>
+                                <span id="err_gambar"></span>
+                            </div>
+                        </div>    
                     </div>
-                    <div id=\'imagecontainer\' class="form-img"></div>
-                    <div class="form-group">
-                        <label for="gambar">Upload gambar</label>
-                        <input type="file" id="gambar" name="gambar">
-                        <i class="las la-paperclip form-right"></i>
-                        <div class="form-control">Pilih file</div>
-                        <span id="err_gambar"></span>
-                    </div>
+                    <hr>
                     <div class="form-group">
                         <label for="publikasi">Publikasi</label>
                         <select class="form-control" id="publikasi" name="publikasi">
@@ -155,14 +167,14 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
                     <hr>
                     <div class="form-button">
                         <input type="hidden" id="editing" name="editing" value="';
-		echo LR\Filters::escapeHtmlAttr(date('Y-m-d')) /* line 86 */;
+		echo LR\Filters::escapeHtmlAttr(date('Y-m-d')) /* line 98 */;
 		echo '">
                         <input type="hidden" id="editorid" name="editorid" value="">
                         <input type="hidden" id="uid" name="uid" value="';
-		echo LR\Filters::escapeHtmlAttr($uid) /* line 88 */;
+		echo LR\Filters::escapeHtmlAttr($uid) /* line 100 */;
 		echo '">
                         <input type="hidden" id="__token" name="__token" value="';
-		echo LR\Filters::escapeHtmlAttr($csrf) /* line 89 */;
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 101 */;
 		echo '">
                         <button class="btn btn-abiesoft"><span id="btnsubmit">Simpan</span></button>
                     </div>
@@ -177,7 +189,7 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 100 */
+	/** {block js} on line 112 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script src="/assets/jsa/berita/add.js"></script>

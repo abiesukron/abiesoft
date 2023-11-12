@@ -38,39 +38,51 @@
                         <textarea class="form-control" id="isi" name="isi" data-type="editor"></textarea>
                         <span id="err_isi"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="kategoriid">Kategori</label>
-                        <select class="form-control" id="kategoriid" name="kategoriid">
-                            <option value="">Pilih kategori</option>
-                            {foreach $kategori as $k}
-                                <option value="{$k->id}">{$k->nama}</option>
-                            {/foreach}
-                        </select>
-                        <span id="err_kategoriid"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="tag">Tag</label>
-                        <div class="form-control tag">
-                            <div id="items">
-                                {* 
-                                    Jika ingin menuliskan tag secara langsung
-                                    <div class='item'><label>nama tag</label><button type='button' class='removetagbtn'><i class='las la-times'></i></buttton></div>
-                                *}
+
+                    <div class='row'>
+                        <div class='col-6'>
+
+                            <div class="form-group">
+                                <label for="kategoriid">Kategori</label>
+                                <select class="form-control" id="kategoriid" name="kategoriid">
+                                    <option value="">Pilih kategori</option>
+                                    {foreach $kategori as $k}
+                                        <option value="{$k->id}">{$k->nama}</option>
+                                    {/foreach}
+                                </select>
+                                <span id="err_kategoriid"></span>
                             </div>
-                            <input id="taginput" placeholder="Tag" data-type="tag">
-                            <div class="clear"></div>
-                        </div>
-                        <input type="hidden" id="tag" name="tag">
-                        <span id="err_tag"></span>
+
+                            <div class="form-group">
+                                <label for="tag">Tag</label>
+                                <div class="form-control tag">
+                                    <div id="items">
+                                        {* 
+                                            Jika ingin menuliskan tag secara langsung
+                                            <div class='item'><label>nama tag</label><button type='button' class='removetagbtn'><i class='las la-times'></i></buttton></div>
+                                        *}
+                                    </div>
+                                    <input id="taginput" placeholder="Tag" data-type="tag">
+                                    <div class="clear"></div>
+                                </div>
+                                <input type="hidden" id="tag" name="tag">
+                                <span id="err_tag"></span>
+                            </div>
+                        </div>    
+                        <div class='col-6'>
+                            <div id='imagecontainer' class="form-img">
+                                <div style='width: 100%; min-height: 93px; background: #f3f6fc; display: flex; justify-content: center; align-items: center;'>Preview Gambar</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gambar">Upload gambar</label>
+                                <input type="file" id="gambar" name="gambar">
+                                <i class="las la-paperclip form-right"></i>
+                                <div class="form-control">Pilih file</div>
+                                <span id="err_gambar"></span>
+                            </div>
+                        </div>    
                     </div>
-                    <div id='imagecontainer' class="form-img"></div>
-                    <div class="form-group">
-                        <label for="gambar">Upload gambar</label>
-                        <input type="file" id="gambar" name="gambar">
-                        <i class="las la-paperclip form-right"></i>
-                        <div class="form-control">Pilih file</div>
-                        <span id="err_gambar"></span>
-                    </div>
+                    <hr>
                     <div class="form-group">
                         <label for="publikasi">Publikasi</label>
                         <select class="form-control" id="publikasi" name="publikasi">

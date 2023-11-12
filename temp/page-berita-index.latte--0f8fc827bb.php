@@ -81,7 +81,7 @@ final class Template0f8fc827bb extends Latte\Runtime\Template
                 <div class="card-tabel">
                     <div class=\'header\'>
                         <div>
-                            <h2>Semua Berita</h2>
+                            <h3>Semua Berita</h3>
                             <small><span id=\'jumlahdataview\'>0</span> berita</small>
                         </div>
                         <div>
