@@ -473,11 +473,6 @@
     margin-left: 10px;
 }
 
-.card > .card-tabel > .tabel > table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
 .card > .card-tabel > .tabel > .search {
     width: 100%;
     padding: 20px 40px;
@@ -505,60 +500,88 @@
     margin: 0 auto;
 }
 
-.card > .card-tabel > .tabel > table > thead > tr {
+.card > .card-tabel > .tabel > .tabel-overflow {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+}
+
+.card > .card-tabel > .tabel > .tabel-overflow::-webkit-scrollbar {
+    height: 8px;
+    background: none;
+}
+
+.card > .card-tabel > .tabel > .tabel-overflow::-webkit-scrollbar-track {
+    height: 8px;
+    background: var(--abu);
+    border-radius: 3px;
+}
+
+.card > .card-tabel > .tabel > .tabel-overflow::-webkit-scrollbar-thumb {
+    height: 8px;
+    background: var(--abu-hover);
+    border-radius: 3px;
+}
+
+.card > .card-tabel > .tabel > .tabel-overflow >  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr {
     border-top: 1px solid var(--abu);
     border-bottom: 1px solid var(--abu);
 }
 
-.card > .card-tabel > .tabel > table > thead > tr > th {
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr > th {
     padding: 20px 40px;
     font-weight: 500;
     cursor: pointer;
 }
 
-.card > .card-tabel > .tabel > table > thead > tr > th.down::after {
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr > th.down::after {
     content: "↓";
     margin-left: 10px;
 }
 
-.card > .card-tabel > .tabel > table > thead > tr > th.up::after {
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr > th.up::after {
     content: "↑";
     margin-left: 10px;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr {
     border-bottom: 1px solid var(--abu);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr.odd {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr.odd {
     background-color: var(--abiesoft-odd);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr.even {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr.even {
     background-color: var(--abiesoft-even);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr:last-child {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr:last-child {
     border-bottom: 0;
 }
 
-.card > .card-tabel > .tabel > table > thead > tr > th.mobile-hide,
-.card > .card-tabel > .tabel > table > tbody > tr > td.mobile-hide {
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr > th.mobile-hide,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td.mobile-hide {
     display: table-cell;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td {
     padding: 15px;
     text-align: left;
     vertical-align: top;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea  {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea  {
     position: relative;
     text-align: center;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > button {
     margin: 0 auto;
     width: 40px;
     height: 40px;
@@ -571,18 +594,18 @@
     z-index: 0;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button:hover,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button:focus,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > button.active {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > button:hover,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > button:focus,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > button.active {
     background-color: var(--abu);
     font-size: 16pt;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu {
     display: none;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active {
     display: block;
     width: 140px;
     position: absolute;
@@ -594,8 +617,8 @@
     -moz-box-shadow: 0px 1px 4px 1px rgba(0,0,0,.05);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button {
     width: 100%;
     display: flex;
     justify-content: left;
@@ -606,88 +629,81 @@
     font-size: 10pt;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr.hidden  {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr.hidden  {
     display: none;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button {
     margin-bottom: 0;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > th:last-child,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child {
-    width: 100px;
-}
-
-.card > .card-tabel > .tabel > table > tbody > tr > th:first-child,
-.card > .card-tabel > .tabel > table > tbody > tr > td:first-child {
-    width: 100px;
-}
-
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover {
     background-color: var(--abu);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button > i,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button > i {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button > i,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button > i {
     font-size: 14pt;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover > i,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:focus > i {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:hover > i,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button:focus > i {
     color: var(--hijau);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover > i,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:focus > i {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:hover > i,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button:focus > i {
     color: var(--merah);
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button > span,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button > span {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > button > span,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child > .opsiarea > .opsihidemenu.active > form > button > span {
     margin-left: 10px;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td.text-center {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td.text-center {
     text-align: center;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td > h3,
-.card > .card-tabel > .tabel > table > tbody > tr > td > div,
-.card > .card-tabel > .tabel > table > tbody > tr > td > small {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td > h3,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td > div,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td > small {
     display: block;
     padding: 7px 0;
     border-bottom: 1px solid var(--abu);
     font-size: 12pt;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td > h3:last-child,
-.card > .card-tabel > .tabel > table > tbody > tr > td > div:last-child,
-.card > .card-tabel > .tabel > table > tbody > tr > td > small:last-child {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td > h3:last-child,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td > div:last-child,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td > small:last-child {
     border-bottom: 0;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > th.gambar,
-.card > .card-tabel > .tabel > table > tbody > tr > td.gambar {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > th.gambar,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td.gambar {
     max-width: 190px;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td.gambar > img {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td.gambar > img {
     max-width: 150px;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > th.photo,
-.card > .card-tabel > .tabel > table > tbody > tr > td.photo {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > th.photo,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td.photo {
     width: 130px;
     text-align: center;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td.photo > img {
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td.photo > img {
     max-width: 100px;
 }
 
-.card > .card-tabel > .tabel > table > tbody > tr > td:first-child,
-.card > .card-tabel > .tabel > table > tbody > tr > td:last-child {
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr > th:first-child,
+.card > .card-tabel > .tabel > .tabel-overflow > table > thead > tr > th:last-child,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:first-child,
+.card > .card-tabel > .tabel > .tabel-overflow > table > tbody > tr > td:last-child {
+    width: 100px;;
     text-align: center;
 }

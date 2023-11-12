@@ -21,7 +21,7 @@ final class Templatec9411c52be extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 78 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 80 */;
 		echo "\n";
 	}
 
@@ -93,50 +93,52 @@ final class Templatec9411c52be extends Latte\Runtime\Template
                         </div>
                     </div>
                     <div class="tabel">
-                        <div class=\'search\'><i class="las la-search"></i><input placeholder=\'Ketikan sesuatu untuk mencari data ..\' id=\'search\' data-url=\'';
+                        <div class=\'search\'><i class="las la-search"></i><input placeholder=\'Cari grup ..\' id=\'search\' data-url=\'';
 			echo LR\Filters::escapeHtmlAttr($url) /* line 32 */;
 			echo '\' data-apikey=\'';
 			echo LR\Filters::escapeHtmlAttr($apikey) /* line 32 */;
 			echo '\' data-tb=\'grup\'></div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th class=\'mobile-hide\'>Keterangan</th>
-                                    <th>Role</th>
-                                    <th>Opsi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td class=\'mobile-hide\'><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class=\'tabel-overflow\'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th class=\'mobile-hide\'>Keterangan</th>
+                                        <th>Role</th>
+                                        <th>Opsi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td class=\'mobile-hide\'><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class=\'table-load-more\'><button class=\'btn btn-biru\' id=\'loadmore\' disabled>Mengambil data ..</button></div>
                     </div>
                 </div>
 
 ';
-		} else /* line 57 */ {
+		} else /* line 59 */ {
 			echo '
                 <div class=\'card-body\'>
                     <div class=\'empty\'>
                         <div>
                             <img src=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 62 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 64 */;
 			echo '/assets/img/banner.png\'>
                             <label>Belum ada grup</label>
                             <div><small>Untuk sementara belum ada grup yang bisa ditampilkan di halaman ini, untuk memulainya silahkan buat grup pertama anda</small></div>
                             <div class=\'center my-40\'><button class=\'btn btn-biru\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 65 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 67 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 65 */;
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 67 */;
 			echo '/grup/add\'>Buat Grup</button></div>
                         </div>
                     </div>
@@ -154,7 +156,7 @@ final class Templatec9411c52be extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 78 */
+	/** {block js} on line 80 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -163,14 +165,14 @@ final class Templatec9411c52be extends Latte\Runtime\Template
 
 		echo '<script src="/assets/jsa/grup/index.js"></script>
 ';
-		if ($totalgrup > 0) /* line 80 */ {
+		if ($totalgrup > 0) /* line 82 */ {
 			echo '    <script>
     loadTabel([';
-			echo LR\Filters::escapeJs($url) /* line 82 */;
+			echo LR\Filters::escapeJs($url) /* line 84 */;
 			echo ',';
-			echo LR\Filters::escapeJs($apikey) /* line 82 */;
+			echo LR\Filters::escapeJs($apikey) /* line 84 */;
 			echo ',\'grup\',';
-			echo LR\Filters::escapeJs($csrf) /* line 82 */;
+			echo LR\Filters::escapeJs($csrf) /* line 84 */;
 			echo ']);
     </script>
 ';

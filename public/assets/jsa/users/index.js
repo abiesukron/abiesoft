@@ -29,7 +29,7 @@ function collectData (x) {
             oe = (i % 2  == 0) ? 'even' : 'odd';
 
             rowData = `
-                <td class="mobile-hide photo"><img src='`+url+data[i].photo+`'></td>
+                <td class="photo"><img src='`+url+data[i].photo+`'></td>
                 <td>
                     <h3>`+data[i].nama+`</h3>
                     <div>`+data[i].email+`</div>

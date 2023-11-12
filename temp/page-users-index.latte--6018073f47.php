@@ -21,7 +21,7 @@ final class Template6018073f47 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 74 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 78 */;
 		echo "\n";
 	}
 
@@ -93,46 +93,50 @@ final class Template6018073f47 extends Latte\Runtime\Template
                         </div>
                     </div>
                     <div class="tabel">
-                        <div class=\'search\'><i class="las la-search"></i><input placeholder=\'Ketikan sesuatu untuk mencari data ..\' id=\'search\' data-url=\'';
+                        <div class=\'search\'><i class="las la-search"></i><input placeholder=\'Cari user ..\' id=\'search\' data-url=\'';
 			echo LR\Filters::escapeHtmlAttr($url) /* line 32 */;
 			echo '\' data-apikey=\'';
 			echo LR\Filters::escapeHtmlAttr($apikey) /* line 32 */;
 			echo '\' data-tb=\'users\'></div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th colspan=\'2\'>Detail Users</th>
-                                    <th>Opsi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td colspan=\'2\'><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                    <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class=\'tabel-overflow\'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Photo</th>
+                                        <th>Detail Users</th>
+                                        <th>Opsi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                        <td><div class="shimmer" style="width: 100%; height: 50px; background: #e9eef6;"></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class=\'table-load-more\'><button class=\'btn btn-biru\' id=\'loadmore\' disabled>Mengambil data ..</button></div>
                     </div>
                 </div>
 
 ';
-		} else /* line 53 */ {
+		} else /* line 57 */ {
 			echo '
                 <div class=\'card-body\'>
                     <div class=\'empty\'>
                         <div>
                             <img src=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 58 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 62 */;
 			echo '/assets/img/banner.png\'>
                             <label>Belum ada users</label>
                             <div><small>Untuk sementara belum ada users yang bisa ditampilkan di halaman ini, untuk memulainya silahkan buat users pertama anda</small></div>
                             <div class=\'center my-40\'><button class=\'btn btn-biru\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 61 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 65 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 61 */;
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 65 */;
 			echo '/users/add\'>Buat Users</button></div>
                         </div>
                     </div>
@@ -150,7 +154,7 @@ final class Template6018073f47 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 74 */
+	/** {block js} on line 78 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -159,14 +163,14 @@ final class Template6018073f47 extends Latte\Runtime\Template
 
 		echo '<script src="/assets/jsa/users/index.js"></script>
 ';
-		if ($totalusers > 0) /* line 76 */ {
+		if ($totalusers > 0) /* line 80 */ {
 			echo '    <script>
     loadTabel([';
-			echo LR\Filters::escapeJs($url) /* line 78 */;
+			echo LR\Filters::escapeJs($url) /* line 82 */;
 			echo ',';
-			echo LR\Filters::escapeJs($apikey) /* line 78 */;
+			echo LR\Filters::escapeJs($apikey) /* line 82 */;
 			echo ',\'users\',';
-			echo LR\Filters::escapeJs($csrf) /* line 78 */;
+			echo LR\Filters::escapeJs($csrf) /* line 82 */;
 			echo ']);
     </script>
 ';
