@@ -48,6 +48,18 @@ body {
     color: var(--font);
 }
 
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .bold { font-weight: 500; }
 
 .text-center { text-align: center; }
@@ -79,6 +91,7 @@ body {
 .mx-auto{ margin-left: auto; margin-right: auto; }
 .my-40 { margin-top: 40px; margin-bottom: 40px; }
 .my-20 { margin-top: 20px; margin-bottom: 20px; }
+.mr-5 { margin-right: 5px; }
 
 a, 
 button,
@@ -595,6 +608,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     padding: 7px 10px;
     border-radius: 25px;
     font-size: 11pt;
+    margin-top: 5px;
 }
 
 .sidebar.active > .menu > ul > li > ul > li.active > a,

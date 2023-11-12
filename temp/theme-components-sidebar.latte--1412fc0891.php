@@ -74,47 +74,45 @@ final class Template1412fc0891 extends Latte\Runtime\Template
                 </a>
                 <ul>
                     <li class="';
-		if ($current == 'editor') /* line 21 */ {
+		if ($current == 'berita') /* line 21 */ {
 			echo 'active';
 		}
 		echo '"><a href=\'';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 21 */;
 		echo '/';
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 21 */;
-		echo '/editor\'><i class="las la-minus"></i><span>Editor</span></a></li>
+		echo '/berita\'><i class="las la-minus"></i><span>Berita</span></a></li>
                     <li class="';
-		if ($current == 'berita') /* line 22 */ {
+		if ($current == 'kategori') /* line 22 */ {
 			echo 'active';
 		}
 		echo '"><a href=\'';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 22 */;
 		echo '/';
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 22 */;
-		echo '/berita\'><i class="las la-minus"></i><span>Berita</span></a></li>
-                    <li class="';
-		if ($current == 'kategori') /* line 23 */ {
-			echo 'active';
-		}
-		echo '"><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 23 */;
-		echo '/';
-		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 23 */;
 		echo '/kategori\'><i class="las la-minus"></i><span>Kategori</span></a></li>
                 </ul>
             </li>
-            <li><a href=\'javascript:void(0)\'><i class="las la-list"></i><span>Kategori</span></a></li>
-            <li><a href=\'javascript:void(0)\'><i class="las la-image"></i><span>Galeri</span></a></li>
+            <li class="';
+		if ($current == 'folder') /* line 25 */ {
+			echo 'active';
+		}
+		echo '"><a href=\'';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 25 */;
+		echo '/';
+		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 25 */;
+		echo '/folder\'><i class="las la-folder-open"></i><span>Foldermu</span></a></li>
             <li><a href=\'javascript:void(0)\'><i class="las la-qrcode"></i><span>QRCode</span></a></li>
             <li><a href=\'javascript:void(0)\'><i class="las la-envelope"></i><span>Email</span></a></li>
             <li><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 30 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 28 */;
 		echo '/form\'><i class="lab la-wpforms"></i><span>Form</span></a></li>
 
 ';
-		if ($sessionkey == 'administrator') /* line 32 */ {
+		if ($sessionkey == 'administrator') /* line 30 */ {
 			echo '            <label>Seting</label>
             <li  class="sub ';
-			if ($current == 'users' || $current == 'grup') /* line 34 */ {
+			if ($current == 'users' || $current == 'grup') /* line 32 */ {
 				echo 'active';
 			}
 			echo '">
@@ -124,22 +122,22 @@ final class Template1412fc0891 extends Latte\Runtime\Template
                 </a>
                 <ul>
                     <li class="';
-			if ($current == 'users') /* line 40 */ {
+			if ($current == 'users') /* line 38 */ {
 				echo 'active';
 			}
 			echo '"><a href=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 40 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 38 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 40 */;
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 38 */;
 			echo '/users\'><i class="las la-minus"></i><span>Kelola User</span></a></li>
                     <li class="';
-			if ($current == 'grup') /* line 41 */ {
+			if ($current == 'grup') /* line 39 */ {
 				echo 'active';
 			}
 			echo '"><a href=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 41 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 39 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 41 */;
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 39 */;
 			echo '/grup\'><i class="las la-minus"></i><span>Kelola Grup</span></a></li>
                 </ul>
             </li>
@@ -151,13 +149,13 @@ final class Template1412fc0891 extends Latte\Runtime\Template
         <div class="line"><hr class="no-margin"></div>
         <div class=\'bottom\'>
             <button class="seting" onClick="window.location.href=this.dataset.url" data-url="';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 51 */;
+		echo LR\Filters::escapeHtmlAttr($url) /* line 49 */;
 		echo '/seting"><i class="las la-cog"></i></button>
             <div class="date">';
-		echo LR\Filters::escapeHtmlText($hariini) /* line 52 */;
+		echo LR\Filters::escapeHtmlText($hariini) /* line 50 */;
 		echo '</div>
             <button class="logout" onClick="window.location.href=this.dataset.url" data-url="';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 53 */;
+		echo LR\Filters::escapeHtmlAttr($url) /* line 51 */;
 		echo '/logout"><i class="las la-sign-out-alt"></i></button>
         </div>
     </div>

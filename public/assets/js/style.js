@@ -619,10 +619,12 @@ if(el('#back')){
 
 if(el('.card-option-btn')){
     el('.card-option-btn').addEventListener('click', () => {
-        if(el('.card-opsi').classList.contains('active')) {
-            el('.card-opsi').classList.remove('active');
-        }else{
-            el('.card-opsi').classList.add('active');
+        if(el('.card-opsi')) {
+            if(el('.card-opsi').classList.contains('active')) {
+                el('.card-opsi').classList.remove('active');
+            }else{
+                el('.card-opsi').classList.add('active');
+            }
         }
     });
 }
@@ -917,4 +919,8 @@ function openOpsi (x) {
     }else{
         el('#opsihidemenu-'+x.split("-")[1]).classList.add('active');
     }
+}
+
+function refresh () {
+    console.log('ok');
 }

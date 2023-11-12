@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 use AbieSoft\Application\Http\Controller;
 
-class EditorController extends Controller
+class FolderController extends Controller
 {
 
     public function index()
     {
-        $this->view('editor/index', [
-            'title' => 'Editor',
+        $this->view('folder/index', [
+            'title' => 'Folder',
         ]);
     }
 

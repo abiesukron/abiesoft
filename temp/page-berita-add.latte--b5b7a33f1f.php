@@ -70,7 +70,7 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
 
             <!-- Card Header -->
             <div class=\'card-header\'>
-                <button onClick="window.location.href=this.dataset.url" data-url="';
+                <button class=\'left\' onClick="window.location.href=this.dataset.url" data-url="';
 		echo LR\Filters::escapeHtmlAttr($url) /* line 12 */;
 		echo '/';
 		echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 12 */;
@@ -78,7 +78,7 @@ final class Templateb5b7a33f1f extends Latte\Runtime\Template
                 <div class=\'label\'>';
 		echo LR\Filters::escapeHtmlText($title) /* line 13 */;
 		echo '</div>
-                <button class=\'card-option-btn hide\'><i class=\'las la-ellipsis-v\' data-model=\'buttonopsi\'></i></button>
+                <button class=\'card-option-btn hide right\'><i class=\'las la-ellipsis-v\' data-model=\'buttonopsi\'></i></button>
             </div>
 
             <!-- Card Body -->

@@ -18,13 +18,11 @@
                     <i class="las la-angle-right"></i>
                 </a>
                 <ul>
-                    <li class="{if $current == 'editor'}active{/if}"><a href='{$url}/{$sessionkey}/editor'><i class="las la-minus"></i><span>Editor</span></a></li>
                     <li class="{if $current == 'berita'}active{/if}"><a href='{$url}/{$sessionkey}/berita'><i class="las la-minus"></i><span>Berita</span></a></li>
                     <li class="{if $current == 'kategori'}active{/if}"><a href='{$url}/{$sessionkey}/kategori'><i class="las la-minus"></i><span>Kategori</span></a></li>
                 </ul>
             </li>
-            <li><a href='javascript:void(0)'><i class="las la-list"></i><span>Kategori</span></a></li>
-            <li><a href='javascript:void(0)'><i class="las la-image"></i><span>Galeri</span></a></li>
+            <li class="{if $current == 'folder'}active{/if}"><a href='{$url}/{$sessionkey}/folder'><i class="las la-folder-open"></i><span>Foldermu</span></a></li>
             <li><a href='javascript:void(0)'><i class="las la-qrcode"></i><span>QRCode</span></a></li>
             <li><a href='javascript:void(0)'><i class="las la-envelope"></i><span>Email</span></a></li>
             <li><a href='{$url}/form'><i class="lab la-wpforms"></i><span>Form</span></a></li>

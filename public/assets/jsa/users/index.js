@@ -79,6 +79,7 @@ function collectData (x) {
         }
 
         el('#jumlahdataview').innerHTML = jumlahData;
+
     }
 }
 

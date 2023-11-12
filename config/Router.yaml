@@ -5,16 +5,14 @@ form:
   function: 'index'
   auth: true
 
-
-
 # Media Online
-editor:
-  admin: true
-
 berita:
   admin: true
 
 kategori:
+  admin: true
+
+folder:
   admin: true
 
 

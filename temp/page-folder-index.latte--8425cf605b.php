@@ -2,10 +2,10 @@
 
 use Latte\Runtime as LR;
 
-/** source: D:\Programming\Project\test\abiesoft\vendor\abiesoft\Http/../../../templates/page/editor/index.latte */
-final class Templatea474c440f3 extends Latte\Runtime\Template
+/** source: D:\Programming\Project\test\abiesoft\vendor\abiesoft\Http/../../../templates/page/folder/index.latte */
+final class Template8425cf605b extends Latte\Runtime\Template
 {
-	public const Source = 'D:\\Programming\\Project\\test\\abiesoft\\vendor\\abiesoft\\Http/../../../templates/page/editor/index.latte';
+	public const Source = 'D:\\Programming\\Project\\test\\abiesoft\\vendor\\abiesoft\\Http/../../../templates/page/folder/index.latte';
 
 	public const Blocks = [
 		['title' => 'blockTitle', 'css' => 'blockCss', 'content' => 'blockContent', 'js' => 'blockJs'],
@@ -97,8 +97,8 @@ final class Templatea474c440f3 extends Latte\Runtime\Template
                     <img src=\'';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 31 */;
 		echo '/assets/img/banner.png\'>
-                    <label>Page Editor</label>
-                    <div><small>Ini tampilan default dari page editor</small></div>
+                    <label>Page Folder</label>
+                    <div><small>Ini tampilan default dari page folder</small></div>
                 </div>
             </div>
         </div>

@@ -12,7 +12,9 @@
             <div class='card-header'>
                 <button id='back' class='left hide'><i class='las la-angle-left'></i></button>
                 <div class='label'>{$title}</div>
-                <button class='card-option-btn hide right'><i class='las la-ellipsis-v' data-model='buttonopsi'></i></button>
+                <div class='right flex-between'>
+                    <button class='card-option-btn mr-5' onClick='loadTabel([this.dataset.url,this.dataset.apikey,this.dataset.tb, this.dataset.csrf])' data-url='{$url}' data-apikey='{$apikey}' data-tb='users' data-csrf='{$csrf}'><i class="las la-redo-alt"></i></button>
+                </div>
             </div>
 
             <!-- Card Body -->

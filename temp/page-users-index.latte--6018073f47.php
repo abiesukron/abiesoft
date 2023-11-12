@@ -21,7 +21,7 @@ final class Template6018073f47 extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 78 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 80 */;
 		echo "\n";
 	}
 
@@ -71,12 +71,20 @@ final class Template6018073f47 extends Latte\Runtime\Template
                 <div class=\'label\'>';
 		echo LR\Filters::escapeHtmlText($title) /* line 14 */;
 		echo '</div>
-                <button class=\'card-option-btn hide right\'><i class=\'las la-ellipsis-v\' data-model=\'buttonopsi\'></i></button>
+                <div class=\'right flex-between\'>
+                    <button class=\'card-option-btn mr-5\' onClick=\'loadTabel([this.dataset.url,this.dataset.apikey,this.dataset.tb, this.dataset.csrf])\' data-url=\'';
+		echo LR\Filters::escapeHtmlAttr($url) /* line 16 */;
+		echo '\' data-apikey=\'';
+		echo LR\Filters::escapeHtmlAttr($apikey) /* line 16 */;
+		echo '\' data-tb=\'users\' data-csrf=\'';
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 16 */;
+		echo '\'><i class="las la-redo-alt"></i></button>
+                </div>
             </div>
 
             <!-- Card Body -->
 ';
-		if ($totalusers > 0) /* line 19 */ {
+		if ($totalusers > 0) /* line 21 */ {
 			echo '
                 <div class="card-tabel">
                     <div class=\'header\'>
@@ -86,17 +94,17 @@ final class Template6018073f47 extends Latte\Runtime\Template
                         </div>
                         <div>
                             <button class="btn btn-biru" onClick="window.location.href=this.dataset.url" data-url="';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 28 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 30 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 28 */;
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 30 */;
 			echo '/users/add"><i class="las la-plus"></i><span>Buat Users</span></button>
                         </div>
                     </div>
                     <div class="tabel">
                         <div class=\'search\'><i class="las la-search"></i><input placeholder=\'Cari user ..\' id=\'search\' data-url=\'';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 32 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 34 */;
 			echo '\' data-apikey=\'';
-			echo LR\Filters::escapeHtmlAttr($apikey) /* line 32 */;
+			echo LR\Filters::escapeHtmlAttr($apikey) /* line 34 */;
 			echo '\' data-tb=\'users\'></div>
                         <div class=\'tabel-overflow\'>
                             <table>
@@ -123,20 +131,20 @@ final class Template6018073f47 extends Latte\Runtime\Template
                 </div>
 
 ';
-		} else /* line 57 */ {
+		} else /* line 59 */ {
 			echo '
                 <div class=\'card-body\'>
                     <div class=\'empty\'>
                         <div>
                             <img src=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 62 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($url)) /* line 64 */;
 			echo '/assets/img/banner.png\'>
                             <label>Belum ada users</label>
                             <div><small>Untuk sementara belum ada users yang bisa ditampilkan di halaman ini, untuk memulainya silahkan buat users pertama anda</small></div>
                             <div class=\'center my-40\'><button class=\'btn btn-biru\' onClick=\'window.location.href=this.dataset.url\' data-url=\'';
-			echo LR\Filters::escapeHtmlAttr($url) /* line 65 */;
+			echo LR\Filters::escapeHtmlAttr($url) /* line 67 */;
 			echo '/';
-			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 65 */;
+			echo LR\Filters::escapeHtmlAttr($sessionkey) /* line 67 */;
 			echo '/users/add\'>Buat Users</button></div>
                         </div>
                     </div>
@@ -154,7 +162,7 @@ final class Template6018073f47 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 78 */
+	/** {block js} on line 80 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -163,14 +171,14 @@ final class Template6018073f47 extends Latte\Runtime\Template
 
 		echo '<script src="/assets/jsa/users/index.js"></script>
 ';
-		if ($totalusers > 0) /* line 80 */ {
+		if ($totalusers > 0) /* line 82 */ {
 			echo '    <script>
     loadTabel([';
-			echo LR\Filters::escapeJs($url) /* line 82 */;
+			echo LR\Filters::escapeJs($url) /* line 84 */;
 			echo ',';
-			echo LR\Filters::escapeJs($apikey) /* line 82 */;
+			echo LR\Filters::escapeJs($apikey) /* line 84 */;
 			echo ',\'users\',';
-			echo LR\Filters::escapeJs($csrf) /* line 82 */;
+			echo LR\Filters::escapeJs($csrf) /* line 84 */;
 			echo ']);
     </script>
 ';
