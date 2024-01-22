@@ -924,3 +924,15 @@ function openOpsi (x) {
 function refresh () {
     console.log('ok');
 }
+
+
+
+
+function selectFor (x) {
+    let select = document.getElementById(x);
+    select.parentElement.innerHTML = `<span>`+select.children[0].innerHTML+`</span>`;
+    select.innerHTML = ``;
+    select.addEventListener('click', ()=>{
+        console.log(select);
+    });
+}

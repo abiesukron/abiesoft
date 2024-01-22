@@ -65,8 +65,8 @@
                             <span id="err_password"></span>
                         </div>                    
                     </div>
-
-
+                </div>
+                <div class='row'>
                     <div class='col-3'>
                         <div class="form-group">
                             <label for="jeniskelamin">Jenis Kelamin</label>
@@ -104,7 +104,17 @@
                     </div>
                 </div>
 
-                
+                <div class="form-group">
+                    <label for="usersid">Users</label>
+                    <select class="form-control" id="usersid" name="usersid">
+                        <option value="">Pilih Users</option>
+                        {foreach $users as $u}
+                            <option value="{$u->id}">{$u->nama}</option>
+                        {/foreach}
+                    </select>
+                    <span id="err_usersid"></span>
+                </div>
+
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <textarea class="form-control" id="alamat" name="alamat" placeholder="Alamat"></textarea>
@@ -157,4 +167,8 @@
     </div>
 </div>
 {/block}
-{block js}{/block}
+{block js}
+<script>
+    selectFor('usersid');
+</script>
+{/block}

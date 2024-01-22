@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use AbieSoft\Application\Http\Controller;
+use App\Models\Users;
 
 class FormController extends Controller
 {
@@ -11,6 +12,7 @@ class FormController extends Controller
     {
         $this->view('form/index', [
             'title' => 'Form Contoh',
+            'users' => Users::all()
         ]);
     }
 

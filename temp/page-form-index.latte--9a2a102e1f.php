@@ -21,7 +21,7 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
 		echo "\n";
 		$this->renderBlock('css', get_defined_vars()) /* line 3 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 4 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 160 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 170 */;
 	}
 
 
@@ -29,6 +29,11 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
 	{
 		extract($this->params);
 
+		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
+			foreach (array_intersect_key(['u' => '111'], $this->params) as $ʟ_v => $ʟ_l) {
+				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
+			}
+		}
 		$this->parentName = '../../main.latte';
 		return get_defined_vars();
 	}
@@ -131,8 +136,8 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
                             <span id="err_password"></span>
                         </div>                    
                     </div>
-
-
+                </div>
+                <div class=\'row\'>
                     <div class=\'col-3\'>
                         <div class="form-group">
                             <label for="jeniskelamin">Jenis Kelamin</label>
@@ -170,7 +175,25 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
                     </div>
                 </div>
 
-                
+                <div class="form-group">
+                    <label for="usersid">Users</label>
+                    <select class="form-control" id="usersid" name="usersid">
+                        <option value="">Pilih Users</option>
+';
+		foreach ($users as $u) /* line 111 */ {
+			echo '                            <option value="';
+			echo LR\Filters::escapeHtmlAttr($u->id) /* line 112 */;
+			echo '">';
+			echo LR\Filters::escapeHtmlText($u->nama) /* line 112 */;
+			echo '</option>
+';
+
+		}
+
+		echo '                    </select>
+                    <span id="err_usersid"></span>
+                </div>
+
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <textarea class="form-control" id="alamat" name="alamat" placeholder="Alamat"></textarea>
@@ -222,8 +245,12 @@ final class Template9a2a102e1f extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 160 */
+	/** {block js} on line 170 */
 	public function blockJs(array $ʟ_args): void
 	{
+		echo '<script>
+    selectFor(\'usersid\');
+</script>
+';
 	}
 }
