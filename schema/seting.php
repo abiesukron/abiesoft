@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Schema;
 
@@ -6,7 +6,7 @@ use AbieSoft\Application\Mysql\DB;
 use AbieSoft\Application\Mysql\Schema;
 use AbieSoft\Application\Utilities\Generate;
 
-class seting extends Schema 
+class seting extends Schema
 {
 
     public function buattabel()
@@ -28,16 +28,16 @@ class seting extends Schema
             'nama' => 'Registrasi',
             'keterangan' => 'Tampilkan registrasi di halaman login',
             'icon' => 'las la-user-plus',
-            'tampilkan' => '0'
+            'tampilkan' => '1'
         ]);
 
-        DB::terhubung()->input('seting', [
-            'id' => '3AvoHp30AhkE',
-            'nama' => 'Login Google',
-            'keterangan' => 'Tampilkan login dengan google di halaman login',
-            'icon' => 'lab la-google',
-            'tampilkan' => '0'
-        ]);
+        // DB::terhubung()->input('seting', [
+        //     'id' => '3AvoHp30AhkE',
+        //     'nama' => 'Login Google',
+        //     'keterangan' => 'Tampilkan login dengan google di halaman login',
+        //     'icon' => 'lab la-google',
+        //     'tampilkan' => '0'
+        // ]);
     }
 }
 $create = new seting();

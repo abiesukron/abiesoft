@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace AbieSoft\Application\Auth;
 
@@ -16,7 +16,7 @@ use Exception;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-class Authentication 
+class Authentication
 {
 
     protected $isLogin = false;
@@ -32,12 +32,13 @@ class Authentication
         return false;
     }
 
-    public function login () {
+    public function login()
+    {
         $controller = new Controller;
         $jwt = Cookies::lihat('ABIESOFT-SID');
         $registrasi = DB::terhubung()->toString('seting', 'tampilkan', '2JDeBas7ssP5');
         $google = "";
-        if($jwt != ""){
+        if ($jwt != "") {
             $email = JWT::decode($jwt, new Key(Config::envReader('WEB_TOKEN'), 'HS256'))->email;
             $user = $this->cariuser($email);
             return $controller->view('ingat', [
@@ -47,7 +48,7 @@ class Authentication
                 'registrasi' => $registrasi,
                 'csrf' => Generate::csrf()
             ]);
-        }else{
+        } else {
             return $controller->view('login', [
                 'registrasi' => $registrasi,
                 'google' => $google,
@@ -57,12 +58,13 @@ class Authentication
         }
     }
 
-    public function setLogin () {
-        if(Guard::FormChecker(Input::get('__token'))) {
+    public function setLogin()
+    {
+        if (Guard::FormChecker(Input::get('__token'))) {
             $email = Input::get('email');
             $user = $this->cariuser($email);
-            if($user){
-                if($user->psw == Generate::make(Input::get('psw'), $user->salt)){
+            if ($user) {
+                if ($user->psw == Generate::make(Input::get('psw'), $user->salt)) {
                     $dir = __DIR__ . "/../../../" . Config::envReader('PUBLIC_FOLDER') . "/assets/storage/" . $user->id;
                     if (!file_exists($dir)) {
                         mkdir($dir, 0777, false);
@@ -87,36 +89,36 @@ class Authentication
                     $jwtseting = JWT::encode($seting, Config::envReader('WEB_TOKEN'), 'HS256');
                     Cookies::simpan('ABIESOFT-SETING', $jwtseting);
                     die('Berhasil');
-                }else{
+                } else {
                     // Salah Password
                     $user = $this->cariuser($email);
 
-                    if($user){
+                    if ($user) {
                         $payload = [
                             'email' => $email
                         ];
                         $jwt = JWT::encode($payload, Config::envReader('WEB_TOKEN'), 'HS256');
                         Cookies::simpan('ABIESOFT-RESET', $jwt);
                         die($jwt);
-                    }else{
-                        die('Login gagal');        
+                    } else {
+                        die('Login gagal');
                     }
-
                 }
-            }else{
+            } else {
                 // User tidak ditemukan
-                die('Login gagal');    
+                die('Login gagal');
             }
-        }else{
+        } else {
             // Token expire
             die('Token Expire');
         }
     }
 
-    public function registrasi () {
+    public function registrasi()
+    {
         $registrasi = DB::terhubung()->toString('seting', 'tampilkan', '2JDeBas7ssP5');
         $google = "";
-        if($registrasi == 0){
+        if ($registrasi == 0) {
             Lanjut::ke('/login');
         }
         $controller = new Controller;
@@ -127,19 +129,20 @@ class Authentication
         ]);
     }
 
-    public function setRegistrasi () {
+    public function setRegistrasi()
+    {
         $email = Input::get('email');
         $token = Input::get('__token');
         $psw = Input::get('psw');
 
         $registrasi = DB::terhubung()->toString('seting', 'tampilkan', '2JDeBas7ssP5');
-        if($registrasi == 0){
+        if ($registrasi == 0) {
             Lanjut::ke('/login');
         }
 
-        if(Guard::FormChecker($token)){
+        if (Guard::FormChecker($token)) {
             $cek = DB::terhubung()->cekdata('users', ['email' => Input::get('email')]);
-            if(!$cek){
+            if (!$cek) {
                 $salt = Generate::salt();
                 $password = Generate::make($psw, $salt);
                 $input = DB::terhubung()->input('users', [
@@ -151,24 +154,24 @@ class Authentication
                     'salt' => $salt,
                     'psw' => $password
                 ]);
-                if($input){
+                if ($input) {
                     die('Berhasil');
-                }else{
+                } else {
                     die('Registrasi Gagal');
                 }
-            }else{
-                die('Email <strong>'.$email.'</strong> sudah digunakan');
+            } else {
+                die('Email <strong>' . $email . '</strong> sudah digunakan');
             }
-        }else{
+        } else {
             die('Token Expire');
         }
-
     }
 
-    public function konfirmasi () {
+    public function konfirmasi()
+    {
         $jwt = Cookies::lihat('ABIESOFT-RESET');
         $controller = new Controller;
-        if($jwt != "" AND $jwt == Input::get('rid')){
+        if ($jwt != "" and $jwt == Input::get('rid')) {
             $google = "";
             $email = JWT::decode($jwt, new Key(Config::envReader('WEB_TOKEN'), 'HS256'))->email;
             Cookies::hapus('ABIESOFT-RESET');
@@ -176,31 +179,31 @@ class Authentication
             $kode = Generate::kode(6);
             $user = $this->cariuser($email);
 
-            if($user){
+            if ($user) {
                 $update = DB::terhubung()->perbarui('users', $user->id, ['kodereset' => $kode]);
-                if($update){
-                    if(Email::verifikasi($user->email, 'Kode Reset', $kode)){
+                if ($update) {
+                    if (Email::verifikasi($user->email, 'Kode Reset', $kode)) {
                         return $controller->view('konfirmasi', [
                             'emailuser' => $user->email,
                             'google' => $google,
                             'csrf' => Generate::csrf()
                         ]);
-                    }else{
+                    } else {
                         Lanjut::ke('/');
                     }
-                }else{
+                } else {
                     Lanjut::ke('/');
                 }
-            }else{
+            } else {
                 Lanjut::ke('/');
             }
- 
-        }else{
+        } else {
             Lanjut::ke('/');
         }
     }
 
-    public function setKonfirmasi () {
+    public function setKonfirmasi()
+    {
         $token = Input::get('__token');
         $email = Input::get('email');
         $kodereset = Input::get('kodereset');
@@ -209,21 +212,21 @@ class Authentication
         $salt = Generate::salt();
         $password = Generate::make($psw, $salt);
 
-        if(Guard::FormChecker($token)){
-            if($kodereset == $user->kodereset){
+        if (Guard::FormChecker($token)) {
+            if ($kodereset == $user->kodereset) {
                 $simpan = DB::terhubung()->perbarui('users', $user->id, [
                     'salt' => $salt,
                     'psw' => $password
                 ]);
-                if($simpan){
+                if ($simpan) {
                     die('Berhasil');
-                }else{
+                } else {
                     die('Gagal memperbarui password');
                 }
-            }else{
+            } else {
                 die('Gagal memperbarui password');
             }
-        }else{
+        } else {
             die('Token Expire');
         }
     }
@@ -242,9 +245,9 @@ class Authentication
                     if ($user->sessionid == $sessionid) {
                         $this->isLogin = true;
                     } else {
-                        if($ingat == "on"){
+                        if ($ingat == "on") {
                             $this->isLogin = false;
-                        }else{
+                        } else {
                             Cookies::hapus('ABIESOFT-SID');
                             $this->isLogin = false;
                         }
@@ -264,11 +267,11 @@ class Authentication
     public function logout()
     {
         session_destroy();
-        if(Cookies::ada('ABIESOFT-SID')){
+        if (Cookies::ada('ABIESOFT-SID')) {
             $jwt = Cookies::lihat('ABIESOFT-SID');
             $email = JWT::decode($jwt, new Key(Config::envReader('WEB_TOKEN'), 'HS256'))->email;
             $ingat = JWT::decode($jwt, new Key(Config::envReader('WEB_TOKEN'), 'HS256'))->ingat;
-            if($ingat == "on"){
+            if ($ingat == "on") {
                 $payloadingat = [
                     'email' => $email,
                     'sessionid' => '',
@@ -278,12 +281,12 @@ class Authentication
                 Cookies::simpan('ABIESOFT-SID', $jwtingat);
                 $this->isLogin = false;
                 Lanjut::ke('/');
-            }else{
+            } else {
                 Cookies::hapus('ABIESOFT-SID');
                 $this->isLogin = false;
                 Lanjut::ke('/');
             }
-        }else{
+        } else {
             Lanjut::ke('/');
         }
     }
@@ -347,10 +350,10 @@ class Authentication
 
     public function getPhoto()
     {
-        $file = __DIR__."/../../../".Config::envReader('PUBLIC_FOLDER').$this->userData('photo');
-        if(file_exists($file)){
+        $file = __DIR__ . "/../../../" . Config::envReader('PUBLIC_FOLDER') . $this->userData('photo');
+        if (file_exists($file)) {
             return $this->userData('photo');
-        }else{
+        } else {
             return '/assets/img/default.png';
         }
     }
@@ -387,93 +390,97 @@ class Authentication
         Profile
     */
 
-    public function profile ($id) {
-        if(!$this->isLogin()){
+    public function profile($id)
+    {
+        if (!$this->isLogin()) {
             Lanjut::ke('/');
         }
         $controller = new Controller;
-        if($id == "@".$this->userData('username')){
+        if ($id == "@" . $this->userData('username')) {
             return $controller->view('profile', [
                 'title' => 'Profile',
                 'id' => $this->userData('id')
-            ]);   
+            ]);
         }
         Lanjut::ke("/");
     }
 
-    public function setProfile () {
-        if(!$this->isLogin()){
+    public function setProfile()
+    {
+        if (!$this->isLogin()) {
             Lanjut::ke('/');
         }
-        
+
         $token = Input::get('__token');
 
-        if(Guard::FormChecker($token)){
+        if (Guard::FormChecker($token)) {
             return $this->emailCheck();
-        }else{
+        } else {
             die('Token Expire');
         }
     }
 
-    protected function emailCheck() {
+    protected function emailCheck()
+    {
         $email = Input::get('email');
         $namafile = Input::file('photo', 'name');
         $authemail = $this->userData('email');
         $authid = $this->userData('id');
 
-        if($email != $authemail){
+        if ($email != $authemail) {
             $cekemail = DB::terhubung()->query("SELECT email, id FROM users WHERE email = '{$email}' AND id != '{$authid}' ")->hitung();
-            if(!$cekemail){
-                if($namafile) {
+            if (!$cekemail) {
+                if ($namafile) {
                     return $this->adafile($authid);
-                }else{
+                } else {
                     return $this->tanpafile($authid);
                 }
-            }else{
-                die('Email <b>'.$email.'</b> Sudah Ada');
+            } else {
+                die('Email <b>' . $email . '</b> Sudah Ada');
             }
-        }else {
-            if($namafile) {
+        } else {
+            if ($namafile) {
                 return $this->adafile($authid);
-            }else{
+            } else {
                 return $this->tanpafile($authid);
             }
         }
     }
 
-    protected function adafile($authid) {
+    protected function adafile($authid)
+    {
         $tipe = pathinfo(Input::file('photo', 'name'), PATHINFO_EXTENSION);
         $tmpName = Input::file('photo', 'tmp_name');
         $namafile = Input::file('photo', 'name');
         $ukuran = Input::file('photo', 'size');
-        $namabaru = date('YmdHis')."_".str_replace(" ","_",$namafile);
+        $namabaru = date('YmdHis') . "_" . str_replace(" ", "_", $namafile);
         $nama = Input::get('nama');
         $email = Input::get('email');
         $nohp = Input::get('nohp');
         $psw = Input::get('psw');
         $dataurl = Input::get('__url');
-        if(Metafile::approver($tipe, $namafile, $ukuran) == "image") {
-            $folder = __DIR__.'/../../../'.Config::envReader('PUBLIC_FOLDER').'/assets/storage/'.$authid.'/pp/';
-            if(!file_exists($folder)){
+        if (Metafile::approver($tipe, $namafile, $ukuran) == "image") {
+            $folder = __DIR__ . '/../../../' . Config::envReader('PUBLIC_FOLDER') . '/assets/storage/' . $authid . '/pp/';
+            if (!file_exists($folder)) {
                 mkdir($folder, 0777);
             }
-            $filebaru = $folder.$namabaru;
+            $filebaru = $folder . $namabaru;
             $upload = move_uploaded_file($tmpName, $filebaru);
-            if($upload){
-                if($psw == ""){
+            if ($upload) {
+                if ($psw == "") {
                     $user = DB::terhubung()->perbarui('users', $authid, [
                         'nama' => $nama,
                         'email' => $email,
                         'nohp' => $nohp,
-                        'photo' => '/assets/storage/'.$authid.'/pp/'.$namabaru,
+                        'photo' => '/assets/storage/' . $authid . '/pp/' . $namabaru,
                         'diupdate' => date('Y-m-d H:i:s')
                     ]);
-                    if($user){
-                        die('Photo|'.$dataurl.'/assets/storage/'.$authid.'/pp/'.$namabaru);
-                    }else{
+                    if ($user) {
+                        die('Photo|' . $dataurl . '/assets/storage/' . $authid . '/pp/' . $namabaru);
+                    } else {
                         die('Gagal memperbarui user');
                     }
-                }else{
+                } else {
                     $salt = Generate::salt();
                     $user = DB::terhubung()->perbarui('users', $authid, [
                         'nama' => $nama,
@@ -481,41 +488,42 @@ class Authentication
                         'nohp' => $nohp,
                         'psw' => Generate::make($psw, $salt),
                         'salt' => $salt,
-                        'photo' => '/assets/storage/'.$authid.'/pp/'.$namabaru,
+                        'photo' => '/assets/storage/' . $authid . '/pp/' . $namabaru,
                         'diupdate' => date('Y-m-d H:i:s')
                     ]);
-                    if($user){
-                        die('Photo|'.$dataurl.'/assets/storage/'.$authid.'/pp/'.$namabaru);
-                    }else{
+                    if ($user) {
+                        die('Photo|' . $dataurl . '/assets/storage/' . $authid . '/pp/' . $namabaru);
+                    } else {
                         die('Gagal memperbarui user');
                     }
                 }
-            }else{
+            } else {
                 die('Upload photo gagal');
             }
-        }else{
+        } else {
             die(Metafile::approver($tipe, $namafile, $ukuran));
         }
     }
 
-    protected function tanpafile($authid) {
+    protected function tanpafile($authid)
+    {
         $nama = Input::get('nama');
         $email = Input::get('email');
         $nohp = Input::get('nohp');
         $psw = Input::get('psw');
-        if($psw == ""){
+        if ($psw == "") {
             $user = DB::terhubung()->perbarui('users', $authid, [
                 'nama' => $nama,
                 'email' => $email,
                 'nohp' => $nohp,
                 'diupdate' => date('Y-m-d H:i:s')
             ]);
-            if($user){
+            if ($user) {
                 die('Berhasil');
-            }else{
+            } else {
                 die('Gagal memperbarui user');
             }
-        }else{
+        } else {
             $salt = Generate::salt();
             $user = DB::terhubung()->perbarui('users', $authid, [
                 'nama' => $nama,
@@ -525,16 +533,17 @@ class Authentication
                 'salt' => $salt,
                 'diupdate' => date('Y-m-d H:i:s')
             ]);
-            if($user){
+            if ($user) {
                 die('Berhasil');
-            }else{
+            } else {
                 die('Gagal memperbarui user');
             }
         }
     }
 
-    public function dropProfile () {
-        if(!$this->isLogin()){
+    public function dropProfile()
+    {
+        if (!$this->isLogin()) {
             Lanjut::ke('/');
         }
 
@@ -542,78 +551,80 @@ class Authentication
         $token = Input::get('__token');
         $auth = new Authentication;
 
-        if(Guard::FormChecker($token)){
-            if($auth->getID() == $id){
-                $hapus = DB::terhubung()->hapus('users', ['id','=',$id]);
-                if($hapus){
+        if (Guard::FormChecker($token)) {
+            if ($auth->getID() == $id) {
+                $hapus = DB::terhubung()->hapus('users', ['id', '=', $id]);
+                if ($hapus) {
                     die('Berhasil');
-                }else{
+                } else {
                     die('Gagal menghapus data');
                 }
-            }else{
+            } else {
                 die('Anda tidak diijinkan menghapus data');
             }
-        }else{
+        } else {
             die('Token Expire');
         }
     }
 
-    public function photoProfile () {
+    public function photoProfile()
+    {
         $token = Input::get('__token');
-        if(Guard::FormChecker($token)){
+        if (Guard::FormChecker($token)) {
             $tipe = pathinfo(Input::file('photo', 'name'), PATHINFO_EXTENSION);
             $tmpName = Input::file('photo', 'tmp_name');
             $namafile = Input::file('photo', 'name');
             $ukuran = Input::file('photo', 'size');
-            $namabaru = date('YmdHis')."_".str_replace(" ","_",$namafile);
-            if(Metafile::approver($tipe, $namafile, $ukuran) == "image") {
-                $folder = __DIR__.'/../../../'.Config::envReader('PUBLIC_FOLDER').'/assets/storage/'.$this->getID().'/pp/';
-                if(!file_exists($folder)){
+            $namabaru = date('YmdHis') . "_" . str_replace(" ", "_", $namafile);
+            if (Metafile::approver($tipe, $namafile, $ukuran) == "image") {
+                $folder = __DIR__ . '/../../../' . Config::envReader('PUBLIC_FOLDER') . '/assets/storage/' . $this->getID() . '/pp/';
+                if (!file_exists($folder)) {
                     mkdir($folder, 0777);
                 }
-                $filebaru = $folder.$namabaru;
+                $filebaru = $folder . $namabaru;
                 $upload = move_uploaded_file($tmpName, $filebaru);
-                if($upload){
+                if ($upload) {
                     $user = DB::terhubung()->perbarui('users', $this->getID(), [
-                        'photo' => '/assets/storage/'.$this->getID().'/pp/'.$namabaru,
+                        'photo' => '/assets/storage/' . $this->getID() . '/pp/' . $namabaru,
                         'diupdate' => date('Y-m-d H:i:s')
                     ]);
-                    if($user){
-                        die('photo|/assets/storage/'.$this->getID().'/pp/'.$namabaru);
-                    }else{
+                    if ($user) {
+                        die('photo|/assets/storage/' . $this->getID() . '/pp/' . $namabaru);
+                    } else {
                         die('Gagal memperbarui user');
                     }
-                }else{
+                } else {
                     die('Upload photo gagal');
                 }
-            }else{
+            } else {
                 die(Metafile::approver($tipe, $namafile, $ukuran));
             }
-        }else{
+        } else {
             die('Token Expire');
         }
     }
 
-    public function hapusPhotoProfile () {
+    public function hapusPhotoProfile()
+    {
         $token = Input::get('__token');
         $photo = Input::get('__photo');
-        if(Guard::FormChecker($token)){
-            $file = __DIR__.'/../../../'.Config::envReader('PUBLIC_FOLDER').$photo;
-            if(file_exists($file)){
+        if (Guard::FormChecker($token)) {
+            $file = __DIR__ . '/../../../' . Config::envReader('PUBLIC_FOLDER') . $photo;
+            if (file_exists($file)) {
                 $default = '/assets/img/default.png';
                 $perbarui = DB::terhubung()->perbarui('users', $this->getID(), ['photo' => $default]);
-                if($perbarui){
-                    if($photo != $default){
+                if ($perbarui) {
+                    if ($photo != $default) {
                         unlink($file);
                     }
-                    echo "Berhasil|".$default;
-                }else{
-                    die('Gagal menghapus photo');    
+                    echo "Berhasil|" . $default;
+                } else {
+                    die('Gagal menghapus photo');
                 }
-            }else{
-                die('Gagal menghapus photo');    
+            } else {
+                die('Gagal menghapus photo');
             }
-        }else{
+        } else {
             die('Token Expire');
         }
     }
@@ -624,8 +635,9 @@ class Authentication
         Seting
     */
 
-    public function seting () {
-        if(!$this->isLogin()){
+    public function seting()
+    {
+        if (!$this->isLogin()) {
             Lanjut::ke('/');
         }
         $controller = new Controller;
@@ -650,45 +662,49 @@ class Authentication
     }
 
 
-    public function setSeting () {
+    public function setSeting()
+    {
         $token = Input::get('__token');
         $model = Input::get('__model');
-        if(Guard::FormChecker($token)){
-            if($this->getGrupID() == "dpYCGB9FFeht"){
+        if (Guard::FormChecker($token)) {
+            if ($this->getGrupID() == "dpYCGB9FFeht") {
                 return match ($model) {
                     'file' => $this->setSetingFile(),
                     'email' => $this->setSetingEmail(),
-                     default => $this->setError(),
+                    default => $this->setError(),
                 };
-            }else{
-                die('Anda tidak diijinkan');   
+            } else {
+                die('Anda tidak diijinkan');
             }
-        }else{
+        } else {
             die('Token Expire');
         }
     }
 
-    protected function setSetingFile () {
-        Config::envChanger('FILE_TYPE_IMAGE',Input::get('tipeimage'));
-        Config::envChanger('FILE_TYPE_MEDIA',Input::get('tipemedia'));
-        Config::envChanger('FILE_TYPE_DOKUMEN',Input::get('tipedokumen'));
-        Config::envChanger('FILE_SIZE_IMAGE',Input::get('ukuranimage'));
-        Config::envChanger('FILE_SIZE_MEDIA',Input::get('ukuranmedia'));
-        Config::envChanger('FILE_SIZE_DOKUMEN',Input::get('ukurandokumen'));
+    protected function setSetingFile()
+    {
+        Config::envChanger('FILE_TYPE_IMAGE', Input::get('tipeimage'));
+        Config::envChanger('FILE_TYPE_MEDIA', Input::get('tipemedia'));
+        Config::envChanger('FILE_TYPE_DOKUMEN', Input::get('tipedokumen'));
+        Config::envChanger('FILE_SIZE_IMAGE', Input::get('ukuranimage'));
+        Config::envChanger('FILE_SIZE_MEDIA', Input::get('ukuranmedia'));
+        Config::envChanger('FILE_SIZE_DOKUMEN', Input::get('ukurandokumen'));
         die("Berhasil");
     }
 
-    protected function setSetingEmail () {
-        Config::envChanger('EMAIL_SMTP',Input::get('smtp'));
-        Config::envChanger('EMAIL_AKUN',Input::get('akun'));
-        Config::envChanger('EMAIL_PASSWORD',Input::get('password'));
-        Config::envChanger('EMAIL_PORT',Input::get('port'));
-        Config::envChanger('EMAIL_PENGIRIM',Input::get('tampilanemail'));
-        Config::envChanger('EMAIL_NAMA_PENGIRIM',Input::get('pengirim'));
+    protected function setSetingEmail()
+    {
+        Config::envChanger('EMAIL_SMTP', Input::get('smtp'));
+        Config::envChanger('EMAIL_AKUN', Input::get('akun'));
+        Config::envChanger('EMAIL_PASSWORD', Input::get('password'));
+        Config::envChanger('EMAIL_PORT', Input::get('port'));
+        Config::envChanger('EMAIL_PENGIRIM', Input::get('tampilanemail'));
+        Config::envChanger('EMAIL_NAMA_PENGIRIM', Input::get('pengirim'));
         die("Berhasil");
     }
 
-    protected function setError () {
+    protected function setError()
+    {
         die('Gagal menyimpan perubahan');
     }
 
@@ -704,7 +720,4 @@ class Authentication
 
         Google Authentication
     **/
-
-    
-
 }

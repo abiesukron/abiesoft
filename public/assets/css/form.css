@@ -17,47 +17,47 @@ form {
     margin-bottom: 0px;
 }
 
-.form-group > label,
-.form-group > input,
-.form-group > select,
-.form-group > textarea,
-.form-group > iframe,
-.form-group > span {
+.form-group>label,
+.form-group>input,
+.form-group>select,
+.form-group>textarea,
+.form-group>iframe,
+.form-group>span {
     width: 100%;
     display: block;
 }
 
-.form-group > textarea {
+.form-group>textarea {
     height: 0px;
     resize: none;
 }
 
-.form-group > textarea::-webkit-scrollbar,
-.form-group > textarea::-webkit-scrollbar-thumb,
-.form-group > textarea::-webkit-scrollbar-track {
+.form-group>textarea::-webkit-scrollbar,
+.form-group>textarea::-webkit-scrollbar-thumb,
+.form-group>textarea::-webkit-scrollbar-track {
     background: none;
     outline: none;
     width: 0;
     border: 0;
 }
 
-.form-group > label {
+.form-group>label {
     display: block;
     font-size: 11pt;
     font-weight: 400;
 }
 
-.form-group > label > button{
+.form-group>label>button {
     font-size: 8pt;
     padding: 5px 10px;
     border-radius: 3px;
 }
 
-.form-group > .form-control,
-.form-group > input.form-control,
-.form-group > select.form-control,
-.form-group > textarea.form-control,
-.form-group > iframe {
+.form-group>.form-control,
+.form-group>input.form-control,
+.form-group>select.form-control,
+.form-group>textarea.form-control,
+.form-group>iframe {
     font-size: 12pt;
     padding: 10px 12px;
     margin: 8px 0;
@@ -65,10 +65,10 @@ form {
     background-color: var(--abu);
     border: 1px solid var(--abu-hover);
     font-family: Roboto;
-} 
+}
 
-.form-group > .form-control.left,
-.form-group > input.form-control.left {
+.form-group>.form-control.left,
+.form-group>input.form-control.left {
     font-size: 12pt;
     padding: 10px 12px 10px 40px;
     margin: 8px 0;
@@ -78,7 +78,7 @@ form {
     font-family: Roboto;
 }
 
-.form-group > input[type='file'] {
+.form-group>input[type='file'] {
     border: 1px solid #000;
     position: absolute;
     margin-top: 10px;
@@ -87,33 +87,33 @@ form {
     cursor: pointer;
 }
 
-.form-group > input[type='date']::-webkit-calendar-picker-indicator {
+.form-group>input[type='date']::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
 
-.form-group > input[data-item='password'] {
+.form-group>input[data-item='password'] {
     padding-right: 47px;
 }
 
-.form-group > i.form-right {
+.form-group>i.form-right {
     position: absolute;
     right: 12px;
     margin-top: 17px;
     font-size: 16pt;
 }
 
-.form-group > i.form-left {
+.form-group>i.form-left {
     position: absolute;
     left: 12px;
     margin-top: 17px;
     font-size: 16pt;
 }
 
-.form-group > span {
+.form-group>span {
     display: none;
 }
 
-.form-group > .btnopsi {
+.form-group>.btnopsi {
     margin: 5px 0;
     padding: 5px 0;
     display: flex;
@@ -122,16 +122,16 @@ form {
     overflow: auto;
 }
 
-.form-group > .btnopsi::-webkit-scrollbar,
-.form-group > .btnopsi::-webkit-scrollbar-track,
-.form-group > .btnopsi::-webkit-scrollbar-thumb {
+.form-group>.btnopsi::-webkit-scrollbar,
+.form-group>.btnopsi::-webkit-scrollbar-track,
+.form-group>.btnopsi::-webkit-scrollbar-thumb {
     width: 0;
     height: 0;
     border: 0;
 }
 
-.form-group > .btnopsi > button,
-.form-group > .btnopsi > select {
+.form-group>.btnopsi>button,
+.form-group>.btnopsi>select {
     font-size: 12pt;
     padding: 4px 10px;
     border-radius: 4px;
@@ -145,17 +145,17 @@ form {
     font-weight: 400;
 }
 
-.form-group > .btnopsi > button {
+.form-group>.btnopsi>button {
     font-weight: 400;
 }
 
-.form-group > .between {
+.form-group>.between {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.form-group > .between > .form-control {
+.form-group>.between>.form-control {
     position: relative;
     display: flex;
     justify-content: left;
@@ -163,11 +163,11 @@ form {
     padding: 5px 0;
 }
 
-.form-group > .between > .form-control > .switch {
+.form-group>.between>.form-control>.switch {
     position: relative;
 }
 
-.form-group > .between > .form-control > .switch > .block {
+.form-group>.between>.form-control>.switch>.block {
     display: block;
     width: 30px;
     height: 20px;
@@ -176,7 +176,7 @@ form {
     background-color: var(--abu);
 }
 
-.form-group > .between > .form-control > .switch > .ceklis {
+.form-group>.between>.form-control>.switch>.ceklis {
     width: 20px;
     height: 20px;
     background-color: var(--abiesoft);
@@ -187,17 +187,17 @@ form {
     transition: right .15s;
 }
 
-.form-group > .between > .form-control > .switch > .ceklis.active {
+.form-group>.between>.form-control>.switch>.ceklis.active {
     right: 0;
     transition: right .15s;
 }
 
-.form-group > .between > .form-control > .switch > input[type="checkbox"] {
+.form-group>.between>.form-control>.switch>input[type="checkbox"] {
     position: absolute;
     z-index: 0;
 }
 
-.form-group > .between > .form-control > label {
+.form-group>.between>.form-control>label {
     position: absolute;
     margin-left: 10px;
     cursor: pointer;
@@ -205,7 +205,7 @@ form {
     z-index: 20;
 }
 
-.form-group > .form-control.tag > div > .item {
+.form-group>.form-control.tag>div>.item {
     float: left;
     margin: 5px;
     padding: 8px;
@@ -217,7 +217,7 @@ form {
     border-radius: 5px;
 }
 
-.form-group > .form-control.tag > div > .item > button {
+.form-group>.form-control.tag>div>.item>button {
     padding: 4px;
     display: flex;
     justify-content: center;
@@ -227,11 +227,11 @@ form {
     font-size: 8pt;
 }
 
-.form-group > .form-control.tag > input {
+.form-group>.form-control.tag>input {
     width: 100px;
     background-color: var(--abu);
-    font-size: 12pt; 
-    padding: 8px;   
+    font-size: 12pt;
+    padding: 8px;
     font-family: Roboto;
     margin: 5px;
 }
@@ -244,23 +244,23 @@ form {
     cursor: pointer;
 }
 
-.form-login > .form-group {
+.form-login>.form-group {
     position: relative;
-    margin: 0;    
+    margin: 0;
 }
 
-.form-login > .form-group > label {
+.form-login>.form-group>label {
     display: none;
     margin: 0;
     padding: 0;
 }
 
-.form-login > .form-group > span {
+.form-login>.form-group>span {
     margin: 0;
     padding: 0;
 }
 
-.form-login > .form-group > i {
+.form-login>.form-group>i {
     margin-top: 10px;
 }
 
@@ -269,11 +269,11 @@ form {
     margin: 0;
 }
 
-.form-img > .cover {
+.form-img>.cover {
     width: 100%;
 }
 
-.form-img > .cover > img {
+.form-img>.cover>img {
     width: 100%;
 }
 
@@ -282,7 +282,7 @@ form {
     margin: 0;
 }
 
-.form-img > .center > .cover {
+.form-img>.center>.cover {
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -292,7 +292,7 @@ form {
     overflow: hidden;
 }
 
-.form-img > .center > .cover > img {
+.form-img>.center>.cover>img {
     width: 130px;
     height: 130px;
     object-fit: cover;
@@ -303,47 +303,47 @@ form {
     Jika Error
 */
 
-.form-group.is-error > input,
-.form-group.is-error > select,
-.form-group.is-error > textarea,
-.form-group.is-error > iframe,
-.form-group.is-error > .form-control,
-.form-group.is-error > .btnopsi > button,
-.form-group.is-error > .btnopsi > select,
-.form-login > .form-group.is-error > input {
+.form-group.is-error>input,
+.form-group.is-error>select,
+.form-group.is-error>textarea,
+.form-group.is-error>iframe,
+.form-group.is-error>.form-control,
+.form-group.is-error>.btnopsi>button,
+.form-group.is-error>.btnopsi>select,
+.form-login>.form-group.is-error>input {
     background-color: var(--merah-background);
     border: 1px solid var(--merah);
 }
 
-.form-group.is-error > .form-control > input {
+.form-group.is-error>.form-control>input {
     background-color: var(--merah-hover);
     border: none;
 }
 
-.form-group.is-error > input::placeholder,
-.form-group.is-error > select::placeholder,
-.form-group.is-error > textarea::placeholder {
+.form-group.is-error>input::placeholder,
+.form-group.is-error>select::placeholder,
+.form-group.is-error>textarea::placeholder {
     color: var(--merah-placeholder);
 }
 
-.form-group.is-error > input,
-.form-group.is-error > select,
-.form-group.is-error > textarea,
-.form-group.form-group.is-error > label,
-.form-group.form-group.is-error > span,
-.form-group.form-group.is-error > i,
-.form-group.is-error > .btnopsi > button,
-.form-group.is-error > .btnopsi > select {
+.form-group.is-error>input,
+.form-group.is-error>select,
+.form-group.is-error>textarea,
+.form-group.form-group.is-error>label,
+.form-group.form-group.is-error>span,
+.form-group.form-group.is-error>i,
+.form-group.is-error>.btnopsi>button,
+.form-group.is-error>.btnopsi>select {
     color: var(--merah);
 }
 
-.form-login > .form-group.is-error > span,
-.form-group.is-error > span {
+.form-login>.form-group.is-error>span,
+.form-group.is-error>span {
     display: block;
     font-size: 10pt;
 }
 
-.form-login > .form-group.is-error > span > span {
+.form-login>.form-group.is-error>span>span {
     position: absolute;
     right: 12px;
     margin-top: -38px;
@@ -352,7 +352,7 @@ form {
     align-items: center;
 }
 
-.form-login > .form-group.is-error > span > span > i {
+.form-login>.form-group.is-error>span>span>i {
     font-size: 16pt;
 }
 
@@ -374,8 +374,12 @@ form {
     text-align: center;
 }
 
-.form-btn-center > button {
+.form-btn-center>button {
     margin: 0 auto;
+}
+
+.form-btn-flex>div {
+    padding: 10px 0;
 }
 
 .btn {
@@ -390,11 +394,11 @@ form {
     align-items: center;
 }
 
-.form-btn > .btn {
+.form-btn>.btn {
     margin-top: 8px;
 }
 
-.form-btn > .btn:first-child {
+.form-btn>.btn:first-child {
     margin-top: 0;
 }
 
@@ -403,6 +407,7 @@ form {
     border: none;
     font-weight: 500;
     color: inherit;
+    padding: 10px 0;
 }
 
 .btn-clean:hover {
@@ -427,7 +432,7 @@ form {
     color: var(--putih);
 }
 
-.btn > i {
+.btn>i {
     font-size: 16pt;
     margin-right: 10px;
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace AbieSoft\Application;
 
@@ -7,14 +7,14 @@ use AbieSoft\Application\Http\Controller;
 use AbieSoft\Application\Http\Lanjut;
 use AbieSoft\Application\Http\Route;
 
-class LoadSys 
+class LoadSys
 {
-    
-    public function start() 
+
+    public function start()
     {
         Route::getRoute();
         $route = Route::currentPage();
-        
+
         $method = $route['method'];
         $path = $route['path'];
         $callback = $route['callback'];
@@ -47,7 +47,6 @@ class LoadSys
             $controller = new Controller;
             $controller->view(403);
         }
-
     }
 
     public function run(string $method, string $path, string $id = "", array $callback)
@@ -58,5 +57,4 @@ class LoadSys
             || $method == "get" && str_ends_with($path, "/{id}"))
             ? $controller->$function($id) : $controller->$function();
     }
-
 }

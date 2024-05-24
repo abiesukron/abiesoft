@@ -10,7 +10,7 @@
     --eee: #eee;
     --bd: #bdbdbd;
     --putih: #ffffff;
-    --transparent: rgba(255, 255, 255,.4);
+    --transparent: rgba(255, 255, 255, .4);
     --hitam: #202124;
     --font: #5f6368;
     --font-disable: #a7a9ac;
@@ -39,7 +39,10 @@
     box-sizing: border-box;
 }
 
-html { font-size: 12pt; font-weight: 400; }
+html {
+    font-size: 12pt;
+    font-weight: 400;
+}
 
 body {
     font-family: Roboto, sans-serif;
@@ -60,10 +63,17 @@ body {
     align-items: center;
 }
 
-.bold { font-weight: 500; }
+.bold {
+    font-weight: 500;
+}
 
-.text-center { text-align: center; }
-.gray { color: var(--font-disable); }
+.text-center {
+    text-align: center;
+}
+
+.gray {
+    color: var(--font-disable);
+}
 
 .art {
     position: relative;
@@ -72,7 +82,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-  
+
 .gradient {
     position: fixed;
     display: block;
@@ -88,19 +98,38 @@ body {
     filter: grayscale(1);
 }
 
-.mx-auto{ margin-left: auto; margin-right: auto; }
-.my-40 { margin-top: 40px; margin-bottom: 40px; }
-.my-20 { margin-top: 20px; margin-bottom: 20px; }
-.mr-5 { margin-right: 5px; }
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
 
-a, 
+.my-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.my-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+a,
 button,
 select {
     cursor: pointer;
 }
 
-.cover { width: 100%; }
-.cover > img { width: 100%; }
+.cover {
+    width: 100%;
+}
+
+.cover>img {
+    width: 100%;
+}
 
 a {
     color: var(--hitam);
@@ -130,7 +159,9 @@ h6 {
     font-weight: 500;
 }
 
-.clear { clear: both; }
+.clear {
+    clear: both;
+}
 
 .center {
     display: flex;
@@ -158,15 +189,41 @@ h6 {
     margin: 0 auto;
 }
 
-.single-4 { width: 400px; }
-.single-45 { width: 450px; }
-.single-5 { width: 500px; }
-.single-55 { width: 550px; }
-.single-6 { width: 600px; }
-.single-65 { width: 650px; }
-.single-7 { width: 700px; }
-.single-75 { width: 750px; }
-.single-8 { width: 800px; }
+.single-4 {
+    width: 400px;
+}
+
+.single-45 {
+    width: 450px;
+}
+
+.single-5 {
+    width: 500px;
+}
+
+.single-55 {
+    width: 550px;
+}
+
+.single-6 {
+    width: 600px;
+}
+
+.single-65 {
+    width: 650px;
+}
+
+.single-7 {
+    width: 700px;
+}
+
+.single-75 {
+    width: 750px;
+}
+
+.single-8 {
+    width: 800px;
+}
 
 .full {
     width: 100%;
@@ -175,6 +232,22 @@ h6 {
 .hide {
     opacity: 0;
     cursor: auto;
+}
+
+.pd-10 {
+    padding: 10px;
+}
+
+.pd-20 {
+    padding: 20px;
+}
+
+.pd-30 {
+    padding: 30px;
+}
+
+.pd-40 {
+    padding: 40px;
 }
 
 
@@ -206,16 +279,16 @@ h6 {
     min-height: 60vh;
 }
 
-.empty > div {
+.empty>div {
     text-align: center;
 }
 
-.empty > div > img{
+.empty>div>img {
     width: 80%;
     filter: grayscale(1);
 }
 
-.empty > div > label {
+.empty>div>label {
     display: block;
     font-weight: 500;
     font-size: 16pt;
@@ -238,13 +311,13 @@ navbar {
     background: none;
 }
 
-navbar > .brand {
+navbar>.brand {
     display: flex;
     justify-content: left;
     align-items: center;
 }
 
-navbar > .brand > .toggle-menu {
+navbar>.brand>.toggle-menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,27 +330,27 @@ navbar > .brand > .toggle-menu {
     margin-right: 10px;
 }
 
-navbar > .brand > .toggle-menu:hover,
-navbar > .brand > .toggle-menu:focus {
+navbar>.brand>.toggle-menu:hover,
+navbar>.brand>.toggle-menu:focus {
     background: var(--transparent);
 }
 
-navbar > .brand > .logo {
+navbar>.brand>.logo {
     background: none;
 }
 
-navbar > .brand > .logo > img {
+navbar>.brand>.logo>img {
     width: auto;
     height: 30px;
 }
 
-navbar > .user-info {
+navbar>.user-info {
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
-navbar > .user-info > .photo {
+navbar>.user-info>.photo {
     width: 50px;
     height: 50px;
     display: flex;
@@ -287,29 +360,29 @@ navbar > .user-info > .photo {
     background: none;
 }
 
-navbar > .user-info > .photo:hover,
-navbar > .user-info > .photo:focus {
+navbar>.user-info>.photo:hover,
+navbar>.user-info>.photo:focus {
     background: var(--transparent);
 }
 
-navbar > .user-info > .photo > div {
+navbar>.user-info>.photo>div {
     width: 40px;
     height: 40px;
     overflow: hidden;
     border-radius: 50%;
 }
 
-navbar > .user-info > .photo > div > img {
+navbar>.user-info>.photo>div>img {
     width: 40px;
     height: 40px;
     object-fit: cover;
 }
 
-navbar > .user-info > .menu {
+navbar>.user-info>.menu {
     display: none;
 }
 
-navbar > .user-info > .menu.active {
+navbar>.user-info>.menu.active {
     display: block;
     position: absolute;
     top: 75px;
@@ -317,14 +390,14 @@ navbar > .user-info > .menu.active {
     width: 365px;
     min-height: 200px;
     background: var(--putih);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     z-index: 50;
 }
 
-navbar > .user-info > .menu.active > .email {
+navbar>.user-info>.menu.active>.email {
     display: block;
     font-size: 11pt;
     font-weight: 500;
@@ -332,7 +405,7 @@ navbar > .user-info > .menu.active > .email {
     padding: 20px;
 }
 
-navbar > .user-info > .menu.active > .photo {
+navbar>.user-info>.menu.active>.photo {
     margin-left: auto;
     margin-right: auto;
     width: 80px;
@@ -341,13 +414,13 @@ navbar > .user-info > .menu.active > .photo {
     overflow: hidden;
 }
 
-navbar > .user-info > .menu.active > .photo > img{
+navbar>.user-info>.menu.active>.photo>img {
     width: 80px;
     height: 80px;
     object-fit: cover;
 }
 
-navbar > .user-info > .menu.active > .edit {
+navbar>.user-info>.menu.active>.edit {
     width: 25px;
     height: 25px;
     background: var(--putih);
@@ -361,17 +434,17 @@ navbar > .user-info > .menu.active > .edit {
     cursor: pointer;
 }
 
-navbar > .user-info > .menu.active > .edit:hover {
+navbar>.user-info>.menu.active>.edit:hover {
     background: var(--putih);
     color: var(--abiesoft);
 }
 
-navbar > .user-info > .menu.active > .edit > i{
+navbar>.user-info>.menu.active>.edit>i {
     font-size: 14pt;
     font-weight: 600;
 }
 
-navbar > .user-info > .menu.active > .nama {
+navbar>.user-info>.menu.active>.nama {
     display: block;
     font-size: 14pt;
     font-weight: 400;
@@ -379,7 +452,7 @@ navbar > .user-info > .menu.active > .nama {
     padding: 7px;
 }
 
-navbar > .user-info > .menu.active > button {
+navbar>.user-info>.menu.active>button {
     display: block;
     padding: 12px 25px;
     background: none;
@@ -392,18 +465,18 @@ navbar > .user-info > .menu.active > button {
     border: 1px solid var(--font);
 }
 
-navbar > .user-info > .menu.active > button:hover {
+navbar>.user-info>.menu.active>button:hover {
     background: var(--abiesoft-hover);
 }
 
-navbar > .user-info > .menu.active > .button-grup  {
+navbar>.user-info>.menu.active>.button-grup {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px 0;
 }
 
-navbar > .user-info > .menu.active > .button-grup > button {
+navbar>.user-info>.menu.active>.button-grup>button {
     width: 44%;
     padding: 20px;
     background: var(--abu);
@@ -412,21 +485,21 @@ navbar > .user-info > .menu.active > .button-grup > button {
     align-items: center;
 }
 
-navbar > .user-info > .menu.active > .button-grup > button:hover {
+navbar>.user-info>.menu.active>.button-grup>button:hover {
     background: var(--abu2-hover);
 }
 
-navbar > .user-info > .menu.active > .button-grup > button:first-child {
+navbar>.user-info>.menu.active>.button-grup>button:first-child {
     border-radius: 35px 5px 5px 35px;
     margin-right: 1px;
 }
 
-navbar > .user-info > .menu.active > .button-grup > button:last-child {
+navbar>.user-info>.menu.active>.button-grup>button:last-child {
     border-radius: 5px 35px 35px 5px;
     margin-left: 1px;
 }
 
-navbar > .user-info > .menu.active > .button-grup > button > i {
+navbar>.user-info>.menu.active>.button-grup>button>i {
     margin-right: 10px;
     font-size: 16pt;
 }
@@ -454,7 +527,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     overflow: hidden;
 }
 
-.sidebar.active > .block{
+.sidebar.active>.block {
     display: block;
     position: fixed;
     z-index: 100;
@@ -465,11 +538,11 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     background: rgba(0, 0, 0, .2);
 }
 
-.sidebar > .menu{
+.sidebar>.menu {
     left: -300px;
 }
 
-.sidebar.active > .menu{
+.sidebar.active>.menu {
     display: block;
     position: fixed;
     z-index: 100;
@@ -478,26 +551,26 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     bottom: 0;
     left: 0px;
     border-radius: 0 10px 10px 0;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     background: var(--putih);
     transition: all 5s;
 }
 
-.sidebar.active > .menu > .top {
+.sidebar.active>.menu>.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
 }
 
-.sidebar.active > .menu > .top > img {
+.sidebar.active>.menu>.top>img {
     width: auto;
     height: 30px;
 }
 
-.sidebar.active > .menu > .top > .close {
+.sidebar.active>.menu>.top>.close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -511,11 +584,11 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     height: 35px;
 }
 
-.sidebar.active > .menu > .top > .close:hover {
+.sidebar.active>.menu>.top>.close:hover {
     font-size: 16pt;
 }
 
-.sidebar.active > .menu > ul {
+.sidebar.active>.menu>ul {
     position: absolute;
     top: 70px;
     right: 0;
@@ -525,31 +598,31 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     overflow: auto;
 }
 
-.sidebar.active > .menu > ul::-webkit-scrollbar {
+.sidebar.active>.menu>ul::-webkit-scrollbar {
     width: 8px;
     background: none;
 }
 
-.sidebar.active > .menu > ul::-webkit-scrollbar-track {
+.sidebar.active>.menu>ul::-webkit-scrollbar-track {
     width: 8px;
     background: var(--abu);
     border-radius: 3px;
 }
 
-.sidebar.active > .menu > ul::-webkit-scrollbar-thumb {
+.sidebar.active>.menu>ul::-webkit-scrollbar-thumb {
     width: 8px;
     background: var(--abu-hover);
     border-radius: 3px;
 }
 
-.sidebar.active > .menu > ul > label {
+.sidebar.active>.menu>ul>label {
     display: block;
     font-weight: 500;
     margin: 20px 0px 10px 0;
     font-size: 10pt;
 }
 
-.sidebar.active > .menu > ul > li > a {
+.sidebar.active>.menu>ul>li>a {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -560,18 +633,18 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     margin: 5px 0;
 }
 
-.sidebar.active > .menu > ul > li > a > i {
+.sidebar.active>.menu>ul>li>a>i {
     margin-right: 8px;
     font-size: 16pt;
 }
 
-.sidebar.active > .menu > ul > li.active > a,
-.sidebar.active > .menu > ul > li > a:focus,
-.sidebar.active > .menu > ul > li > a:hover {
+.sidebar.active>.menu>ul>li.active>a,
+.sidebar.active>.menu>ul>li>a:focus,
+.sidebar.active>.menu>ul>li>a:hover {
     background: var(--abu);
 }
 
-.sidebar.active > .menu > ul > li > a.ic {
+.sidebar.active>.menu>ul>li>a.ic {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -582,25 +655,25 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     margin: 5px 0;
 }
 
-.sidebar.active > .menu > ul > li > a.ic > span > i {
+.sidebar.active>.menu>ul>li>a.ic>span>i {
     margin-right: 8px;
     font-size: 16pt;
 }
 
-.sidebar.active > .menu > ul > li > a.ic > i {
+.sidebar.active>.menu>ul>li>a.ic>i {
     font-size: 12pt;
 }
 
-.sidebar.active > .menu > ul > li > ul {
+.sidebar.active>.menu>ul>li>ul {
     display: none;
 }
 
-.sidebar.active > .menu > ul > li.active > ul {
+.sidebar.active>.menu>ul>li.active>ul {
     display: block;
     margin-left: 25px;
 }
 
-.sidebar.active > .menu > ul > li > ul > li > a{
+.sidebar.active>.menu>ul>li>ul>li>a {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -611,25 +684,25 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     margin-top: 5px;
 }
 
-.sidebar.active > .menu > ul > li > ul > li.active > a,
-.sidebar.active > .menu > ul > li > ul > li > a:focus,
-.sidebar.active > .menu > ul > li > ul > li > a:hover {
+.sidebar.active>.menu>ul>li>ul>li.active>a,
+.sidebar.active>.menu>ul>li>ul>li>a:focus,
+.sidebar.active>.menu>ul>li>ul>li>a:hover {
     background: var(--abu);
 }
 
-.sidebar.active > .menu > ul > li > ul > li > a > i {
+.sidebar.active>.menu>ul>li>ul>li>a>i {
     margin-right: 8px;
     font-size: 16pt;
 }
 
-.sidebar.active > .menu > .line {
+.sidebar.active>.menu>.line {
     position: absolute;
     right: 0;
     bottom: 70px;
     left: 0;
 }
 
-.sidebar.active > .menu > .bottom {
+.sidebar.active>.menu>.bottom {
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -640,8 +713,8 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     left: 0;
 }
 
-.sidebar.active > .menu > .bottom > .seting,
-.sidebar.active > .menu > .bottom > .logout {
+.sidebar.active>.menu>.bottom>.seting,
+.sidebar.active>.menu>.bottom>.logout {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -655,12 +728,12 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     height: 35px;
 }
 
-.sidebar.active > .menu > .bottom > .seting:hover,
-.sidebar.active > .menu > .bottom > .logout:hover {
+.sidebar.active>.menu>.bottom>.seting:hover,
+.sidebar.active>.menu>.bottom>.logout:hover {
     font-size: 16pt;
 }
 
-.sidebar.active > .menu > .bottom > .date {
+.sidebar.active>.menu>.bottom>.date {
     font-size: 10pt;
     font-weight: 600;
 }
@@ -696,7 +769,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     Modal
 */
 
-.modal { 
+.modal {
     display: none;
 }
 
@@ -713,7 +786,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     align-items: center;
 }
 
-.modal.active > .modal-box {
+.modal.active>.modal-box {
     display: block;
     position: fixed;
     z-index: 100;
@@ -724,33 +797,33 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     background: rgba(0, 0, 0, .2);
 }
 
-.modal.active > .profile {
+.modal.active>.profile {
     display: block;
     position: fixed;
     z-index: 100;
     width: 320px;
     min-height: 100px;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     background: var(--putih);
 }
 
-.modal.active > .profile > .top {
+.modal.active>.profile>.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
 }
 
-.modal.active > .profile > .top > label {
+.modal.active>.profile>.top>label {
     font-weight: 500;
     font-size: 14pt;
 }
 
 
-.modal.active > .profile > .top > .close {
+.modal.active>.profile>.top>.close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -764,26 +837,26 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     height: 35px;
 }
 
-.modal.active > .profile > .top > .close:hover {
+.modal.active>.profile>.top>.close:hover {
     font-size: 16pt;
 }
 
-.modal.active > .profile > .photo {
+.modal.active>.profile>.photo {
     margin: 0;
 }
 
-.modal.active > .profile > .photo > img {
+.modal.active>.profile>.photo>img {
     width: 100%;
 }
 
-.modal.active > .profile > .form {
+.modal.active>.profile>.form {
     margin-top: -3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.modal.active > .profile > .form > form:first-child > .grup > div {
+.modal.active>.profile>.form>form:first-child>.grup>div {
     width: 169px;
     padding: 14px 0;
     text-align: center;
@@ -794,7 +867,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     background-color: var(--abu);
 }
 
-.modal.active > .profile > .form > form:first-child > input[type='file'] {
+.modal.active>.profile>.form>form:first-child>input[type='file'] {
     width: 50%;
     height: 40px;
     margin-top: -30px;
@@ -804,7 +877,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
 }
 
 
-.modal.active > .profile > .form > form:last-child > button {
+.modal.active>.profile>.form>form:last-child>button {
     width: 150px;
     background-color: var(--abu);
     color: var(--merah);
@@ -815,7 +888,7 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     font-weight: 600;
 }
 
-.modal.active > .profile > .form > form:last-child > button:hover {
+.modal.active>.profile>.form>form:last-child>button:hover {
     background-color: var(--abu3);
 }
 
@@ -856,11 +929,11 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
 
 
 
-.list > table {
+.list>table {
     width: 100%;
 }
 
-.list > table > tr > td {
+.list>table>tr>td {
     border-collapse: collapse;
     vertical-align: top;
     padding: 20px;
@@ -875,31 +948,31 @@ navbar > .user-info > .menu.active > .button-grup > button > i {
     Halaman Wellcome
 */
 
-.single-4 > .brand {
+.single-4>.brand {
     max-width: 100%;
     text-align: center;
 }
 
-.single-4 > .brand > .logo {
+.single-4>.brand>.logo {
     text-align: center;
 }
 
-.single-4 > .brand > .logo > img{
+.single-4>.brand>.logo>img {
     width: 180px;
 }
 
-.single-4 > .brand > .label {
+.single-4>.brand>.label {
     margin: 20px 0;
     font-size: 14pt;
 }
 
-.single-4 > .brand > .grup-button {
+.single-4>.brand>.grup-button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.single-4 > .brand > .grup-button > button {
+.single-4>.brand>.grup-button>button {
     padding: 8px 15px;
     background: var(--abiesoft);
     color: var(--putih);

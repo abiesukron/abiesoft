@@ -1,8 +1,8 @@
 form:
-  method: 'get'
-  path: '/form'
-  controller: 'FormController'
-  function: 'index'
+  method: "get"
+  path: "/form"
+  controller: "FormController"
+  function: "index"
   auth: true
 
 # Media Online
@@ -15,9 +15,6 @@ kategori:
 folder:
   admin: true
 
-
-
-
 # Seting
 users:
   admin: true
@@ -25,14 +22,10 @@ users:
 grup:
   admin: true
 
-
-
-
-
 # Publik
 landing:
-  method: 'get'
-  path: '/'
-  controller: 'LandingController'
-  function: 'index'
+  method: "get"
+  path: "/"
+  controller: "LandingController"
+  function: "index"
   auth: false

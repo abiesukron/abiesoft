@@ -23,12 +23,8 @@
         <div class="single-4">
             <div class='transparent'>
                 <div class="card">
-                    <div class="card-header">
-                        <button id="back" class="hide"><i class="las la-angle-left"></i></button>
-                        <div class="label">{$title}</div>
-                        <button class="card-option-btn hide"><i class="las la-ellipsis-v"></i></button>
-                    </div>
                     <div class="card-body">
+                        <div class='center pd-30'><img src='/assets/img/logo_abiesoft.png' style='width: 70px;'></div>
                         <form id="formAuth" name="formAuth" method="post" onSubmit="return submitAuth()">
                             <div class="form-login">
                                 <div class="form-group">
@@ -70,9 +66,10 @@
                                 </div>
                                 {if $registrasi == 1}
                                     <hr>
-                                    <div class="form-btn">
-                                        <button type="button" class="btn btn-clean full" onClick="window.location.href=this.dataset.url" data-url="{$url}/registrasi">
-                                            <span>Registrasi</span>
+                                    <div class="form-btn-flex flex-between">
+                                        <div>Belum punya akun?</div>
+                                        <button type="button" class="btn btn-clean" onClick="window.location.href=this.dataset.url" data-url="{$url}/registrasi">
+                                            <span> Registrasi &#10141;</span>
                                         </button>
                                     </div>
                                 {/if}

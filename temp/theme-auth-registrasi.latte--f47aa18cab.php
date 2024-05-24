@@ -42,14 +42,8 @@ final class Templatef47aa18cab extends Latte\Runtime\Template
         <div class="single-4">
             <div class=\'transparent\'>
                 <div class="card">
-                    <div class="card-header">
-                        <button id="back" class="hide"><i class="las la-angle-left"></i></button>
-                        <div class="label">';
-		echo LR\Filters::escapeHtmlText($title) /* line 28 */;
-		echo '</div>
-                        <button class="card-option-btn hide"><i class="las la-ellipsis-v"></i></button>
-                    </div>
                     <div class="card-body">
+                        <div class=\'center pd-30\'><img src=\'/assets/img/logo_abiesoft.png\' style=\'width: 70px;\'></div>
                         <form id="formAuth" name="formAuth" method="post" onSubmit="return submitAuth()">
                             <div class="form-login">
                                 <div class="form-group">
@@ -72,15 +66,15 @@ final class Templatef47aa18cab extends Latte\Runtime\Template
                                 </div>
                                 <div class="form-btn">
                                     <input type="hidden" id="__token" name="__token" value="';
-		echo LR\Filters::escapeHtmlAttr($csrf) /* line 53 */;
+		echo LR\Filters::escapeHtmlAttr($csrf) /* line 49 */;
 		echo '">
                                     <button class="btn btn-abiesoft full">
                                         <span id="btnregistrasi">Registrasi</span>
                                     </button>
 ';
-		if ($google == 1) /* line 57 */ {
+		if ($google == 1) /* line 53 */ {
 			echo '                                    <button type="button" class="btn btn-google-merah full" onClick="window.location.href=this.dataset.url" data-url="';
-			echo LR\Filters::escapeHtmlAttr($google_url_login) /* line 58 */;
+			echo LR\Filters::escapeHtmlAttr($google_url_login) /* line 54 */;
 			echo '">
                                         <i class="lab la-google"></i>
                                         <span>Registrasi dengan google</span>
@@ -89,11 +83,12 @@ final class Templatef47aa18cab extends Latte\Runtime\Template
 		}
 		echo '                                </div>
                                 <hr>
-                                <div class="form-btn">
-                                    <button type="button" class="btn btn-clean full" onClick="window.location.href=this.dataset.url" data-url="';
-		echo LR\Filters::escapeHtmlAttr($url) /* line 66 */;
+                                <div class="form-btn-flex flex-between">
+                                    <div>Sudah punya akun?</div>
+                                    <button type="button" class="btn btn-clean" onClick="window.location.href=this.dataset.url" data-url="';
+		echo LR\Filters::escapeHtmlAttr($url) /* line 63 */;
 		echo '/login">
-                                        <span>Kembali ke login</span>
+                                        <span> Login &#10141;</span>
                                     </button>
                                 </div>
                             </div>
