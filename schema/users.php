@@ -36,10 +36,10 @@ class users extends Schema
         DB::terhubung()->input('users', [
             // 'id' => Generate::ID('users'),
             'id' => 'HfCnTEIFtAnB',
-            'nama' => 'Sukron',
+            'nama' => 'Administrator',
             'username' => Generate::Username('user'),
-            'email' => 'abiesoft22@gmail.com',
-            'nohp' => '085161473783',
+            'email' => 'sabbayroad@gmail.com',
+            'nohp' => '0000',
             'psw' => 'f8e538f55c6d29729d542b21c765fa9b3b56f16350f0e1dc91ae648ffafb24fb',
             'salt' => 'uYif',
             'grupid' => 'dpYCGB9FFeht'

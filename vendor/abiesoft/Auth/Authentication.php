@@ -6,7 +6,6 @@ use AbieSoft\Application\Http\Controller;
 use AbieSoft\Application\Http\Lanjut;
 use AbieSoft\Application\Mysql\DB;
 use AbieSoft\Application\Package\Email;
-use AbieSoft\Application\Package\Google;
 use AbieSoft\Application\Utilities\Config;
 use AbieSoft\Application\Utilities\Cookies;
 use AbieSoft\Application\Utilities\Generate;
@@ -37,7 +36,7 @@ class Authentication
         $controller = new Controller;
         $jwt = Cookies::lihat('ABIESOFT-SID');
         $registrasi = DB::terhubung()->toString('seting', 'tampilkan', '2JDeBas7ssP5');
-        $google = DB::terhubung()->toString('seting', 'tampilkan', '3AvoHp30AhkE');
+        $google = "";
         if($jwt != ""){
             $email = JWT::decode($jwt, new Key(Config::envReader('WEB_TOKEN'), 'HS256'))->email;
             $user = $this->cariuser($email);
@@ -52,7 +51,7 @@ class Authentication
             return $controller->view('login', [
                 'registrasi' => $registrasi,
                 'google' => $google,
-                'google_url_login' => filter_var(Google::createAuthUrl(),FILTER_SANITIZE_URL),
+                'google_url_login' => "",
                 'csrf' => Generate::csrf()
             ]);
         }
@@ -116,14 +115,14 @@ class Authentication
 
     public function registrasi () {
         $registrasi = DB::terhubung()->toString('seting', 'tampilkan', '2JDeBas7ssP5');
-        $google = DB::terhubung()->toString('seting', 'tampilkan', '3AvoHp30AhkE');
+        $google = "";
         if($registrasi == 0){
             Lanjut::ke('/login');
         }
         $controller = new Controller;
         return $controller->view('registrasi', [
             'google' => $google,
-            'google_url_login' => filter_var(Google::createAuthUrl(),FILTER_SANITIZE_URL),
+            'google_url_login' => "",
             'csrf' => Generate::csrf()
         ]);
     }
@@ -170,7 +169,7 @@ class Authentication
         $jwt = Cookies::lihat('ABIESOFT-RESET');
         $controller = new Controller;
         if($jwt != "" AND $jwt == Input::get('rid')){
-            $google = DB::terhubung()->toString('seting', 'tampilkan', '3AvoHp30AhkE');
+            $google = "";
             $email = JWT::decode($jwt, new Key(Config::envReader('WEB_TOKEN'), 'HS256'))->email;
             Cookies::hapus('ABIESOFT-RESET');
 
@@ -706,9 +705,6 @@ class Authentication
         Google Authentication
     **/
 
-    public function googleAuth () {
-        echo Google::getAuthentication();
-        // print_r(Google::getAuthentication());
-    }
+    
 
 }
